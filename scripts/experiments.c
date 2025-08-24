@@ -47,9 +47,22 @@ int main( int argc, char **argv )
     //const char *input_file = "matrix.mtx";       // or pass via -f option
     const char *output_file = "solution.txt";
 
-    const char *input_file = "../matrices/bin/06_u_bayer03.bin";
+    const char *input_file = "../matrices/bin/09_u_dw4096.bin";
 
     Mat A = load_matrix(input_file);
+
+
+    /*
+    PetscBool is_symmetric;
+    PetscReal tol = 1e-10; // tolerance for numerical symmetry
+
+    PetscCall(MatIsSymmetric(A, tol, &is_symmetric));
+
+    if (is_symmetric) {
+        PetscPrintf(PETSC_COMM_WORLD, "Matrix is symmetric (within tolerance).\n");
+    } else {
+        PetscPrintf(PETSC_COMM_WORLD, "Matrix is NOT symmetric.\n");
+    }*/
 
 
     PetscInt m, n;
