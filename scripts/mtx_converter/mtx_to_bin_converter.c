@@ -49,6 +49,18 @@ int main( int argc, char **argv )
     PetscCall( MatSetFromOptions(A) );
     PetscCall( MatSetUp(A) );
 
+    // check for symmetry from filename
+    const char *input_filename = strrchr(argv[1], '/');
+    input_filename = input_filename ? input_filename + 1 : argv[1];
+    int symmetric = 0;
+    
+    if ( strstr(input_filename, "_s_") ) {
+        symmetric = 1;
+
+        PetscCall( MatSetOption(A, MAT_SYMMETRIC, PETSC_TRUE) );
+        PetscPrintf(PETSC_COMM_WORLD, "Matrix marked as symmetric based on filename: %s\n", input_filename);
+    }
+
     // read and insert entries
     for ( int i = 0; i < nnz; i++ ) {
         if ( fscanf(f, "%d %d %lf", &row_idx, &col_idx, &val) != 3 ) {
@@ -56,6 +68,11 @@ int main( int argc, char **argv )
             break;
         }
         PetscCall( MatSetValue(A, row_idx - 1, col_idx - 1, val, INSERT_VALUES) );
+
+        // ensure symmetric values if matrix is symmetric
+        if ( symmetric && row_idx != col_idx ) {
+            PetscCall( MatSetValue(A, col_idx - 1, row_idx - 1, val, INSERT_VALUES) );
+        }
     }
 
     fclose(f);
