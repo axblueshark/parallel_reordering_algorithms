@@ -16,7 +16,7 @@ Mat load_matrix( const char *filename )
     PetscCall( MatLoad(A, viewer) );
 
     // cleanup
-    PetscCall(PetscViewerDestroy(&viewer));
+    PetscCall( PetscViewerDestroy(&viewer) );
 
     return A;
 }
@@ -44,10 +44,10 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    //const char *input_file = "matrix.mtx";       // or pass via -f option
+    //const char *input_file = "matrix.mtx";       // or pass via -f option - better probably
     const char *output_file = "solution.txt";
 
-    const char *input_file = "../matrices/bin/09_u_dw4096.bin";
+    const char *input_file = "../matrices/bin/04_s_barth4_coord.bin";
 
     Mat A = load_matrix(input_file);
 
@@ -65,15 +65,16 @@ int main( int argc, char **argv )
     }*/
 
 
+    // check if matrix is loaded properly
     PetscInt m, n;
     MatInfo info;
 
-    MatGetSize(A, &m, &n);  // Get global matrix size
-    MatGetInfo(A, MAT_GLOBAL_SUM, &info);  // Fill the info struct
+    PetscCall( MatGetSize(A, &m, &n) );  // global matrix size
+    PetscCall( MatGetInfo(A, MAT_GLOBAL_SUM, &info) );  // fill the info struct
 
-    PetscPrintf(PETSC_COMM_WORLD, "Matrix size: %d x %d\n", m, n);
-    PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated);
-    PetscPrintf(PETSC_COMM_WORLD, "Memory used: %.2f MB\n", info.memory / (1024.0 * 1024.0));
+    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Matrix size: %d x %d\n", m, n) );
+    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
+    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Memory used: %.2f MB\n", info.memory) );
 
     //apply_reordering(A);
 
@@ -81,6 +82,7 @@ int main( int argc, char **argv )
     
     //save_results(x, output_file);
 
+    // cleanup 
     //VecDestroy(&x);
     MatDestroy(&A);
 
