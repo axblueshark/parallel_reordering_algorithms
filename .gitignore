@@ -1,2 +1,20 @@
 /petsc
 /matrices
+
+
+# object files
+*.o
+
+# executables / binaries
+mtx_to_bin_mat
+mtx_to_bin_vec
+experiments
+*.out
+*.exe
+
+# PETSc binary matrix/vector files
+*.bin
+
+# backup / temp
+*~
+.DS_Store
