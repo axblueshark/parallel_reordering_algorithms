@@ -21,6 +21,25 @@ Mat load_matrix( const char *filename )
     return A;
 }
 
+Vec load_vector( const char *filename )
+{
+    Vec         v;
+    PetscViewer viewer;
+
+    // open PETSc binary file for reading
+    PetscCall( PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_READ, &viewer) );
+
+    // create and load the matrix
+    PetscCall( VecCreate(PETSC_COMM_WORLD, &v) );
+    PetscCall( VecSetFromOptions(v) );
+    PetscCall( VecLoad(v, viewer) );
+
+    // cleanup
+    PetscCall( PetscViewerDestroy(&viewer) );
+
+    return v;
+}
+
 void apply_reordering(Mat A) 
 {
     // TODO: Implement matrix reordering using MatGetOrdering, etc.
@@ -44,28 +63,11 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    //const char *input_file = "matrix.mtx";       // or pass via -f option - better probably
-    const char *output_file = "solution.txt";
-
     const char *input_file = "../matrices/bin/01_s_bcsstk03.bin";
+    const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_file);
-
-
-    /*
-    PetscBool is_symmetric;
-    PetscReal tol = 1e-10; // tolerance for numerical symmetry
-
-    PetscCall(MatIsSymmetric(A, tol, &is_symmetric));
-
-    if (is_symmetric) {
-        PetscPrintf(PETSC_COMM_WORLD, "Matrix is symmetric (within tolerance).\n");
-    } else {
-        PetscPrintf(PETSC_COMM_WORLD, "Matrix is NOT symmetric.\n");
-    }*/
-
-
-    // check if matrix is loaded properly
+    Vec v = load_vector(input_vec_file);
     PetscInt m, n;
     MatInfo info;
 
@@ -76,33 +78,24 @@ int main( int argc, char **argv )
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Memory used: %.2f MB\n", info.memory) );
 
+    PetscInt vec_size;
+
+    PetscCall( VecGetSize(v, &vec_size) );
+
+    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Vec size: %d\n", vec_size) );
 
 
-        // print first 5 nonzero entries
-        PetscInt printed = 0;
-        for (PetscInt row = 0; row < m && printed < 5; row++) {
-            const PetscInt    *cols;
-            const PetscScalar *vals;
-            PetscInt           ncols;
-    
-            PetscCall(MatGetRow(A, row, &ncols, &cols, &vals));
-            for (PetscInt j = 0; j < ncols && printed < 5; j++) {
-                PetscPrintf(PETSC_COMM_WORLD,
-                            "Entry %" PetscInt_FMT ",%" PetscInt_FMT " = %g\n",
-                            row+1, cols[j]+1, (double)PetscRealPart(vals[j]));
-                printed++;
-            }
-            PetscCall(MatRestoreRow(A, row, &ncols, &cols, &vals));
-        }
-    
-    //apply_reordering(A);
+    PetscInt nprint = vec_size < 3 ? vec_size : 3;
+    PetscInt idx[3] = {0, 1, 2};  // indices we want to read
+    PetscScalar vals[3];
 
-    //Vec x = solve_system(A);
-    
-    //save_results(x, output_file);
+    PetscCall(VecGetValues(v, nprint, idx, vals));
+    for (PetscInt k = 0; k < nprint; k++) {
+        PetscCall(PetscPrintf(PETSC_COMM_WORLD,
+            "v[%" PetscInt_FMT "] = %g\n", idx[k]+1, (double)PetscRealPart(vals[k])));
+    }
 
-    // cleanup 
-    //VecDestroy(&x);
+    VecDestroy(&v);
     MatDestroy(&A);
 
     PetscFinalize();
