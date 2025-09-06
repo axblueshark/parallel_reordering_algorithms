@@ -8,7 +8,7 @@ int main( int argc, char **argv )
 {
     FILE *file;
     PetscInt row_idx, col_idx, m, n, nnz;  // m, n, nnz - matrix dimensions and number of nonzeros, respectively
-    PetscScalar val;                       // value at (row_idx, col_idx)
+    PetscReal val;                       // value at (row_idx, col_idx)
     Mat A;                            // matrix to be constructed
     PetscViewer viewer;
     char line[512];
@@ -41,7 +41,8 @@ int main( int argc, char **argv )
     } while ( line[0] == '%' );
 
     // read matrix dimensions and number of nonzeros
-    sscanf( line, "%d %d %d", &m, &n, &nnz );
+    sscanf( line, "%" PetscInt_FMT " %" PetscInt_FMT " %" PetscInt_FMT, 
+                  &m, &n, &nnz);
 
     // empty matrix setup
     PetscCall( MatCreate(PETSC_COMM_WORLD, &A) );
@@ -52,17 +53,18 @@ int main( int argc, char **argv )
     // check for symmetry from filename
     const char *input_filename = strrchr(argv[1], '/');
     input_filename = input_filename ? input_filename + 1 : argv[1];
-    int symmetric = 0;
+    PetscBool symmetric = PETSC_FALSE;
     
     if ( strstr(input_filename, "_s_") ) {
-        symmetric = 1;
+        symmetric = PETSC_TRUE;
         PetscCall( MatSetOption(A, MAT_SYMMETRIC, PETSC_TRUE) );
     }
 
     // read and insert entries
     for ( PetscInt i = 0; i < nnz; i++ ) {
-        if ( fscanf(file, "%d %d %lf", &row_idx, &col_idx, &val) != 3 ) {
-            PetscPrintf( PETSC_COMM_WORLD, "Failed to read value #%d\n", i + 1 );
+        if ( fscanf(file, "%" PetscInt_FMT " %" PetscInt_FMT " %lf", 
+                          &row_idx, &col_idx, &val) != 3 ) {
+            PetscPrintf( PETSC_COMM_WORLD, "Failed to read value #%" PetscInt_FMT "\n", i + 1 );
             break;
         }
         PetscCall( MatSetValue(A, row_idx - 1, col_idx - 1, val, INSERT_VALUES) );
