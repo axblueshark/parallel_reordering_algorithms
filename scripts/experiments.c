@@ -47,7 +47,7 @@ int main( int argc, char **argv )
     //const char *input_file = "matrix.mtx";       // or pass via -f option - better probably
     const char *output_file = "solution.txt";
 
-    const char *input_file = "../matrices/bin/04_s_barth4_coord.bin";
+    const char *input_file = "../matrices/bin/01_s_bcsstk03.bin";
 
     Mat A = load_matrix(input_file);
 
@@ -76,6 +76,25 @@ int main( int argc, char **argv )
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Memory used: %.2f MB\n", info.memory) );
 
+
+
+        // print first 5 nonzero entries
+        PetscInt printed = 0;
+        for (PetscInt row = 0; row < m && printed < 5; row++) {
+            const PetscInt    *cols;
+            const PetscScalar *vals;
+            PetscInt           ncols;
+    
+            PetscCall(MatGetRow(A, row, &ncols, &cols, &vals));
+            for (PetscInt j = 0; j < ncols && printed < 5; j++) {
+                PetscPrintf(PETSC_COMM_WORLD,
+                            "Entry %" PetscInt_FMT ",%" PetscInt_FMT " = %g\n",
+                            row+1, cols[j]+1, (double)PetscRealPart(vals[j]));
+                printed++;
+            }
+            PetscCall(MatRestoreRow(A, row, &ncols, &cols, &vals));
+        }
+    
     //apply_reordering(A);
 
     //Vec x = solve_system(A);
