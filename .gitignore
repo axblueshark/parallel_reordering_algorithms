@@ -1,6 +1,6 @@
 /petsc
 /matrices
-
+!/matrices/matrices.md
 
 # object files
 *.o
