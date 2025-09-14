@@ -41,10 +41,10 @@
     - nonzeros: 770,811
     - Computer Graphics/Vision Problem
 
-8. symmetric: nd6k (https://sparse.tamu.edu/ND/nd6k)
-    - size: 18000x18000
-    - nonzeros: 6897316
-    - 2D/3D problem
+8. symmetric: gyro_k (https://sparse.tamu.edu/Oberwolfach/gyro_k)
+    - size: 17361x17361
+    - nonzeros: 1,021,159
+    - Duplicate Model Reduction Problem
 
 9. unsymmetric: powersim (https://sparse.tamu.edu/LiuWenzhuo/powersim)
     - size: 15838x15838

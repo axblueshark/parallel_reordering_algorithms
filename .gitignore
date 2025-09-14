@@ -1,10 +1,5 @@
 # specific folders
 /petsc
-/matrices/mtx/*
-/matrices/bin/*
-!/matrices/matrices.md
-!/matrices/mtx/.keep
-!/matrices/mtx/.keep
 
 # object files
 *.o
@@ -15,9 +10,6 @@ mtx_to_bin_vec
 experiments
 *.out
 *.exe
-
-# PETSc binary matrix/vector files
-*.bin
 
 # backup / temp
 *~

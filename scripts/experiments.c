@@ -74,7 +74,7 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    const char *input_mat_file = "../matrices/bin/01_s_bcsstk03.bin";
+    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
     const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_mat_file);
