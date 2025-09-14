@@ -1,5 +1,7 @@
+# specific folders
 /petsc
-/matrices
+/matrices/mtx/*
+/matrices/bin/*
 !/matrices/matrices.md
 
 # object files
