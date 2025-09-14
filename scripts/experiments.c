@@ -52,6 +52,35 @@ Vec load_vector( const char *filename )
     return v;
 }
 
+/**
+ * @brief Function to generate right hand vector if none is available from suite sparse collection.
+ * 
+ * @param A The system matrix.
+ * @return Vec 
+ */
+Vec generate_rhs( Mat A )
+{
+    Vec      b, ones;
+    PetscInt n;
+
+    PetscCall( MatGetSize(A, NULL, &n) );
+
+    // create a vector filled with ones
+    PetscCall( VecCreate(PETSC_COMM_WORLD, &ones) );
+    PetscCall( VecSetSizes(ones, PETSC_DECIDE, n) );
+    PetscCall( VecSetFromOptions(ones) );
+    PetscCall( VecSet(ones, 1.0) );
+    PetscCall( VecAssemblyBegin(ones) );
+    PetscCall( VecAssemblyEnd(ones) );
+
+    // create b of size n and calculate b = A * ones
+    PetscCall( VecDuplicate(ones, &b) );
+    PetscCall( MatMult(A, ones, b) );
+
+    PetscCall( VecDestroy(&ones) );
+    return b;
+}
+
 Mat reorder( Mat A, MatOrderingType ordering ) 
 {
     IS  rperm, cperm;
