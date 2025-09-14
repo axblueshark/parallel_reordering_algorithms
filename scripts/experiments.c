@@ -52,16 +52,27 @@ Vec load_vector( const char *filename )
     return v;
 }
 
-void apply_reordering(Mat A) 
+Mat reorder( Mat A, MatOrderingType ordering ) 
 {
-    // TODO: Implement matrix reordering using MatGetOrdering, etc.
+    IS  rperm, cperm;
+    Mat A_perm;
+
+    // get the permutation indices
+    PetscCall( MatGetOrdering(A, ordering, &rperm, &cperm) );
+
+    // get the permuted matrix
+    PetscCall( MatPermute(A, rperm, cperm, &A_perm) );
+
+    // cleanup
+    PetscCall( ISDestroy(&rperm) );
+    PetscCall( ISDestroy(&cperm) );
+
+    return A_perm;
 }
 
 Vec solve_system(Mat A) 
 {
-    Vec x;
     // TODO: Create RHS, set up KSP, solve the system, return solution vector
-    return x;
 }
 
 void save_results(Vec x, const char *output_filename) 
@@ -102,6 +113,8 @@ int main( int argc, char **argv )
         PetscCall( PetscPrintf(PETSC_COMM_WORLD,
             "v[%" PetscInt_FMT "] = %g\n", idx[i] + 1, (double)PetscRealPart(vals[i])) );
     }
+
+    Mat A_perm = reorder( A, MATORDERINGRCM );
 
     VecDestroy(&v);
     MatDestroy(&A);
