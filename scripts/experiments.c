@@ -106,10 +106,11 @@ Mat reorder( Mat A, MatOrderingType ordering )
     return A_perm;
 }
 
-Vec solve_system(Mat A) 
+Vec solve_system( Mat A, Vec b )
 {
-    // TODO: Create RHS, set up KSP, solve the system, return solution vector
+    
 }
+
 
 void save_results(Vec x, const char *output_filename) 
 {
@@ -121,11 +122,12 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
-    const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
+    const char *input_mat_file = "../matrices/bin/12_s_GAP-road.bin";
+    //const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_mat_file);
-    Vec v = load_vector(input_vec_file);
+    //Vec v = load_vector(input_vec_file);
+    Vec b = generate_rhs(A);
 
     // check if loaded correctly
     PetscInt m, n;
@@ -136,23 +138,27 @@ int main( int argc, char **argv )
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Matrix size: %d x %d\n", m, n) );
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
 
-    PetscInt vec_size;
-    PetscCall( VecGetSize(v, &vec_size) );
-    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Vec size: %" PetscInt_FMT "\n", vec_size) );
+    //PetscInt vec_size;
+    //PetscCall( VecGetSize(v, &vec_size) );
+    //PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Vec size: %" PetscInt_FMT "\n", vec_size) );
+//
+    //PetscInt nprint = 3;
+    //PetscInt idx[3] = {0, 1, 2};
+    //PetscScalar vals[3];
 
-    PetscInt nprint = 3;
-    PetscInt idx[3] = {0, 1, 2};
-    PetscScalar vals[3];
+    //PetscCall( VecGetValues(v, nprint, idx, vals) );
+    //for ( PetscInt i = 0; i < nprint; i++ ) {
+    //    PetscCall( PetscPrintf(PETSC_COMM_WORLD,
+    //        "v[%" PetscInt_FMT "] = %g\n", idx[i] + 1, (double)PetscRealPart(vals[i])) );
+    //}
 
-    PetscCall( VecGetValues(v, nprint, idx, vals) );
-    for ( PetscInt i = 0; i < nprint; i++ ) {
-        PetscCall( PetscPrintf(PETSC_COMM_WORLD,
-            "v[%" PetscInt_FMT "] = %g\n", idx[i] + 1, (double)PetscRealPart(vals[i])) );
-    }
+    //Mat A_perm = reorder( A, MATORDERINGRCM );
 
-    Mat A_perm = reorder( A, MATORDERINGRCM );
+    Vec x = solve_system(A, b);
 
-    VecDestroy(&v);
+    //VecDestroy(&v);
+    VecDestroy(&b);
+    VecDestroy(&x);
     MatDestroy(&A);
 
     PetscFinalize();
