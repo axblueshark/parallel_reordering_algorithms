@@ -3,6 +3,8 @@
 /matrices/mtx/*
 /matrices/bin/*
 !/matrices/matrices.md
+!/matrices/mtx/.keep
+!/matrices/mtx/.keep
 
 # object files
 *.o
