@@ -81,6 +81,13 @@ Vec generate_rhs( Mat A )
     return b;
 }
 
+/**
+ * @brief Function to get a reordering of the system matrix.
+ * 
+ * @param A The system matrix.
+ * @param ordering Type of the reordering.
+ * @return Mat 
+ */
 Mat reorder( Mat A, MatOrderingType ordering ) 
 {
     IS  rperm, cperm;
