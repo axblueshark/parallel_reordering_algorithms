@@ -106,9 +106,24 @@ Mat reorder( Mat A, MatOrderingType ordering )
     return A_perm;
 }
 
-Vec solve_system( Mat A, Vec b )
+Vec solve_system( Mat A, Vec b, 
+                  MatOrderingType ordering, const char *solver_type,
+                  PetscBool use_reordering )
 {
-    
+    // TODO: variables setup
+
+    // TODO: use/don't use reordering
+
+    // TODO: solver setup
+
+    // TODO: solve
+
+    // TODO: "unpermute" the solution to get the original one 
+
+    // TODO: error
+
+    // TODO: cleanup
+
 }
 
 
@@ -122,7 +137,7 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    const char *input_mat_file = "../matrices/bin/12_s_GAP-road.bin";
+    const char *input_mat_file = "../matrices/bin/03_s_ex10hs.bin";
     //const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_mat_file);
@@ -154,7 +169,12 @@ int main( int argc, char **argv )
 
     //Mat A_perm = reorder( A, MATORDERINGRCM );
 
-    Vec x = solve_system(A, b);
+    Vec x = solve_system( 
+        A, b, 
+        MATORDERINGND, 
+        MATSOLVERMUMPS, 
+        PETSC_TRUE 
+    );
 
     //VecDestroy(&v);
     VecDestroy(&b);
