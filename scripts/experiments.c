@@ -107,23 +107,41 @@ Mat reorder( Mat A, MatOrderingType ordering )
 }
 
 Vec solve_system( Mat A, Vec b, 
-                  MatOrderingType ordering, const char *solver_type,
-                  PetscBool use_reordering )
+                  MatOrderingType ordering,
+                  PCType pc_type, MatSolverType mat_solver_type
+                )
 {
     // TODO: variables setup
+    KSP ksp;
+    PC  pc;
+    Vec x;
 
     // TODO: use/don't use reordering
 
     // TODO: solver setup
+    PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
+    PetscCall( KSPSetOperators(ksp, A, A) );
+    PetscCall( KSPSetType(ksp, KSPPREONLY) ); // to use direct solvers
+    
+    PetscCall( KSPGetPC(ksp, &pc) );
+    PetscCall( PCSetType(pc, pc_type) );
+    PetscCall( PCFactorSetMatSolverType(pc, mat_solver_type) );
+    PetscCall( PCFactorSetUpMatSolverType(pc) );
+
+    PetscCall( KSPSetFromOptions(ksp) );
+    PetscCall( KSPSetUp(ksp) );
 
     // TODO: solve
+    PetscCall( KSPSolve(ksp, b, x) );
 
     // TODO: "unpermute" the solution to get the original one 
 
     // TODO: error
 
     // TODO: cleanup
+    PetscCall( KSPDestroy(&ksp) );
 
+    return x;
 }
 
 
@@ -169,16 +187,16 @@ int main( int argc, char **argv )
 
     //Mat A_perm = reorder( A, MATORDERINGRCM );
 
-    Vec x = solve_system( 
-        A, b, 
-        MATORDERINGND, 
-        MATSOLVERMUMPS, 
-        PETSC_TRUE 
-    );
+    //Vec x = solve_system( 
+    //    A, b, 
+    //    MATORDERINGND, 
+    //    MATSOLVERMUMPS, 
+    //    PETSC_TRUE 
+    //);
 
     //VecDestroy(&v);
     VecDestroy(&b);
-    VecDestroy(&x);
+    //VecDestroy(&x);
     MatDestroy(&A);
 
     PetscFinalize();
