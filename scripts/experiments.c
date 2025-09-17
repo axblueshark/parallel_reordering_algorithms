@@ -92,25 +92,24 @@ Vec generate_rhs( Mat A )
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
-                        Mat *A_perm, Vec *b_perm ) 
+                        Mat *A_perm, Vec *b_perm, IS *rperm ) 
 {
-    IS  rperm, cperm;
+    IS cperm;
 
     PetscFunctionBeginUser;
 
     // get the permutation indices
-    PetscCall( MatGetOrdering(A, ordering, &rperm, &cperm) );
+    PetscCall( MatGetOrdering(A, ordering, rperm, &cperm) );
 
     // get the permuted matrix
-    PetscCall( MatPermute(A, rperm, cperm, A_perm) );
+    PetscCall( MatPermute(A, *rperm, cperm, A_perm) );
 
     // permute rhs
     PetscCall( VecDuplicate(b, b_perm) );
     PetscCall( VecCopy(b, *b_perm) );
-    PetscCall( VecPermute(*b_perm, rperm, PETSC_FALSE) );
+    PetscCall( VecPermute(*b_perm, *rperm, PETSC_FALSE) );
 
     // cleanup
-    PetscCall( ISDestroy(&rperm) );
     PetscCall( ISDestroy(&cperm) );
 
     PetscFunctionReturn( PETSC_SUCCESS );
@@ -124,14 +123,16 @@ Vec solve_system( Mat A, Vec b,
     // variables setup
     KSP ksp;
     PC  pc;
+    IS  rperm;
     Vec x, b_perm;
     Mat A_perm;
 
     // reordering
-    
+    PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
+
     // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
-    PetscCall( KSPSetOperators(ksp, A, A) );
+    PetscCall( KSPSetOperators(ksp, A_perm, A_perm) );
     PetscCall( KSPSetType(ksp, KSPPREONLY) ); // to use direct solvers
     
     PetscCall( KSPGetPC(ksp, &pc) );
@@ -142,16 +143,22 @@ Vec solve_system( Mat A, Vec b,
     PetscCall( KSPSetFromOptions(ksp) );
     PetscCall( KSPSetUp(ksp) );
 
-    // TODO: solve
-    PetscCall( KSPSolve(ksp, b, x) );
+    // allocate space for solution vector
+    PetscCall( VecDuplicate(b_perm, &x) );
 
-    // TODO: "unpermute" the solution to get the original one 
+    // solve
+    PetscCall( KSPSolve(ksp, b_perm, x) );
+
+    // "unpermute" the solution to get the original one 
+    PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
 
     // TODO: error
 
-    // TODO: cleanup
-    PetscCall( PCDestroy(&pc) );
+    // cleanup
     PetscCall( KSPDestroy(&ksp) );
+    PetscCall( MatDestroy(&A_perm) );
+    PetscCall( VecDestroy(&b_perm) );
+    PetscCall( ISDestroy(&rperm) );
 
     return x;
 }
