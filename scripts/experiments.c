@@ -82,43 +82,54 @@ Vec generate_rhs( Mat A )
 }
 
 /**
- * @brief Function to get a reordering of the system matrix.
+ * @brief Function to get a reordering of the system matrix and right-hand-side vector.
  * 
  * @param A The system matrix.
- * @param ordering Type of the reordering.
- * @return Mat 
+ * @param b The right-hand-side vector.
+ * @param ordering The ordering type.
+ * @param A_perm The permuted matrix.
+ * @param b_perm The permuted right-hand-side vector.
+ * @return PetscErrorCode 
  */
-Mat reorder( Mat A, MatOrderingType ordering ) 
+PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
+                        Mat *A_perm, Vec *b_perm ) 
 {
     IS  rperm, cperm;
-    Mat A_perm;
+
+    PetscFunctionBeginUser;
 
     // get the permutation indices
     PetscCall( MatGetOrdering(A, ordering, &rperm, &cperm) );
 
     // get the permuted matrix
-    PetscCall( MatPermute(A, rperm, cperm, &A_perm) );
+    PetscCall( MatPermute(A, rperm, cperm, A_perm) );
+
+    // permute rhs
+    PetscCall( VecDuplicate(b, b_perm) );
+    PetscCall( VecCopy(b, *b_perm) );
+    PetscCall( VecPermute(*b_perm, rperm, PETSC_FALSE) );
 
     // cleanup
     PetscCall( ISDestroy(&rperm) );
     PetscCall( ISDestroy(&cperm) );
 
-    return A_perm;
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 Vec solve_system( Mat A, Vec b, 
-                  MatOrderingType ordering,
+                  MatOrderingType ordering_type,
                   PCType pc_type, MatSolverType mat_solver_type
                 )
 {
-    // TODO: variables setup
+    // variables setup
     KSP ksp;
     PC  pc;
-    Vec x;
+    Vec x, b_perm;
+    Mat A_perm;
 
-    // TODO: use/don't use reordering
-
-    // TODO: solver setup
+    // reordering
+    
+    // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
     PetscCall( KSPSetOperators(ksp, A, A) );
     PetscCall( KSPSetType(ksp, KSPPREONLY) ); // to use direct solvers
@@ -139,6 +150,7 @@ Vec solve_system( Mat A, Vec b,
     // TODO: error
 
     // TODO: cleanup
+    PetscCall( PCDestroy(&pc) );
     PetscCall( KSPDestroy(&ksp) );
 
     return x;
@@ -155,12 +167,12 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
+
     const char *input_mat_file = "../matrices/bin/03_s_ex10hs.bin";
-    //const char *input_vec_file = "../matrices/bin/09_u_powersim_b.bin";
+    const char *input_rhs_file = "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_mat_file);
-    //Vec v = load_vector(input_vec_file);
-    Vec b = generate_rhs(A);
+    Vec b = input_rhs_file != "" ? load_vector(input_rhs_file) : generate_rhs(A);
 
     // check if loaded correctly
     PetscInt m, n;
@@ -185,16 +197,14 @@ int main( int argc, char **argv )
     //        "v[%" PetscInt_FMT "] = %g\n", idx[i] + 1, (double)PetscRealPart(vals[i])) );
     //}
 
-    //Mat A_perm = reorder( A, MATORDERINGRCM );
+    Vec x = solve_system(
+        A, b,
+        MATORDERINGNATURAL,
+        PCLU,
+        MATSOLVERSUPERLU
+    );
 
-    //Vec x = solve_system( 
-    //    A, b, 
-    //    MATORDERINGND, 
-    //    MATSOLVERMUMPS, 
-    //    PETSC_TRUE 
-    //);
-
-    //VecDestroy(&v);
+    VecDestroy(&x);
     VecDestroy(&b);
     //VecDestroy(&x);
     MatDestroy(&A);
