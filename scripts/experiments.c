@@ -176,10 +176,11 @@ int main( int argc, char **argv )
 
 
     const char *input_mat_file = "../matrices/bin/03_s_ex10hs.bin";
-    const char *input_rhs_file = "../matrices/bin/09_u_powersim_b.bin";
+    const char *input_rhs_file = ""; "../matrices/bin/09_u_powersim_b.bin";
 
     Mat A = load_matrix(input_mat_file);
-    Vec b = input_rhs_file != "" ? load_vector(input_rhs_file) : generate_rhs(A);
+    Vec b = input_rhs_file[0] ? load_vector(input_rhs_file) : generate_rhs(A);
+
 
     // check if loaded correctly
     PetscInt m, n;
@@ -190,25 +191,12 @@ int main( int argc, char **argv )
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Matrix size: %d x %d\n", m, n) );
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
 
-    //PetscInt vec_size;
-    //PetscCall( VecGetSize(v, &vec_size) );
-    //PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Vec size: %" PetscInt_FMT "\n", vec_size) );
-//
-    //PetscInt nprint = 3;
-    //PetscInt idx[3] = {0, 1, 2};
-    //PetscScalar vals[3];
-
-    //PetscCall( VecGetValues(v, nprint, idx, vals) );
-    //for ( PetscInt i = 0; i < nprint; i++ ) {
-    //    PetscCall( PetscPrintf(PETSC_COMM_WORLD,
-    //        "v[%" PetscInt_FMT "] = %g\n", idx[i] + 1, (double)PetscRealPart(vals[i])) );
-    //}
-
+    // solve the system
     Vec x = solve_system(
         A, b,
         MATORDERINGNATURAL,
         PCLU,
-        MATSOLVERSUPERLU
+        MATSOLVERSUPERLU_DIST
     );
 
     VecDestroy(&x);
