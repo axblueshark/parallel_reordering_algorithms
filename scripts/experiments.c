@@ -6,61 +6,66 @@ static const char help[] = "Parallel reordering algorithms and parallel direct s
  * @brief Loads the system matrix from an input .bin file.
  * 
  * @param filename The input file.
- * @return Mat 
+ * @param A The matrix to store the data.
+ * @return PetscErrorCode 
  */
-Mat load_matrix( const char *filename )
+PetscErrorCode load_matrix( const char *filename, Mat *A )
 {
-    Mat         A;
     PetscViewer viewer;
+
+    PetscFunctionBeginUser;
 
     // open PETSc binary file for reading
     PetscCall( PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_READ, &viewer) );
 
     // create and load the matrix
-    PetscCall( MatCreate(PETSC_COMM_WORLD, &A) );
-    PetscCall( MatSetFromOptions(A) );
-    PetscCall( MatLoad(A, viewer) );
+    PetscCall( MatCreate(PETSC_COMM_WORLD, A) );
+    PetscCall( MatSetFromOptions(*A) );
+    PetscCall( MatLoad(*A, viewer) );
 
     // cleanup
     PetscCall( PetscViewerDestroy(&viewer) );
 
-    return A;
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 /**
  * @brief Loads the RHS vector from an input .bin file.
  * 
  * @param filename The input file.
- * @return Vec 
+ * @param v The vectorto store the data.
+ * @return PetscErrorCode 
  */
-Vec load_vector( const char *filename )
+PetscErrorCode load_vector( const char *filename, Vec *v )
 {
-    Vec         v;
     PetscViewer viewer;
+
+    PetscFunctionBeginUser;
 
     // open PETSc binary file for reading
     PetscCall( PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_READ, &viewer) );
 
     // create and load the matrix
-    PetscCall( VecCreate(PETSC_COMM_WORLD, &v) );
-    PetscCall( VecSetFromOptions(v) );
-    PetscCall( VecLoad(v, viewer) );
+    PetscCall( VecCreate(PETSC_COMM_WORLD, v) );
+    PetscCall( VecSetFromOptions(*v) );
+    PetscCall( VecLoad(*v, viewer) );
 
     // cleanup
     PetscCall( PetscViewerDestroy(&viewer) );
 
-    return v;
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 /**
  * @brief Function to generate right hand vector if none is available from suite sparse collection.
  * 
  * @param A The system matrix.
- * @return Vec 
+ * @param b The generated right-hand side vector.
+ * @return PetscErrorCode 
  */
-Vec generate_rhs( Mat A )
+PetscErrorCode generate_rhs( Mat A, Vec *b )
 {
-    Vec      b, ones;
+    Vec      ones;
     PetscInt n;
 
     PetscCall( MatGetSize(A, NULL, &n) );
@@ -74,21 +79,22 @@ Vec generate_rhs( Mat A )
     PetscCall( VecAssemblyEnd(ones) );
 
     // create b of size n and calculate b = A * ones
-    PetscCall( VecDuplicate(ones, &b) );
-    PetscCall( MatMult(A, ones, b) );
+    PetscCall( VecDuplicate(ones, b) );
+    PetscCall( MatMult(A, ones, *b) );
 
     PetscCall( VecDestroy(&ones) );
-    return b;
+    
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 /**
- * @brief Function to get a reordering of the system matrix and right-hand-side vector.
+ * @brief Function to get a reordering of the system matrix and right-hand side vector.
  * 
  * @param A The system matrix.
- * @param b The right-hand-side vector.
+ * @param b The right-hand side vector.
  * @param ordering The ordering type.
  * @param A_perm The permuted matrix.
- * @param b_perm The permuted right-hand-side vector.
+ * @param b_perm The permuted right-hand side vector.
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
@@ -115,7 +121,18 @@ PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering,
     PetscFunctionReturn( PETSC_SUCCESS );
 }
 
-Vec solve_system( Mat A, Vec b, 
+/**
+ * @brief Function to solve the system of linear equations Ax = b.
+ * 
+ * @param A The system matrix.
+ * @param b The right-hand side vector.
+ * @param x The solution vector.
+ * @param ordering_type The type of the reordering to be used.
+ * @param pc_type The type of the preconditioner to be used.
+ * @param mat_solver_type The solver type.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
                   MatOrderingType ordering_type,
                   PCType pc_type, MatSolverType mat_solver_type
                 )
@@ -124,7 +141,7 @@ Vec solve_system( Mat A, Vec b,
     KSP ksp;
     PC  pc;
     IS  rperm;
-    Vec x, b_perm;
+    Vec b_perm;
     Mat A_perm;
 
     // reordering
@@ -144,13 +161,13 @@ Vec solve_system( Mat A, Vec b,
     PetscCall( KSPSetUp(ksp) );
 
     // allocate space for solution vector
-    PetscCall( VecDuplicate(b_perm, &x) );
+    PetscCall( VecDuplicate(b_perm, x) );
 
     // solve
-    PetscCall( KSPSolve(ksp, b_perm, x) );
+    PetscCall( KSPSolve(ksp, b_perm, *x) );
 
     // "unpermute" the solution to get the original one 
-    PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
+    PetscCall( VecPermute(*x, rperm, PETSC_TRUE) );
 
     // TODO: error
 
@@ -160,27 +177,36 @@ Vec solve_system( Mat A, Vec b,
     PetscCall( VecDestroy(&b_perm) );
     PetscCall( ISDestroy(&rperm) );
 
-    return x;
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 
-void save_results(Vec x, const char *output_filename) 
-{
-    // TODO: Save solution vector to file using PetscViewer
-}
+//PetscErrorCode save_results(Vec x, const char *output_filename) 
+//{
+//    PetscFunctionBeginUser;
+//    // TODO: Save solution vector to file using PetscViewer
+//    PetscFunctionReturn( PETSC_SUCCESS );
+//}
 
 //========================================================
 int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
+    Mat A;
+    Vec b, x;
 
     const char *input_mat_file = "../matrices/bin/03_s_ex10hs.bin";
-    const char *input_rhs_file = ""; "../matrices/bin/09_u_powersim_b.bin";
+    const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
-    Mat A = load_matrix(input_mat_file);
-    Vec b = input_rhs_file[0] ? load_vector(input_rhs_file) : generate_rhs(A);
+    // prepare the system matrix and RHS vector
+    PetscCall( load_matrix(input_mat_file, &A) );
 
+    if ( input_rhs_file && input_rhs_file[0] ) {
+        PetscCall( load_vector(input_rhs_file, &b) );
+    } else {
+        PetscCall( generate_rhs(A, &b) );
+    }
 
     // check if loaded correctly
     PetscInt m, n;
@@ -192,16 +218,17 @@ int main( int argc, char **argv )
     PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
 
     // solve the system
-    Vec x = solve_system(
-        A, b,
+    PetscCall( solve_system(
+        A, b, &x,
         MATORDERINGNATURAL,
         PCLU,
         MATSOLVERSUPERLU_DIST
+        ) 
     );
 
+    // cleanup
     VecDestroy(&x);
     VecDestroy(&b);
-    //VecDestroy(&x);
     MatDestroy(&A);
 
     PetscFinalize();
