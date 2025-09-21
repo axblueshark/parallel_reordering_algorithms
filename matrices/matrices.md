@@ -2,15 +2,15 @@
 
 ------
 ### Small
-1. symmetric: bcsstk03 (https://sparse.tamu.edu/HB/bcsstk03)
-    - size: 112x112
-    - nonzeros: 640
-    - structural problem
+1. symmetric: ex2 (https://sparse.tamu.edu/FIDAP/ex2)
+    - size: 441x441
+    - nonzeros: 26,839
+    - Computational Fluid Dynamics Problem
 
-2. unsymmetric:  saylr1 (https://sparse.tamu.edu/HB/saylr1)
-    - size: 238x238
-    - nonzeros: 1128
-    - computational fluid dynamics problem
+2. unsymmetric:  mhda416 (https://sparse.tamu.edu/Bai/mhda416)
+    - size: 416x416
+    - nonzeros: 8,562
+    - Electromagnetics Problem
 
 
 ### Medium

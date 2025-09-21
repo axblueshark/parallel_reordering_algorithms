@@ -13,7 +13,7 @@ int main( int argc, char **argv )
     MatType mat_type = MATMPIAIJ;
     VecType vec_type = VECMPI;
 
-    const char *input_mat_file = "../matrices/bin/01_s_bcsstk03.bin";
+    const char *input_mat_file = "../matrices/bin/02_u_mhda416.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
