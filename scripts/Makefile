@@ -1,5 +1,5 @@
 PETSC_DIR = ../petsc
-PETSC_ARCH = arch-linux-32-opt
+PETSC_ARCH = arch-linux-c-opt
 
 CC = ${PETSC_DIR}/${PETSC_ARCH}/bin/mpicc
 CFLAGS = -O2 -Wall -Wextra -I${PETSC_DIR}/include -I${PETSC_DIR}/${PETSC_ARCH}/include

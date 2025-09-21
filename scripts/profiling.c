@@ -45,7 +45,28 @@ PetscErrorCode measure_fill_in      ( Mat A, Mat L, PetscReal *fill_ratio )
  */
 PetscErrorCode draw_matrix_structure( Mat A, const char *output_file )
 {
-    
+    PetscDraw   draw;
+    PetscViewer viewer;
+
+    PetscFunctionBeginUser;
+
+    PetscCall( PetscOptionsSetValue(NULL, "-draw_save_single_file", "true") );
+
+    PetscCall( PetscViewerDrawOpen(PETSC_COMM_WORLD, NULL, output_file,
+                                   PETSC_DECIDE, PETSC_DECIDE, 
+                                   800, 800, &viewer) );
+
+    PetscCall( MatView(A, viewer) );
+
+    PetscCall( PetscViewerDrawGetDraw(viewer, 0, &draw) );
+
+    PetscCall( PetscDrawSetSave(draw, output_file) );
+    PetscCall( PetscDrawSave(draw) );
+
+    // cleanup
+    PetscCall( PetscViewerDestroy(&viewer) );
+
+    PetscFunctionReturn( PETSC_SUCCESS );
 }
 
 /**
