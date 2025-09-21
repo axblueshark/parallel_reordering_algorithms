@@ -43,7 +43,7 @@ int main( int argc, char **argv )
     // solve the system
     PetscCall( solve_system(
         A, b, &x,
-        MATORDERINGAMD,
+        MATORDERINGNATURAL,
         PCLU,
         MATSOLVERSUPERLU_DIST
         ) 
