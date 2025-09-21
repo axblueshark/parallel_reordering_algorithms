@@ -76,7 +76,7 @@ PetscErrorCode generate_rhs( Mat A, Vec *b, VecType vec_type )
     // create a vector filled with ones
     PetscCall( VecCreate(PETSC_COMM_WORLD, &ones) );
     PetscCall( VecSetSizes(ones, PETSC_DECIDE, n) );
-    PetscCall( VecSetType(*b, vec_type) );
+    PetscCall( VecSetType(ones, vec_type) );
     PetscCall( VecSetFromOptions(ones) );
     PetscCall( VecSet(ones, 1.0) );
     PetscCall( VecAssemblyBegin(ones) );
