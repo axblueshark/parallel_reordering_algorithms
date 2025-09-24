@@ -79,6 +79,13 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
 // -------------------------------------
 // METRICS AND PROFILING
 // -------------------------------------
+/**
+ * @brief Get the main info about a given matrix.
+ * 
+ * @param A Matrix.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode matrix_info( Mat A );
 
 /**
  * @brief Measures the solution time.
@@ -87,7 +94,7 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
  * @param time Time in seconds.
  * @return PetscErrorCode 
  */
-PetscErrorCode measure_solve_time   ( KSP ksp, PetscLogDouble *time );
+PetscErrorCode measure_solve_time( KSP ksp, PetscLogDouble *time );
 
 /**
  * @brief Measures the memory usage.
@@ -95,7 +102,7 @@ PetscErrorCode measure_solve_time   ( KSP ksp, PetscLogDouble *time );
  * @param memory_usage The estimated memroy.
  * @return PetscErrorCode 
  */
-PetscErrorCode measure_memory_usage ( PetscLogDouble *memory_usage );
+PetscErrorCode measure_memory_usage( PetscLogDouble *memory_usage );
 
 /**
  * @brief Computes fill-in ratio: nnz(L+U) / nnz(A)
@@ -105,7 +112,7 @@ PetscErrorCode measure_memory_usage ( PetscLogDouble *memory_usage );
  * @param fill_ratio 
  * @return PetscErrorCode 
  */
-PetscErrorCode measure_fill_in      ( Mat A, Mat L, PetscReal *fill_ratio ); 
+PetscErrorCode measure_fill_in( Mat A, Mat L, PetscReal *fill_ratio ); 
 
 /**
  * @brief Draws a sparsity structure of the system matrix.
@@ -123,6 +130,6 @@ PetscErrorCode draw_matrix_structure( Mat A, const char *output_file );
  * @param output_filename 
  * @return PetscErrorCode 
  */
-PetscErrorCode save_results         ( Vec x, const char *output_filename);
+PetscErrorCode save_results( Vec x, const char *output_filename);
 
 #endif // SOLVER_UTILS_H

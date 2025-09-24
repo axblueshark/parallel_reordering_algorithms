@@ -13,7 +13,7 @@ int main( int argc, char **argv )
     MatType mat_type = MATMPIAIJ;
     VecType vec_type = VECMPI;
 
-    const char *input_mat_file = "../matrices/bin/02_u_rbsa480.bin";
+    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
@@ -33,12 +33,9 @@ int main( int argc, char **argv )
     PetscCall( MatGetSize(A, &m, &n) );
     PetscCall( MatGetType(A, &type) );
 
-    PetscCall( MatGetInfo(A, MAT_GLOBAL_SUM, &info) );
-    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Matrix size: %d x %d\n", m, n) );
-    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Number of nonzeros: %.0f\n", info.nz_allocated) );
-    PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Mat type: %s\n", type) );
+    PetscCall( matrix_info(A) );
 
-    PetscCall(draw_matrix_structure(A, "matrix_structure.ppm"));
+    //PetscCall( draw_matrix_structure(A, "matrix_structure.ppm") );
 
     // solve the system
     PetscCall( solve_system(
