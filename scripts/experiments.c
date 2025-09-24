@@ -35,8 +35,6 @@ int main( int argc, char **argv )
 
     PetscCall( matrix_info(A) );
 
-    //PetscCall( draw_matrix_structure(A, "matrix_structure.ppm") );
-
     // solve the system
     PetscCall( solve_system(
         A, b, &x,

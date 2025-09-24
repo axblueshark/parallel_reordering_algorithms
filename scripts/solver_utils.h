@@ -115,15 +115,6 @@ PetscErrorCode measure_memory_usage( PetscLogDouble *memory_usage );
 PetscErrorCode measure_fill_in( Mat A, Mat L, PetscReal *fill_ratio ); 
 
 /**
- * @brief Draws a sparsity structure of the system matrix.
- * 
- * @param A           System matrix.
- * @param output_file Output file to save the structure.
- * @return PetscErrorCode 
- */
-PetscErrorCode draw_matrix_structure( Mat A, const char *output_file );
-
-/**
  * @brief Save the obtained results to an output file.
  * 
  * @param x 
