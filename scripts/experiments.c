@@ -8,6 +8,14 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
+    // logging setup
+    PetscCall( PetscLogDefaultBegin() );
+
+    PetscLogStage stageReorder, stageFactor, stageSolve;
+    PetscCall( PetscLogStageRegister("Reorder", &stageReorder) );
+    PetscCall( PetscLogStageRegister("Factorization", &stageFactor) );
+    PetscCall( PetscLogStageRegister("Solve", &stageSolve) );
+
     Mat     A;
     Vec     b, x;
     MatType mat_type = MATMPIAIJ;
@@ -27,7 +35,6 @@ int main( int argc, char **argv )
 
     // check if loaded correctly
     PetscInt m, n;
-    MatInfo info;
     MatType type;
 
     PetscCall( MatGetSize(A, &m, &n) );
@@ -36,12 +43,13 @@ int main( int argc, char **argv )
     PetscCall( matrix_info(A) );
 
     // solve the system
-    PetscCall( solve_system(
+    PetscCall( solve_system( 
         A, b, &x,
-        MATORDERINGNATURAL,
-        PCLU,
-        MATSOLVERSUPERLU_DIST
-        ) 
+        MATORDERINGRCM, 
+        PCLU, 
+        MATSOLVERSUPERLU_DIST,
+        stageReorder, stageFactor, stageSolve
+        )
     );
 
     // cleanup
