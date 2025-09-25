@@ -14,23 +14,22 @@
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
                              MatOrderingType ordering_type,
                              PCType pc_type, MatSolverType mat_solver_type,
-                             PetscLogStage stageReorder,
-                             PetscLogStage stageFactor,
-                             PetscLogStage stageSolve )
-{    // variables setup
-    KSP ksp;
-    PC  pc;
-    IS  rperm;
-    Vec b_perm;
-    Mat A_perm;
+                             PetscLogStage stage_reorder,
+                             PetscLogStage stage_factor,
+                             PetscLogStage stage_solve )
+{
+    KSP     ksp;
+    PC      pc;
+    IS      rperm;
+    Vec     b_perm;
+    Mat     A_perm;
 
     PetscFunctionBeginUser;
 
     // reordering
-    PetscCall( PetscLogStagePush(stageReorder) );
+    PetscCall( PetscLogStagePush(stage_reorder) );
     PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
     PetscCall( PetscLogStagePop() );
-
 
     // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
@@ -41,10 +40,10 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     PetscCall( PCSetType(pc, pc_type) );
     PetscCall( PCFactorSetMatSolverType(pc, mat_solver_type) );
     PetscCall( PCFactorSetUpMatSolverType(pc) );
-
     PetscCall( KSPSetFromOptions(ksp) );
 
-    PetscCall( PetscLogStagePush(stageFactor) );
+    // factorization
+    PetscCall( PetscLogStagePush(stage_factor) );
     PetscCall( KSPSetUp(ksp) ); // triggers symbolic+numeric factorization
     PetscCall( PetscLogStagePop() );
 
@@ -52,14 +51,12 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     PetscCall( VecDuplicate(b_perm, x) );
 
     // solve
-    PetscCall( PetscLogStagePush(stageSolve) );
+    PetscCall( PetscLogStagePush(stage_solve) );
     PetscCall( KSPSolve(ksp, b_perm, *x) );
-    PetscCall( PetscLogStagePop() );  
+    PetscCall( PetscLogStagePop() );
 
-    // "unpermute" the solution to get the original one 
+    // "unpermute" the solution to get the original one
     PetscCall( VecPermute(*x, rperm, PETSC_TRUE) );
-
-    // TODO: error? profiling? what do I know we will see
 
     // cleanup
     PetscCall( KSPDestroy(&ksp) );

@@ -8,18 +8,18 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    // logging setup
-    PetscCall( PetscLogDefaultBegin() );
-
-    PetscLogStage stageReorder, stageFactor, stageSolve;
-    PetscCall( PetscLogStageRegister("Reorder", &stageReorder) );
-    PetscCall( PetscLogStageRegister("Factorization", &stageFactor) );
-    PetscCall( PetscLogStageRegister("Solve", &stageSolve) );
-
     Mat     A;
     Vec     b, x;
     MatType mat_type = MATMPIAIJ;
     VecType vec_type = VECMPI;
+
+    // logging setup
+    PetscCall( PetscLogDefaultBegin() );
+
+    PetscLogStage stage_reorder, stage_factor, stage_solve;
+    PetscCall( PetscLogStageRegister("Reorder", &stage_reorder) );
+    PetscCall( PetscLogStageRegister("Factorization", &stage_factor) );
+    PetscCall( PetscLogStageRegister("Solve", &stage_solve) );
 
     const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
@@ -33,24 +33,17 @@ int main( int argc, char **argv )
         PetscCall( generate_rhs(A, &b, vec_type) );
     }
 
-    // check if loaded correctly
-    PetscInt m, n;
-    MatType type;
-
-    PetscCall( MatGetSize(A, &m, &n) );
-    PetscCall( MatGetType(A, &type) );
-
+    // show matrix info (rank 0 only)
     PetscCall( matrix_info(A) );
 
     // solve the system
-    PetscCall( solve_system( 
+    PetscCall( solve_system(
         A, b, &x,
-        MATORDERINGRCM, 
-        PCLU, 
+        MATORDERINGRCM,
+        PCLU,
         MATSOLVERSUPERLU_DIST,
-        stageReorder, stageFactor, stageSolve
-        )
-    );
+        stage_reorder, stage_factor, stage_solve
+    ));
 
     // cleanup
     VecDestroy(&x);
