@@ -45,6 +45,7 @@ int main( int argc, char **argv )
 
     // create empty vector of length n
     PetscCall( VecCreate(PETSC_COMM_WORLD, &v) );
+    PetscCall( VecSetType(v, VECMPI) );
     PetscCall( VecSetSizes(v, PETSC_DECIDE, n) );
     PetscCall( VecSetFromOptions(v) );
 

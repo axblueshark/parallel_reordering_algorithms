@@ -1,0 +1,57 @@
+# Matrices selection 
+
+------
+### Small
+1. symmetric: ex2 (https://sparse.tamu.edu/FIDAP/ex2)
+    - size: 441x441
+    - nonzeros: 26,839
+    - Computational Fluid Dynamics Problem
+
+2. unsymmetric: rbsa480 (https://sparse.tamu.edu/Bai/rbsa480)
+    - size: 480x480
+    - nonzeros: 17,088
+    - Robotics Problem
+
+
+### Medium
+3. symmetric: ex10hs (https://sparse.tamu.edu/FIDAP/ex10hs)
+    - size: 2548x2548 
+    - nonzeros: 57308
+    - computational fluid dynamics problem
+
+4. symmetric: nasa4704 (https://sparse.tamu.edu/Nasa/nasa4704)
+    - size: 4704x4704
+    - nonzeros: 104756
+    - structural problem
+
+5. unsymmetric: mhd3200a (https://sparse.tamu.edu/Bai/mhd3200a)
+    - size: 3200x3200 
+    - nonzeros: 68026
+    - electromagnetics problem
+
+6. unsymmetric: bayer03 (https://sparse.tamu.edu/Grund/bayer03)
+    - size: 6747x6747
+    - nonzeros: 29195
+    - chemical process simulation problem
+
+
+### Large
+7. symmetric: bundle1 (https://sparse.tamu.edu/Lourakis/bundle1)
+    - size: 10581x10581
+    - nonzeros: 770,811
+    - Computer Graphics/Vision Problem
+
+8. symmetric: gyro_k (https://sparse.tamu.edu/Oberwolfach/gyro_k)
+    - size: 17361x17361
+    - nonzeros: 1,021,159
+    - Duplicate Model Reduction Problem
+
+9. unsymmetric: powersim (https://sparse.tamu.edu/LiuWenzhuo/powersim)
+    - size: 15838x15838
+    - nonzeros: 64,424
+    - power network problem
+
+10. unsymmetric: airfoil_2d (https://sparse.tamu.edu/Engwirda/airfoil_2d)
+    - size: 14214x14214
+    - nonzeros: 259688
+    - computational fluid dynamics problem

@@ -46,6 +46,7 @@ int main( int argc, char **argv )
 
     // empty matrix setup
     PetscCall( MatCreate(PETSC_COMM_WORLD, &A) );
+    PetscCall( MatSetType(A, MATMPIAIJ) );
     PetscCall( MatSetSizes(A, PETSC_DECIDE, PETSC_DECIDE, m, n) );
     PetscCall( MatSetFromOptions(A) );
     PetscCall( MatSetUp(A) );
