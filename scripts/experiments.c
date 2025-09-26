@@ -21,7 +21,7 @@ int main( int argc, char **argv )
     PetscCall( PetscLogStageRegister("Factorization", &stage_factor) );
     PetscCall( PetscLogStageRegister("Solve", &stage_solve) );
 
-    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
+    const char *input_mat_file = "../matrices/bin/01_s_ex2.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
