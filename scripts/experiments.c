@@ -21,7 +21,7 @@ int main( int argc, char **argv )
     PetscCall( PetscLogStageRegister("Factorization", &stage_factor) );
     PetscCall( PetscLogStageRegister("Solve", &stage_solve) );
 
-    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
+    const char *input_mat_file = "../matrices/bin/01_s_ex2.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
@@ -39,11 +39,30 @@ int main( int argc, char **argv )
     // solve the system
     PetscCall( solve_system(
         A, b, &x,
-        MATORDERINGRCM,
+        MATORDERINGNATURAL,
         PCLU,
         MATSOLVERSUPERLU_DIST,
         stage_reorder, stage_factor, stage_solve
     ));
+
+
+
+    // validate solution: compute ||Ax - b||_2
+Vec       r;
+PetscReal norm;
+
+PetscCall( VecDuplicate(b, &r) );           // r = Ax - b
+PetscCall( MatMult(A, x, r) );              // r = A * x
+PetscCall( VecAXPY(r, -1.0, b) );           // r = r - b
+PetscCall( VecNorm(r, NORM_2, &norm) );     // norm = ||r||_2
+
+PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Residual norm ||Ax - b||_2 = %.6e\n", norm) );
+
+PetscCall( VecDestroy(&r) );
+
+
+
+
 
     // cleanup
     VecDestroy(&x);

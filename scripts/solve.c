@@ -31,6 +31,10 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
     PetscCall( PetscLogStagePop() );
 
+
+    PetscLogDouble start_time, end_time;
+    PetscCall(PetscTime(&start_time));
+    
     // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
     PetscCall( KSPSetOperators(ksp, A_perm, A_perm) );
@@ -52,7 +56,13 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
 
     // solve
     PetscCall( PetscLogStagePush(stage_solve) );
+
     PetscCall( KSPSolve(ksp, b_perm, *x) );
+
+    PetscCall(PetscTime(&end_time));
+
+    PetscCall(PetscPrintf(PETSC_COMM_SELF, "Time: %.6f seconds\n", (double)(end_time - start_time)));
+
     PetscCall( PetscLogStagePop() );
 
     // "unpermute" the solution to get the original one
