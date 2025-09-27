@@ -21,7 +21,7 @@ int main( int argc, char **argv )
     PetscCall( PetscLogStageRegister("Factorization", &stage_factor) );
     PetscCall( PetscLogStageRegister("Solve", &stage_solve) );
 
-    const char *input_mat_file = "../matrices/bin/01_s_ex2.bin";
+    const char *input_mat_file = "../matrices/bin/08_s_gyro_k.bin";
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
@@ -60,6 +60,29 @@ PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Residual norm ||Ax - b||_2 = %.6e\n", 
 
 PetscCall( VecDestroy(&r) );
 
+
+
+PetscInt rstart, rend, loc_rows, loc_nnz = 0;
+PetscMPIInt rank;
+PetscInt ncols;
+const PetscInt *cols;
+const PetscScalar *vals;
+
+PetscCall(MatGetOwnershipRange(A, &rstart, &rend));
+
+for (PetscInt i = rstart; i < rend; i++) {
+    PetscCall(MatGetRow(A, i, &ncols, &cols, &vals));
+    loc_nnz += ncols;
+    PetscCall(MatRestoreRow(A, i, &ncols, &cols, &vals));
+}
+
+PetscCallMPI(MPI_Comm_rank(PETSC_COMM_WORLD, &rank));
+loc_rows = rend - rstart;
+
+PetscSynchronizedPrintf(PETSC_COMM_WORLD,
+    "[%d] owns rows %d to %d (total %d rows), local nnz = %d\n",
+    rank, rstart, rend-1, loc_rows, loc_nnz);
+PetscSynchronizedFlush(PETSC_COMM_WORLD, PETSC_STDOUT);
 
 
 
