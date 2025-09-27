@@ -39,11 +39,30 @@ int main( int argc, char **argv )
     // solve the system
     PetscCall( solve_system(
         A, b, &x,
-        MATORDERINGRCM,
+        MATORDERINGNATURAL,
         PCLU,
         MATSOLVERSUPERLU_DIST,
         stage_reorder, stage_factor, stage_solve
     ));
+
+
+
+    // validate solution: compute ||Ax - b||_2
+Vec       r;
+PetscReal norm;
+
+PetscCall( VecDuplicate(b, &r) );           // r = Ax - b
+PetscCall( MatMult(A, x, r) );              // r = A * x
+PetscCall( VecAXPY(r, -1.0, b) );           // r = r - b
+PetscCall( VecNorm(r, NORM_2, &norm) );     // norm = ||r||_2
+
+PetscCall( PetscPrintf(PETSC_COMM_WORLD, "Residual norm ||Ax - b||_2 = %.6e\n", norm) );
+
+PetscCall( VecDestroy(&r) );
+
+
+
+
 
     // cleanup
     VecDestroy(&x);
