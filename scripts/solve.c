@@ -12,32 +12,18 @@
  * @return PetscErrorCode 
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
-                             MatOrderingType ordering_type,
                              PCType pc_type, MatSolverType mat_solver_type,
-                             PetscLogStage stage_reorder,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve )
 {
     KSP     ksp;
     PC      pc;
-    IS      rperm;
-    Vec     b_perm;
-    Mat     A_perm;
 
     PetscFunctionBeginUser;
 
-    // reordering
-    PetscCall( PetscLogStagePush(stage_reorder) );
-    PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
-    PetscCall( PetscLogStagePop() );
-
-
-    PetscLogDouble start_time, end_time;
-    PetscCall(PetscTime(&start_time));
-    
     // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
-    PetscCall( KSPSetOperators(ksp, A_perm, A_perm) );
+    PetscCall( KSPSetOperators(ksp, A, A) );
     PetscCall( KSPSetType(ksp, KSPPREONLY) ); // to use direct solvers
 
     PetscCall( KSPGetPC(ksp, &pc) );
@@ -52,27 +38,15 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     PetscCall( PetscLogStagePop() );
 
     // allocate space for solution vector
-    PetscCall( VecDuplicate(b_perm, x) );
+    PetscCall( VecDuplicate(b, x) );
 
     // solve
     PetscCall( PetscLogStagePush(stage_solve) );
-
-    PetscCall( KSPSolve(ksp, b_perm, *x) );
-
-    PetscCall(PetscTime(&end_time));
-
-    PetscCall(PetscPrintf(PETSC_COMM_SELF, "Time: %.6f seconds\n", (double)(end_time - start_time)));
-
+    PetscCall( KSPSolve(ksp, b, *x) );
     PetscCall( PetscLogStagePop() );
-
-    // "unpermute" the solution to get the original one
-    PetscCall( VecPermute(*x, rperm, PETSC_TRUE) );
 
     // cleanup
     PetscCall( KSPDestroy(&ksp) );
-    PetscCall( MatDestroy(&A_perm) );
-    PetscCall( VecDestroy(&b_perm) );
-    PetscCall( ISDestroy(&rperm) );
 
     PetscFunctionReturn( PETSC_SUCCESS );
 }

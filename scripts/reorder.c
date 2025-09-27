@@ -11,7 +11,7 @@
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
-    Mat *A_perm, Vec *b_perm, IS *rperm ) 
+                        Mat *A_perm, Vec *b_perm, IS *rperm ) 
 {
     IS cperm;
 

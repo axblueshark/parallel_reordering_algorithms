@@ -8,8 +8,9 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    Mat     A;
-    Vec     b, x;
+    Mat     A, A_perm;
+    Vec     b, b_perm, x;
+    IS      rperm;
     MatType mat_type = MATMPIAIJ;
     VecType vec_type = VECMPI;
 
@@ -36,15 +37,22 @@ int main( int argc, char **argv )
     // show matrix info (rank 0 only)
     PetscCall( matrix_info(A) );
 
+
+    // reordering
+    PetscCall( PetscLogStagePush(stage_reorder) );
+    PetscCall( reorder(A, b, MATORDERINGNATURAL, &A_perm, &b_perm, &rperm) );
+    PetscCall( PetscLogStagePop() );
+
     // solve the system
     PetscCall( solve_system(
-        A, b, &x,
-        MATORDERINGNATURAL,
+        A_perm, b_perm, &x,
         PCLU,
         MATSOLVERSUPERLU_DIST,
-        stage_reorder, stage_factor, stage_solve
+        stage_factor, stage_solve
     ));
 
+    // "unpermute" the solution to get the original one
+    PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
 
 
     // validate solution: compute ||Ax - b||_2
@@ -91,6 +99,7 @@ PetscSynchronizedFlush(PETSC_COMM_WORLD, PETSC_STDOUT);
     VecDestroy(&x);
     VecDestroy(&b);
     MatDestroy(&A);
+    ISDestroy(&rperm);
 
     PetscFinalize();
     return 0;
