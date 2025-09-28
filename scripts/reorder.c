@@ -8,6 +8,7 @@
  * @param ordering The ordering type.
  * @param A_perm The permuted matrix.
  * @param b_perm The permuted right-hand side vector.
+ * @param rperm The row permutation (will be needed for unpermuting x).
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 

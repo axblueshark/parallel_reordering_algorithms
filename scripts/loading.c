@@ -5,7 +5,6 @@
  * 
  * @param filename Path to the input file.
  * @param A        Matrix to load the data into.
- * @param mat_type Matrix type (MATSEQAIJ or MATMPIAIJ).
  * @return PetscErrorCode 
  */
 PetscErrorCode load_matrix ( const char *filename, Mat *A )
@@ -61,7 +60,6 @@ PetscErrorCode load_vector( const char *filename, Vec *v )
  * 
  * @param A        System matrix for which the RHS is to be generated.
  * @param b        Vector to be generated.
- * @param vec_type Vector type (VECSEQ or VECMPI).
  * @return PetscErrorCode 
  */
 PetscErrorCode generate_rhs( Mat A, Vec *b )

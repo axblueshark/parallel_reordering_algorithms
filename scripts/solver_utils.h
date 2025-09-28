@@ -12,10 +12,10 @@
  * 
  * @param filename Path to the input file.
  * @param A        Matrix to load the data into.
- * @param mat_type Matrix type (MATSEQAIJ or MATMPIAIJ).
  * @return PetscErrorCode 
  */
 PetscErrorCode load_matrix ( const char *filename, Mat *A );
+
 
 /**
  * @brief Loads the RHS vector from .bin file.
@@ -24,14 +24,14 @@ PetscErrorCode load_matrix ( const char *filename, Mat *A );
  * @param v        Vector to load the data into.
  * @return PetscErrorCode 
  */
-PetscErrorCode load_vector ( const char *filename, Vec *v );
+PetscErrorCode load_vector( const char *filename, Vec *v );
+
 
 /**
  * @brief Generates an all-ones RHS (if no RHS is available).
  * 
  * @param A        System matrix for which the RHS is to be generated.
  * @param b        Vector to be generated.
- * @param vec_type Vector type (VECSEQ or VECMPI).
  * @return PetscErrorCode 
  */
 PetscErrorCode generate_rhs( Mat A, Vec *b );
@@ -49,9 +49,10 @@ PetscErrorCode generate_rhs( Mat A, Vec *b );
  * @param ordering The ordering type.
  * @param A_perm The permuted matrix.
  * @param b_perm The permuted right-hand side vector.
+ * @param rperm The row permutation (will be needed for unpermuting x).
  * @return PetscErrorCode 
  */
-PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering,
+PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
                         Mat *A_perm, Vec *b_perm, IS *rperm );
 
 
@@ -65,9 +66,10 @@ PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering,
  * @param A The system matrix.
  * @param b The right-hand side vector.
  * @param x The solution vector.
- * @param ordering_type The type of the reordering to be used.
  * @param pc_type The type of the preconditioner to be used.
  * @param mat_solver_type The solver type.
+ * @param stage_factor The stage to measure factorization.
+ * @param stage_solve THe stage to measure solve.
  * @return PetscErrorCode 
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
