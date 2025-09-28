@@ -18,8 +18,8 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve )
 {
-    KSP     ksp;
-    PC      pc;
+    KSP ksp;
+    PC  pc;
 
     PetscFunctionBeginUser;
 
