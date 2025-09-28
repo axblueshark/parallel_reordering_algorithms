@@ -15,7 +15,7 @@
  * @param mat_type Matrix type (MATSEQAIJ or MATMPIAIJ).
  * @return PetscErrorCode 
  */
-PetscErrorCode load_matrix ( const char *filename, Mat *A, MatType mat_type );
+PetscErrorCode load_matrix ( const char *filename, Mat *A );
 
 /**
  * @brief Loads the RHS vector from .bin file.
@@ -24,7 +24,7 @@ PetscErrorCode load_matrix ( const char *filename, Mat *A, MatType mat_type );
  * @param v        Vector to load the data into.
  * @return PetscErrorCode 
  */
-PetscErrorCode load_vector ( const char *filename, Vec *v, VecType vec_type );
+PetscErrorCode load_vector ( const char *filename, Vec *v );
 
 /**
  * @brief Generates an all-ones RHS (if no RHS is available).
@@ -34,7 +34,7 @@ PetscErrorCode load_vector ( const char *filename, Vec *v, VecType vec_type );
  * @param vec_type Vector type (VECSEQ or VECMPI).
  * @return PetscErrorCode 
  */
-PetscErrorCode generate_rhs( Mat A, Vec *b, VecType vec_type );
+PetscErrorCode generate_rhs( Mat A, Vec *b );
 
 
 // -------------------------------------

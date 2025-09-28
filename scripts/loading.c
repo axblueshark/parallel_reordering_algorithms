@@ -8,7 +8,7 @@
  * @param mat_type Matrix type (MATSEQAIJ or MATMPIAIJ).
  * @return PetscErrorCode 
  */
-PetscErrorCode load_matrix ( const char *filename, Mat *A, MatType mat_type )
+PetscErrorCode load_matrix ( const char *filename, Mat *A )
 {
     PetscViewer viewer;
 
@@ -19,7 +19,6 @@ PetscErrorCode load_matrix ( const char *filename, Mat *A, MatType mat_type )
 
     // create and load the matrix
     PetscCall( MatCreate(PETSC_COMM_WORLD, A) );
-    PetscCall( MatSetType(*A, mat_type) );
     PetscCall( MatSetFromOptions(*A) );
     PetscCall( MatLoad(*A, viewer) );
 
@@ -37,7 +36,7 @@ PetscErrorCode load_matrix ( const char *filename, Mat *A, MatType mat_type )
  * @param v        Vector to load the data into.
  * @return PetscErrorCode 
  */
-PetscErrorCode load_vector( const char *filename, Vec *v, VecType vec_type )
+PetscErrorCode load_vector( const char *filename, Vec *v )
 {
     PetscViewer viewer;
 
@@ -48,7 +47,6 @@ PetscErrorCode load_vector( const char *filename, Vec *v, VecType vec_type )
 
     // create and load the matrix
     PetscCall( VecCreate(PETSC_COMM_WORLD, v) );
-    PetscCall( VecSetType(*v, vec_type) );
     PetscCall( VecSetFromOptions(*v) );
     PetscCall( VecLoad(*v, viewer) );
 
@@ -66,7 +64,7 @@ PetscErrorCode load_vector( const char *filename, Vec *v, VecType vec_type )
  * @param vec_type Vector type (VECSEQ or VECMPI).
  * @return PetscErrorCode 
  */
-PetscErrorCode generate_rhs( Mat A, Vec *b, VecType vec_type )
+PetscErrorCode generate_rhs( Mat A, Vec *b )
 {
     Vec      ones;
     PetscInt n;
@@ -76,7 +74,6 @@ PetscErrorCode generate_rhs( Mat A, Vec *b, VecType vec_type )
     // create a vector filled with ones
     PetscCall( VecCreate(PETSC_COMM_WORLD, &ones) );
     PetscCall( VecSetSizes(ones, PETSC_DECIDE, n) );
-    PetscCall( VecSetType(ones, vec_type) );
     PetscCall( VecSetFromOptions(ones) );
     PetscCall( VecSet(ones, 1.0) );
     PetscCall( VecAssemblyBegin(ones) );

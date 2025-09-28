@@ -11,12 +11,11 @@ int main( int argc, char **argv )
     Mat     A, A_perm;
     Vec     b, b_perm, x;
     IS      rperm;
-    MatType mat_type = MATMPIAIJ;
-    VecType vec_type = VECMPI;
 
     // logging setup
     PetscCall( PetscLogDefaultBegin() );
 
+    // set stages
     PetscLogStage stage_reorder, stage_factor, stage_solve;
     PetscCall( PetscLogStageRegister("Reorder", &stage_reorder) );
     PetscCall( PetscLogStageRegister("Factorization", &stage_factor) );
@@ -26,16 +25,16 @@ int main( int argc, char **argv )
     const char *input_rhs_file = ""; // "../matrices/bin/09_u_powersim_b.bin";
 
     // prepare the system matrix and RHS vector
-    PetscCall( load_matrix(input_mat_file, &A, mat_type) );
+    PetscCall( load_matrix(input_mat_file, &A ) );
 
     if ( input_rhs_file && input_rhs_file[0] ) {
-        PetscCall( load_vector(input_rhs_file, &b, vec_type) );
+        PetscCall( load_vector(input_rhs_file, &b ) );
     } else {
-        PetscCall( generate_rhs(A, &b, vec_type) );
+        PetscCall( generate_rhs(A, &b ) );
     }
 
     // show matrix info
-    // PetscCall( matrix_info(A) );
+    PetscCall( matrix_info(A) );
 
 
     // reordering
@@ -61,7 +60,7 @@ int main( int argc, char **argv )
 
 
 
-    // export permuted matrix for plotting
+    // export permuted matrix (for plotting)
     // PetscCall( save_matrix(A_perm, "../matrices/bin/permuted/08_s_gyro_k_AMD.bin") );
 
     // cleanup
