@@ -1,5 +1,5 @@
 
-Entering DMUMPS 5.7.3 from C interface with JOB, N =   1       10581
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   1       14214
       executing #MPI =      4, without OMP
 
  =================================================
@@ -15,24 +15,24 @@ Type of parallelism: Working host
  ****** ANALYSIS STEP ********
 
  ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
- Processing a graph of size:     10581 with        760320 edges
+ Processing a graph of size:     14214 with        249974 edges
  Ordering based on METIS
- ELAPSED TIME SPENT IN METIS reordering  =      0.0305
+ ELAPSED TIME SPENT IN METIS reordering  =      0.1098
  SYMBOLIC based on column counts 
- ELAPSED TIME IN symbolic factorization  =      0.0055
+ ELAPSED TIME IN symbolic factorization  =      0.0041
 
 Leaving analysis phase with  ...
  INFOG(1)                                       =               0
  INFOG(2)                                       =               0
- -- (20) Number of entries in factors (estim.)  =         1688763
- --  (3) Real space for factors    (estimated)  =         1688763
- --  (4) Integer space for factors (estimated)  =          214602
- --  (5) Maximum frontal size      (estimated)  =             471
- --  (6) Number of nodes in the tree            =            2549
+ -- (20) Number of entries in factors (estim.)  =         2440328
+ --  (3) Real space for factors    (estimated)  =         2440328
+ --  (4) Integer space for factors (estimated)  =          122054
+ --  (5) Maximum frontal size      (estimated)  =             333
+ --  (6) Number of nodes in the tree            =             703
  -- (32) Type of analysis effectively used      =               1
  --  (7) Ordering option effectively used       =               5
  ICNTL (6) Maximum transversal option           =               0
- ICNTL (7) Pivot order option                   =               5
+ ICNTL (7) Pivot order option                   =               7
  ICNTL(12) Ordering symmetric indef. matrices   =               1
  ICNTL(13) Parallelism/splitting of root node   =               1
  ICNTL(14) Percentage of memory relaxation      =             120
@@ -44,19 +44,19 @@ Leaving analysis phase with  ...
  ICNTL(58) Symbolic factorization option        =               2
  Number of level 2 nodes                        =               0
  Number of split nodes                          =               0
- RINFOG(1) Operations during elimination (estim)= 3.180D+08
+ RINFOG(1) Operations during elimination (estim)= 2.907D+08
  Distributed matrix entry format (ICNTL(18))    =               3
 
  MEMORY ESTIMATIONS ... 
  Estimations with standard Full-Rank (FR) factorization:
-    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):              37
+    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):              36
     Total space in MBytes, IC factorization      (INFOG(17)):             142
-    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):              38
-    Total space in MBytes,  OOC factorization    (INFOG(27)):             141
+    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):              28
+    Total space in MBytes,  OOC factorization    (INFOG(27)):             111
 
- Elapsed time in analysis driver=       0.1041
+ Elapsed time in analysis driver=       0.1295
 
-Entering DMUMPS 5.7.3 from C interface with JOB, N =   2       10581
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   2       14214
       executing #MPI =      4, without OMP
 
 
@@ -70,51 +70,51 @@ Entering DMUMPS 5.7.3 from C interface with JOB, N =   2       10581
  ICNTL(37) BLR CB compression (eff. choice) =               0
  ICNTL(49) Compact workarray S (end facto.) =               0
  ICNTL(14) Memory relaxation                =             120
- INFOG(3) Real space for factors (estimated)=         1688763
- INFOG(4) Integer space for factors (estim.)=          214602
- Maximum frontal size (estimated)           =             471
- Number of nodes in the tree                =            2549
+ INFOG(3) Real space for factors (estimated)=         2440328
+ INFOG(4) Integer space for factors (estim.)=          122054
+ Maximum frontal size (estimated)           =             333
+ Number of nodes in the tree                =             703
  ICNTL(23) Memory allowed (value on host)   =               0
            Sum over all procs               =               0
  Memory provided by user, sum of LWK_USER   =               0
  Effective threshold for pivoting, CNTL(1)  =      0.1000D-01
 
  Statistics on the scaling phase
- Elapsed time for scaling                   =      0.0195
- Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.81D+00
+ Elapsed time for scaling                   =      0.0075
+ Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.74D+00
 
- Average Effective size of S     (based on INFO(39))=              1306597
+ Average Effective size of S     (based on INFO(39))=              1483579
 
- Redistrib: total data local/sent           =          164116          606785
- Elapsed time to reformat/distribute matrix =      0.0401
+ Redistrib: total data local/sent           =           57628          202060
+ Elapsed time to reformat/distribute matrix =      0.0071
 
- ** Memory allocated, max in Mbytes             (INFOG(18)):          37
+ ** Memory allocated, max in Mbytes             (INFOG(18)):          36
 
  ** Memory allocated, total in Mbytes           (INFOG(19)):         142
- ** Memory effectively used, max in  Mbytes     (INFOG(21)):          32
- ** Memory effectively used, total in Mbytes    (INFOG(22)):         122
+ ** Memory effectively used, max in  Mbytes     (INFOG(21)):          29
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):         115
 
- Elapsed time for factorization                     =      0.1612
+ Elapsed time for factorization                     =      0.0599
 
 Leaving factorization with ...
- RINFOG (2) Operations in node assembly             = 2.526D+06
- ------ (3) Operations in node elimination          = 3.180D+08
+ RINFOG (2) Operations in node assembly             = 2.936D+06
+ ------ (3) Operations in node elimination          = 2.907D+08
  ICNTL  (8) Scaling effectively used                =               7
- INFOG  (9) Real space for factors                  =         1688763
- INFOG (10) Integer space for factors               =          214602
- INFOG (11) Maximum front size                      =             471
- INFOG (29) Number of entries in factors            =         1688763
+ INFOG  (9) Real space for factors                  =         2440328
+ INFOG (10) Integer space for factors               =          122054
+ INFOG (11) Maximum front size                      =             333
+ INFOG (29) Number of entries in factors            =         2440328
  INFOG (12) Number of off diagonal pivots           =               0
  INFOG (13) Number of delayed pivots                =               0
- RINFOG(19) Smallest pivot WITH perturbed pivots    = 6.033D-03
- RINFOG(20) Smallest pivot WITHOUT perturbed pivots = 6.033D-03
- RINFOG(21) Largest pivot in absolute value         = 9.870D-01
+ RINFOG(19) Smallest pivot WITH perturbed pivots    = 1.810D-01
+ RINFOG(20) Smallest pivot WITHOUT perturbed pivots = 1.810D-01
+ RINFOG(21) Largest pivot in absolute value         = 9.040D-01
  INFOG (24) Effective value of ICNTL(12)            =               1
  INFOG (14) Number of memory compress               =               0
 
- Elapsed time in factorization driver               =      0.2216
+ Elapsed time in factorization driver               =      0.0754
 
-Entering DMUMPS 5.7.3 from C interface with JOB, N =   3       10581
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   3       14214
       executing #MPI =      4, without OMP
 
 
@@ -132,19 +132,19 @@ Entering DMUMPS 5.7.3 from C interface with JOB, N =   3       10581
   --- (30)                                     =           0
   --- (35)                                     =           0
   --- (48) (effective)                         =           0
- ** Rank of processor needing largest memory in solve     :         1
- ** Space in MBYTES used by this processor for solve      :        22
- ** Avg. Space in MBYTES per working proc during solve    :        20
+ ** Rank of processor needing largest memory in solve     :         0
+ ** Space in MBYTES used by this processor for solve      :        23
+ ** Avg. Space in MBYTES per working proc during solve    :        21
 
  Leaving solve with ...
- Time to build/scatter RHS        =       0.000209
- Time in solution step (fwd/bwd)  =       0.005785
-  .. Time in forward (fwd) step   =          0.003321
-  .. Time in backward (bwd) step  =          0.002447
+ Time to build/scatter RHS        =       0.000258
+ Time in solution step (fwd/bwd)  =       0.002736
+  .. Time in forward (fwd) step   =          0.001278
+  .. Time in backward (bwd) step  =          0.001433
  Time to gather solution(cent.sol)=       0.000000
- Time for distributed solution    =       0.000080
+ Time for distributed solution    =       0.000038
 
- Elapsed time in solve driver=       0.0067
+ Elapsed time in solve driver=       0.0035
 
 Entering DMUMPS 5.7.3 from C interface with JOB =  -2
       executing #MPI =      4, without OMP
@@ -154,16 +154,16 @@ Entering DMUMPS 5.7.3 from C interface with JOB =  -2
 
 ------------------------------------------------------------------ PETSc Performance Summary: ------------------------------------------------------------------
 
-../scripts/experiment on a arch-linux-c-opt named HP-Pavilion-Gaming-Laptop-15-ec0xxx with 4 processes, by alexandr on Sun Sep 28 21:43:19 2025
+../scripts/experiment on a arch-linux-c-opt named HP-Pavilion-Gaming-Laptop-15-ec0xxx with 4 processes, by alexandr on Sun Sep 28 22:05:34 2025
 Using PETSc Release Version 3.23.6, unknown
 
                          Max       Max/Min     Avg       Total
-Time (sec):           4.510e-01     1.000   4.510e-01
+Time (sec):           2.388e-01     1.000   2.388e-01
 Objects:              0.000e+00     0.000   0.000e+00
-Flops:                2.476e+06     1.714   1.853e+06  7.413e+06
-Flops/sec:            5.489e+06     1.714   4.109e+06  1.644e+07
-MPI Msg Count:        5.400e+01     1.459   4.475e+01  1.790e+02
-MPI Msg Len (bytes):  2.061e+06     2.964   2.350e+04  4.206e+06
+Flops:                2.227e+06     1.139   2.073e+06  8.293e+06
+Flops/sec:            9.329e+06     1.139   8.682e+06  3.473e+07
+MPI Msg Count:        4.000e+01     1.250   3.750e+01  1.500e+02
+MPI Msg Len (bytes):  1.267e+06     2.834   1.766e+04  2.649e+06
 MPI Reductions:       4.800e+01     1.000
 
 Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
@@ -172,10 +172,10 @@ Flop counting convention: 1 flop = 1 real number operation of type (multiply/div
 
 Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
                         Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
- 0:      Main Stage: 6.4013e-02  14.2%  1.5312e+06  20.7%  4.800e+01  26.8%  8.150e+04       93.0%  2.500e+01  52.1%
- 1:         Reorder: 4.0619e-02   9.0%  0.0000e+00   0.0%  5.000e+01  27.9%  2.091e+03        2.5%  5.000e+00  10.4%
- 2:   Factorization: 3.3861e-01  75.1%  2.5256e+06  34.1%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
- 3:           Solve: 7.7898e-03   1.7%  3.3564e+06  45.3%  8.100e+01  45.3%  2.336e+03        4.5%  1.000e+00   2.1%
+ 0:      Main Stage: 1.5736e-02   6.6%  5.0516e+05   6.1%  3.600e+01  24.0%  6.637e+04       90.2%  2.500e+01  52.1%
+ 1:         Reorder: 8.4852e-03   3.6%  0.0000e+00   0.0%  3.000e+01  20.0%  4.524e+02        0.5%  5.000e+00  10.4%
+ 2:   Factorization: 2.0977e-01  87.8%  2.9360e+06  35.4%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3:           Solve: 4.8015e-03   2.0%  4.8522e+06  58.5%  8.400e+01  56.0%  2.933e+03        9.3%  1.000e+00   2.1%
 
 ------------------------------------------------------------------------------------------------------------------------
 See the 'Profiling' chapter of the users' manual for details on interpreting output.
@@ -199,60 +199,60 @@ Event                Count      Time (sec)     Flop                             
 
 --- Event Stage 0: Main Stage
 
-BuildTwoSided          2 1.0 7.0098e-04 7.9 0.00e+00 0.0 1.0e+01 4.0e+00 0.0e+00  0  0  6  0  0   1  0 21  0  0     0
-BuildTwoSidedF         1 1.0 3.7430e-05 2.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-MatMult                1 1.0 4.3970e-03 1.2 9.10e+05 4.6 1.0e+01 7.0e+03 0.0e+00  1 21  6  2  0   6 100 21  2  0   348
-MatAssemblyBegin       1 1.0 8.2160e-06 13.9 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-MatAssemblyEnd         1 1.0 2.6114e-02 2.1 0.00e+00 0.0 2.0e+01 1.7e+03 1.0e+00  5  0 11  1  2  35  0 42  1  4     0
-MatLoad                1 1.0 5.5270e-02 1.0 0.00e+00 0.0 3.8e+01 1.0e+05 1.7e+01 12  0 21 91 35  86  0 79 98 68     0
-VecSet                 1 1.0 7.0540e-06 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-VecAssemblyBegin       1 1.0 4.9122e-05 2.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-VecAssemblyEnd         1 1.0 2.5750e-06 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-VecScatterBegin        1 1.0 3.5168e-03 45.1 0.00e+00 0.0 1.0e+01 7.0e+03 0.0e+00  0  0  6  2  0   3  0 21  2  0     0
-VecScatterEnd          1 1.0 3.4065e-03 76.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   3  0  0  0  0     0
-SFSetGraph             1 1.0 1.8341e-04 30.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFSetUp                1 1.0 7.5844e-04 1.7 0.00e+00 0.0 2.0e+01 1.7e+03 0.0e+00  0  0 11  1  0   1  0 42  1  0     0
-SFPack                 1 1.0 1.7583e-05 10.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFUnpack               1 1.0 1.2520e-06 2.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+BuildTwoSided          2 1.0 5.8259e-05 1.1 0.00e+00 0.0 6.0e+00 4.0e+00 0.0e+00  0  0  4  0  0   0  0 17  0  0     0
+BuildTwoSidedF         1 1.0 1.8996e-05 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult                1 1.0 2.9658e-04 1.1 1.30e+05 1.1 6.0e+00 1.5e+03 0.0e+00  0  6  4  0  0   2 100 17  0  0  1703
+MatAssemblyBegin       1 1.0 7.6950e-06 13.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 1.0090e-03 1.3 0.00e+00 0.0 1.2e+01 3.8e+02 1.0e+00  0  0  8  0  2   5  0 33  0  4     0
+MatLoad                1 1.0 1.1795e-02 1.0 0.00e+00 0.0 3.0e+01 7.9e+04 1.7e+01  5  0 20 90 35  75  0 83 100 68     0
+VecSet                 1 1.0 8.2250e-06 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyBegin       1 1.0 3.1940e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyEnd         1 1.0 4.2380e-06 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecScatterBegin        1 1.0 6.2968e-05 1.4 0.00e+00 0.0 6.0e+00 1.5e+03 0.0e+00  0  0  4  0  0   0  0 17  0  0     0
+VecScatterEnd          1 1.0 2.4316e-05 2.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             1 1.0 9.3570e-06 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                1 1.0 1.2737e-04 1.3 0.00e+00 0.0 1.2e+01 3.8e+02 0.0e+00  0  0  8  0  0   1  0 33  0  0     0
+SFPack                 1 1.0 2.5650e-06 2.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               1 1.0 6.6100e-07 4.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
 
 --- Event Stage 1: Reorder
 
-BuildTwoSided          5 1.0 1.4979e-02 177.6 0.00e+00 0.0 2.0e+01 4.0e+00 0.0e+00  2  0 11  0  0  27  0 40  0  0     0
-BuildTwoSidedF         1 1.0 1.4039e-02 382.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0  25  0  0  0  0     0
-MatAssemblyBegin       1 1.0 1.4070e-02 230.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0  25  0  0  0  0     0
-MatAssemblyEnd         1 1.0 1.1265e-02 1.0 0.00e+00 0.0 2.0e+01 1.7e+03 1.0e+00  2  0 11  1  2  28  0 40 33 20     0
-MatSetValues        5290 1.8 1.6674e-02 4.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  2  0  0  0  0  18  0  0  0  0     0
-MatGetRowIJ            3 1.0 1.7330e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-MatGetOrdering         1 1.0 1.2179e-04 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-VecCopy                1 1.0 6.0020e-06 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFSetGraph             4 1.0 2.0062e-04 39.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFSetUp                4 1.0 1.1579e-03 1.5 0.00e+00 0.0 4.0e+01 1.7e+03 0.0e+00  0  0 22  2  0   3  0 80 67  0     0
-SFBcastBegin           3 1.0 3.1466e-03 244.8 0.00e+00 0.0 1.0e+01 3.5e+03 0.0e+00  0  0  6  1  0   4  0 20 33  0     0
-SFBcastEnd             3 1.0 3.1397e-03 425.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   4  0  0  0  0     0
-SFReduceBegin          2 1.0 1.5298e-05 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFReduceEnd            2 1.0 1.5830e-06 1.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFPack                 5 1.0 1.8630e-06 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFUnpack               5 1.0 2.2540e-06 2.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+BuildTwoSided          5 1.0 9.8543e-04 13.6 0.00e+00 0.0 1.2e+01 4.0e+00 0.0e+00  0  0  8  0  0   6  0 40  0  0     0
+BuildTwoSidedF         1 1.0 8.9055e-04 40.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   6  0  0  0  0     0
+MatAssemblyBegin       1 1.0 9.1539e-04 25.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   6  0  0  0  0     0
+MatAssemblyEnd         1 1.0 3.6179e-04 1.1 0.00e+00 0.0 1.2e+01 3.8e+02 1.0e+00  0  0  8  0  2   4  0 40 33 20     0
+MatSetValues        3922 1.1 2.5404e-03 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0  26  0  0  0  0     0
+MatGetRowIJ            3 1.0 1.8140e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering         1 1.0 5.7889e-05 1.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+VecCopy                1 1.0 5.3600e-06 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             4 1.0 6.4730e-06 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                4 1.0 3.0290e-04 1.1 0.00e+00 0.0 2.4e+01 3.8e+02 0.0e+00  0  0 16  0  0   3  0 80 67  0     0
+SFBcastBegin           3 1.0 3.2376e-03 205.7 0.00e+00 0.0 6.0e+00 7.5e+02 0.0e+00  1  0  4  0  0  18  0 20 33  0     0
+SFBcastEnd             3 1.0 3.2405e-03 393.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0  19  0  0  0  0     0
+SFReduceBegin          2 1.0 2.7952e-05 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 3.8370e-06 3.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 5 1.0 1.7740e-06 1.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               5 1.0 2.3040e-06 3.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
 
 --- Event Stage 2: Factorization
 
-MatLUFactorSym         1 1.0 1.1552e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00 26  0  0  0  0  34  0  0  0  0     0
-MatLUFactorNum         1 1.0 2.2295e-01 1.0 8.20e+05 1.7 0.0e+00 0.0e+00 0.0e+00 49 34  0  0  0  66 100  0  0  0    11
-KSPSetUp               1 1.0 1.5830e-06 2.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-PCSetUp                1 1.0 3.3850e-01 1.0 8.20e+05 1.7 0.0e+00 0.0e+00 0.0e+00 75 34  0  0  0 100 100  0  0  0     7
+MatLUFactorSym         1 1.0 1.3346e-01 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00 56  0  0  0  0  64  0  0  0  0     0
+MatLUFactorNum         1 1.0 7.6171e-02 1.0 8.23e+05 1.3 0.0e+00 0.0e+00 0.0e+00 32 35  0  0  0  36 100  0  0  0    39
+KSPSetUp               1 1.0 1.5530e-06 2.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCSetUp                1 1.0 2.0966e-01 1.0 8.23e+05 1.3 0.0e+00 0.0e+00 0.0e+00 88 35  0  0  0 100 100  0  0  0    14
 
 --- Event Stage 3: Solve
 
-BuildTwoSided          1 1.0 6.3629e-05 4.2 0.00e+00 0.0 1.2e+01 4.0e+00 0.0e+00  0  0  7  0  0   1  0 15  0  0     0
-MatSolve               1 1.0 7.7200e-03 1.0 9.08e+05 1.2 8.1e+01 2.3e+03 1.0e+00  2 45 45  4  2  99 100 100 100 100   435
-VecScatterBegin        1 1.0 3.3122e-05 1.5 0.00e+00 0.0 1.2e+01 5.8e+03 0.0e+00  0  0  7  2  0   0  0 15 37  0     0
-VecScatterEnd          1 1.0 1.7493e-05 1.9 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFSetGraph             1 1.0 1.9401e-04 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   2  0  0  0  0     0
-SFSetUp                1 1.0 1.7046e-04 1.3 0.00e+00 0.0 2.4e+01 1.5e+03 0.0e+00  0  0 13  1  0   2  0 30 18  0     0
-SFPack                 1 1.0 1.4196e-05 2.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-SFUnpack               1 1.0 6.5730e-06 3.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
-KSPSolve               1 1.0 7.7699e-03 1.0 9.08e+05 1.2 8.1e+01 2.3e+03 1.0e+00  2 45 45  4  2 100 100 100 100 100   432
-PCApply                1 1.0 7.7229e-03 1.0 9.08e+05 1.2 8.1e+01 2.3e+03 1.0e+00  2 45 45  4  2  99 100 100 100 100   435
+BuildTwoSided          1 1.0 1.4070e-04 5.2 0.00e+00 0.0 1.2e+01 4.0e+00 0.0e+00  0  0  8  0  0   2  0 14  0  0     0
+MatSolve               1 1.0 4.7441e-03 1.0 1.28e+06 1.1 8.4e+01 2.9e+03 1.0e+00  2 59 56  9  2  99 100 100 100 100  1023
+VecScatterBegin        1 1.0 7.0732e-05 1.7 0.00e+00 0.0 1.2e+01 7.4e+03 0.0e+00  0  0  8  3  0   1  0 14 36  0     0
+VecScatterEnd          1 1.0 4.0617e-05 2.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+SFSetGraph             1 1.0 2.6812e-04 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   5  0  0  0  0     0
+SFSetUp                1 1.0 2.3796e-04 1.7 0.00e+00 0.0 2.4e+01 1.8e+03 0.0e+00  0  0 16  2  0   4  0 29 18  0     0
+SFPack                 1 1.0 2.3264e-05 2.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               1 1.0 7.1440e-06 2.9 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+KSPSolve               1 1.0 4.7841e-03 1.0 1.28e+06 1.1 8.4e+01 2.9e+03 1.0e+00  2 59 56  9  2 100 100 100 100 100  1014
+PCApply                1 1.0 4.7469e-03 1.0 1.28e+06 1.1 8.4e+01 2.9e+03 1.0e+00  2 59 56  9  2  99 100 100 100 100  1022
 ------------------------------------------------------------------------------------------------------------------------
 
 Object Type          Creations   Destructions. Reports information only for process 0.
@@ -271,7 +271,7 @@ Object Type          Creations   Destructions. Reports information only for proc
 
               Matrix     3              0
               Vector     3              1
-           Index Set     8              7
+           Index Set     6              5
    Star Forest Graph     4              3
 
 --- Event Stage 2: Factorization
@@ -284,20 +284,23 @@ Object Type          Creations   Destructions. Reports information only for proc
            Index Set     2              2
    Star Forest Graph     1              0
 ========================================================================================================================
-Average time to get PetscTime(): 3.21e-08
-Average time for MPI_Barrier(): 2.2502e-06
-Average time for zero size MPI_Send(): 1.653e-06
+Average time to get PetscTime(): 3.5e-08
+Average time for MPI_Barrier(): 1.8514e-06
+Average time for zero size MPI_Send(): 1.97875e-06
 #PETSc Option Table entries:
 -log_view # (source: command line)
--mat_file ../matrices/bin/07_s_bundle1.bin # (source: command line)
+-mat_file ../matrices/bin/10_u_airfoil_2d.bin # (source: command line)
 -mat_mumps_icntl_1 6 # (source: command line)
 -mat_mumps_icntl_13 1 # (source: command line)
 -mat_mumps_icntl_14 120 # (source: command line)
 -mat_mumps_icntl_2 3 # (source: command line)
 -mat_mumps_icntl_4 2 # (source: command line)
--mat_mumps_icntl_7 5 # (source: command line)
+-mat_mumps_icntl_7 7 # (source: command line)
+-mat_ordering_type natural # (source: command line)
 -mat_solver_type mumps # (source: command line)
 -matload_block_size 1 # (source: file)
+-n 4 # (source: command line)
+-own_reordering true # (source: command line)
 -pc_type lu # (source: command line)
 #End of PETSc Option Table entries
 Compiled without FORTRAN kernels
@@ -323,3 +326,7 @@ Using Fortran linker: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/pet
 Using libraries: -Wl,-rpath,/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -L/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -lpetsc -Wl,-rpath,/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -L/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13 -lHYPRE -lspqr -lumfpack -lklu -lcholmod -lamd -lsuperlu_dist -ldmumps -lmumps_common -lpord -lpthread -lscalapack -lpastix -lsuperlu -llapacke -llapack -lcblas -lblas -lptesmumps -lptscotchparmetisv3 -lptscotch -lptscotcherr -lesmumps -lscotch -lscotcherr -llapacke -lcblas -llapack -lblas -lparmetis -lmetis -lhdf5_hl -lhdf5 -lm -lz -lhwloc -lX11 -lmpifort -lmpi -lgfortran -lm -lgfortran -lm -lgcc_s -lquadmath -lstdc++
 -----------------------------------------
 
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There is one unused database option. It is:
+Option left: name:-n value: 4 source: command line
