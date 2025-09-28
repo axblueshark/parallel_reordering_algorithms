@@ -8,8 +8,8 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    Mat             A, A_perm;
-    Vec             b, b_perm, x;
+    Mat             A, A_perm, A_in = NULL;
+    Vec             b, b_perm, b_in = NULL, x;
     IS              rperm;
 
     char            input_mat_file[PETSC_MAX_PATH_LEN] = "";
@@ -23,7 +23,8 @@ int main( int argc, char **argv )
 
     PetscBool       show_mat_info = PETSC_FALSE,
                     get_solution_norm = PETSC_FALSE,
-                    export_mat = PETSC_FALSE;
+                    export_mat = PETSC_FALSE,
+                    own_reordering = PETSC_FALSE;
 
     PetscLogStage   stage_reorder, stage_factor, stage_solve;
 
@@ -89,6 +90,11 @@ int main( int argc, char **argv )
         sizeof(export_file), NULL)
     );
 
+    PetscCall( PetscOptionsBool(
+        "-own_reordering", "Use custom reorder() routine (default: false)", PETSC_FALSE, 
+        own_reordering, &own_reordering, NULL)
+    );
+
     PetscOptionsEnd();
 
     // load system & RHS vector
@@ -106,18 +112,29 @@ int main( int argc, char **argv )
     }
 
     // reordering
-    PetscCall( PetscLogStagePush(stage_reorder) );
-    PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
-    PetscCall( PetscLogStagePop() );
+    if ( own_reordering ) {
+        PetscCall( PetscLogStagePush(stage_reorder) );
+        PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
+        PetscCall( PetscLogStagePop() );
+
+        A_in = A_perm;
+        b_in = b_perm;
+    } else {
+        // skip own reordering function, let solver handle it
+        A_in = A;
+        b_in = b;
+    }
 
     // solve
-    PetscCall( solve_system(A_perm, b_perm, &x,
+    PetscCall( solve_system(A_in, b_in, &x,
                            pc_type,
                            solver_type,
                            stage_factor, stage_solve) );
 
-    // unpermute solution
-    PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
+    // unpermute if our reorder() was used
+    if ( own_reordering ) {
+        PetscCall(VecPermute(x, rperm, PETSC_TRUE));
+    }
 
     // check solution norm
     if ( get_solution_norm ) {
@@ -127,7 +144,7 @@ int main( int argc, char **argv )
     }
 
     // export permuted matrix
-    if ( export_mat && export_file[0] ) {
+    if ( export_mat && export_file[0] && own_reordering ) {
         PetscCall( save_matrix(A_perm, export_file) );
     }
 
@@ -135,9 +152,11 @@ int main( int argc, char **argv )
     VecDestroy(&x);
     VecDestroy(&b);
     MatDestroy(&A);
-    MatDestroy(&A_perm);
-    VecDestroy(&b_perm);
-    ISDestroy(&rperm);
+    if ( own_reordering ) {
+        MatDestroy(&A_perm);
+        VecDestroy(&b_perm);
+        ISDestroy(&rperm);
+    }
 
     PetscFinalize();
     return 0;

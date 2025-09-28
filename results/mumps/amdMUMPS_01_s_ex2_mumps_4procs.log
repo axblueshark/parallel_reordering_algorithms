@@ -1,0 +1,325 @@
+
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   1         441
+      executing #MPI =      4, without OMP
+
+ =================================================
+ MUMPS compiled with option -Dmetis
+ MUMPS compiled with option -Dparmetis
+ MUMPS compiled with option -Dpord
+ MUMPS compiled with option -Dptscotch
+ MUMPS compiled with option -Dscotch
+ =================================================
+L U Solver for unsymmetric matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
+ Processing a graph of size:       441 with         26398 edges
+ Ordering based on METIS
+ ELAPSED TIME SPENT IN METIS reordering  =      0.0006
+ SYMBOLIC based on column counts 
+ ELAPSED TIME IN symbolic factorization  =      0.0002
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =           44283
+ --  (3) Real space for factors    (estimated)  =           44283
+ --  (4) Integer space for factors (estimated)  =            2652
+ --  (5) Maximum frontal size      (estimated)  =              94
+ --  (6) Number of nodes in the tree            =              19
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               5
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               5
+ ICNTL(12) Ordering symmetric indef. matrices   =               1
+ ICNTL(13) Parallelism/splitting of root node   =               1
+ ICNTL(14) Percentage of memory relaxation      =             120
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               3
+ ICNTL(32) Forward elimination during facto.    =               0
+ ICNTL(35) BLR activation                       =               0
+ ICNTL(48) Tree based multithreading (effective)=               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =               0
+ Number of split nodes                          =               0
+ RINFOG(1) Operations during elimination (estim)= 2.453D+06
+ Distributed matrix entry format (ICNTL(18))    =               3
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):               4
+    Total space in MBytes, IC factorization      (INFOG(17)):              16
+    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):               5
+    Total space in MBytes,  OOC factorization    (INFOG(27)):              19
+
+ Elapsed time in analysis driver=       0.0065
+
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   2         441
+      executing #MPI =      4, without OMP
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =               4
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(14) Memory relaxation                =             120
+ INFOG(3) Real space for factors (estimated)=           44283
+ INFOG(4) Integer space for factors (estim.)=            2652
+ Maximum frontal size (estimated)           =              94
+ Number of nodes in the tree                =              19
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.1000D-01
+
+ Statistics on the scaling phase
+ Elapsed time for scaling                   =      0.0005
+ Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.45D+00
+
+ Average Effective size of S     (based on INFO(39))=                35698
+
+ Redistrib: total data local/sent           =            5897           20942
+ Elapsed time to reformat/distribute matrix =      0.0009
+
+ ** Memory allocated, max in Mbytes             (INFOG(18)):           4
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):          16
+ ** Memory effectively used, max in  Mbytes     (INFOG(21)):           4
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):          16
+
+ Elapsed time for factorization                     =      0.0017
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 2.777D+04
+ ------ (3) Operations in node elimination          = 2.453D+06
+ ICNTL  (8) Scaling effectively used                =               7
+ INFOG  (9) Real space for factors                  =           44283
+ INFOG (10) Integer space for factors               =            2652
+ INFOG (11) Maximum front size                      =              94
+ INFOG (29) Number of entries in factors            =           44283
+ INFOG (12) Number of off diagonal pivots           =               2
+ INFOG (13) Number of delayed pivots                =               0
+ RINFOG(19) Smallest pivot WITH perturbed pivots    = 6.689D-10
+ RINFOG(20) Smallest pivot WITHOUT perturbed pivots = 6.689D-10
+ RINFOG(21) Largest pivot in absolute value         = 7.638D-01
+ INFOG (24) Effective value of ICNTL(12)            =               1
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =      0.0036
+
+Entering DMUMPS 5.7.3 from C interface with JOB, N =   3         441
+      executing #MPI =      4, without OMP
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           0
+  --- (11)                                     =           0
+  --- (20)                                     =          10
+  --- (21)                                     =           1
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+  --- (48) (effective)                         =           0
+ ** Rank of processor needing largest memory in solve     :         0
+ ** Space in MBYTES used by this processor for solve      :         9
+ ** Avg. Space in MBYTES per working proc during solve    :         9
+
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.000116
+ Time in solution step (fwd/bwd)  =       0.000209
+  .. Time in forward (fwd) step   =          0.000118
+  .. Time in backward (bwd) step  =          0.000080
+ Time to gather solution(cent.sol)=       0.000000
+ Time for distributed solution    =       0.000002
+
+ Elapsed time in solve driver=       0.0006
+
+Entering DMUMPS 5.7.3 from C interface with JOB =  -2
+      executing #MPI =      4, without OMP
+****************************************************************************************************************************************************************
+***                                WIDEN YOUR WINDOW TO 160 CHARACTERS.  Use 'enscript -r -fCourier9' to print this document                                 ***
+****************************************************************************************************************************************************************
+
+------------------------------------------------------------------ PETSc Performance Summary: ------------------------------------------------------------------
+
+../scripts/experiment on a arch-linux-c-opt named HP-Pavilion-Gaming-Laptop-15-ec0xxx with 4 processes, by alexandr on Sun Sep 28 21:43:18 2025
+Using PETSc Release Version 3.23.6, unknown
+
+                         Max       Max/Min     Avg       Total
+Time (sec):           2.885e-02     1.000   2.884e-02
+Objects:              0.000e+00     0.000   0.000e+00
+Flops:                5.505e+04     1.878   4.217e+04  1.687e+05
+Flops/sec:            1.909e+06     1.878   1.462e+06  5.848e+06
+MPI Msg Count:        4.200e+01     1.355   3.550e+01  1.420e+02
+MPI Msg Len (bytes):  1.280e+05     2.750   1.890e+03  2.684e+05
+MPI Reductions:       4.800e+01     1.000
+
+Flop counting convention: 1 flop = 1 real number operation of type (multiply/divide/add/subtract)
+                            e.g., VecAXPY() for real vectors of length N --> 2N flops
+                            and VecAXPY() for complex vectors of length N --> 8N flops
+
+Summary of Stages:   ----- Time ------  ----- Flop ------  --- Messages ---  -- Message Lengths --  -- Reductions --
+                        Avg     %Total     Avg     %Total    Count   %Total     Avg         %Total    Count   %Total
+ 0:      Main Stage: 8.7506e-03  30.3%  5.3237e+04  31.6%  4.200e+01  29.6%  6.083e+03       95.2%  2.500e+01  52.1%
+ 1:         Reorder: 4.9016e-03  17.0%  0.0000e+00   0.0%  4.000e+01  28.2%  1.393e+02        2.1%  5.000e+00  10.4%
+ 2:   Factorization: 1.3931e-02  48.3%  2.7767e+04  16.5%  0.000e+00   0.0%  0.000e+00        0.0%  0.000e+00   0.0%
+ 3:           Solve: 1.2530e-03   4.3%  8.7684e+04  52.0%  6.000e+01  42.3%  1.225e+02        2.7%  1.000e+00   2.1%
+
+------------------------------------------------------------------------------------------------------------------------
+See the 'Profiling' chapter of the users' manual for details on interpreting output.
+Phase summary info:
+   Count: number of times phase was executed
+   Time and Flop: Max - maximum over all processors
+                  Ratio - ratio of maximum to minimum over all processors
+   Mess: number of messages sent
+   AvgLen: average message length (bytes)
+   Reduct: number of global reductions
+   Global: entire computation
+   Stage: stages of a computation. Set stages with PetscLogStagePush() and PetscLogStagePop().
+      %T - percent time in this phase         %F - percent flop in this phase
+      %M - percent messages in this phase     %L - percent message lengths in this phase
+      %R - percent reductions in this phase
+   Total Mflop/s: 1e-6 * (sum of flop over all processors)/(max time over all processors)
+------------------------------------------------------------------------------------------------------------------------
+Event                Count      Time (sec)     Flop                              --- Global ---  --- Stage ----  Total
+                   Max Ratio  Max     Ratio   Max  Ratio  Mess   AvgLen  Reduct  %T %F %M %L %R  %T %F %M %L %R Mflop/s
+------------------------------------------------------------------------------------------------------------------------
+
+--- Event Stage 0: Main Stage
+
+BuildTwoSided          2 1.0 9.2614e-05 2.1 0.00e+00 0.0 8.0e+00 4.0e+00 0.0e+00  0  0  6  0  0   1  0 19  0  0     0
+BuildTwoSidedF         1 1.0 9.1770e-06 1.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatMult                1 1.0 3.7386e-03 1.0 1.40e+04 1.2 8.0e+00 4.6e+02 0.0e+00 13 32  6  1  0  42 100 19  1  0    14
+MatAssemblyBegin       1 1.0 5.9010e-06 10.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatAssemblyEnd         1 1.0 1.2247e-03 1.8 0.00e+00 0.0 1.6e+01 1.2e+02 1.0e+00  4  0 11  1  2  12  0 38  1  4     0
+MatLoad                1 1.0 2.6260e-03 1.0 0.00e+00 0.0 3.4e+01 7.4e+03 1.7e+01  9  0 24 94 35  30  0 81 99 68     0
+VecSet                 1 1.0 3.2870e-06 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyBegin       1 1.0 1.9567e-05 1.3 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecAssemblyEnd         1 1.0 2.8450e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+VecScatterBegin        1 1.0 3.6790e-03 90.1 0.00e+00 0.0 8.0e+00 4.6e+02 0.0e+00  3  0  6  1  0  11  0 19  1  0     0
+VecScatterEnd          1 1.0 3.6242e-03 274.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  9  0  0  0  0  31  0  0  0  0     0
+SFSetGraph             1 1.0 6.3920e-06 2.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                1 1.0 1.4692e-04 1.9 0.00e+00 0.0 1.6e+01 1.2e+02 0.0e+00  0  0 11  1  0   1  0 38  1  0     0
+SFPack                 1 1.0 1.1420e-06 4.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               1 1.0 1.0320e-06 5.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 1: Reorder
+
+BuildTwoSided          5 1.0 2.0730e-04 1.5 0.00e+00 0.0 1.6e+01 4.0e+00 0.0e+00  1  0 11  0  0   4  0 40  1  0     0
+BuildTwoSidedF         1 1.0 1.2945e-04 6.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+MatAssemblyBegin       1 1.0 1.5953e-04 4.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   2  0  0  0  0     0
+MatAssemblyEnd         1 1.0 2.4738e-04 1.0 0.00e+00 0.0 1.6e+01 1.2e+02 1.0e+00  1  0 11  1  2   5  0 40 34 20     0
+MatSetValues         220 1.3 2.5360e-04 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  1  0  0  0  0   4  0  0  0  0     0
+MatGetRowIJ            3 1.0 8.9670e-06 7.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+MatGetOrdering         1 1.0 6.8689e-05 1.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   1  0  0  0  0     0
+VecCopy                1 1.0 1.5330e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             4 1.0 4.2770e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                4 1.0 1.6597e-04 1.4 0.00e+00 0.0 3.2e+01 1.2e+02 0.0e+00  1  0 23  1  0   3  0 80 67  0     0
+SFBcastBegin           3 1.0 3.6467e-03 376.4 0.00e+00 0.0 8.0e+00 2.3e+02 0.0e+00  6  0  6  1  0  35  0 20 33  0     0
+SFBcastEnd             3 1.0 3.6370e-03 1197.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  3  0  0  0  0  20  0  0  0  0     0
+SFReduceBegin          2 1.0 2.4415e-05 2.2 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFReduceEnd            2 1.0 2.1150e-06 1.4 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFPack                 5 1.0 1.8440e-06 2.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               5 1.0 1.2720e-06 1.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+
+--- Event Stage 2: Factorization
+
+MatLUFactorSym         1 1.0 9.8348e-03 1.0 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00 34  0  0  0  0  71  0  0  0  0     0
+MatLUFactorNum         1 1.0 3.9560e-03 1.0 1.08e+04 4.6 0.0e+00 0.0e+00 0.0e+00 14 16  0  0  0  28 100  0  0  0     7
+KSPSetUp               1 1.0 1.7940e-06 2.1 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+PCSetUp                1 1.0 1.3818e-02 1.0 1.08e+04 4.6 0.0e+00 0.0e+00 0.0e+00 48 16  0  0  0  99 100  0  0  0     2
+
+--- Event Stage 3: Solve
+
+BuildTwoSided          1 1.0 1.3896e-05 1.1 0.00e+00 0.0 9.0e+00 4.0e+00 0.0e+00  0  0  6  0  0   1  0 15  0  0     0
+MatSolve               1 1.0 1.1398e-03 1.1 3.10e+04 2.3 6.0e+01 1.2e+02 1.0e+00  4 52 42  3  2  88 100 100 100 100    77
+VecScatterBegin        1 1.0 1.6250e-05 1.3 0.00e+00 0.0 9.0e+00 2.8e+02 0.0e+00  0  0  6  1  0   1  0 15 34  0     0
+VecScatterEnd          1 1.0 4.7990e-06 1.5 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetGraph             1 1.0 6.8830e-06 1.7 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFSetUp                1 1.0 2.8153e-05 1.0 0.00e+00 0.0 1.8e+01 7.1e+01 0.0e+00  0  0 13  0  0   2  0 30 17  0     0
+SFPack                 1 1.0 6.2420e-06 9.6 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+SFUnpack               1 1.0 1.0920e-06 3.8 0.00e+00 0.0 0.0e+00 0.0e+00 0.0e+00  0  0  0  0  0   0  0  0  0  0     0
+KSPSolve               1 1.0 1.2146e-03 1.0 3.10e+04 2.3 6.0e+01 1.2e+02 1.0e+00  4 52 42  3  2  97 100 100 100 100    72
+PCApply                1 1.0 1.1429e-03 1.1 3.10e+04 2.3 6.0e+01 1.2e+02 1.0e+00  4 52 42  3  2  88 100 100 100 100    77
+------------------------------------------------------------------------------------------------------------------------
+
+Object Type          Creations   Destructions. Reports information only for process 0.
+
+--- Event Stage 0: Main Stage
+
+              Viewer     1              1
+              Matrix     4              7
+              Vector     5              8
+           Index Set     2              3
+   Star Forest Graph     1              3
+       Krylov Solver     1              1
+      Preconditioner     1              1
+
+--- Event Stage 1: Reorder
+
+              Matrix     3              0
+              Vector     3              1
+           Index Set     8              7
+   Star Forest Graph     4              3
+
+--- Event Stage 2: Factorization
+
+              Vector     1              0
+
+--- Event Stage 3: Solve
+
+              Vector     1              1
+           Index Set     2              2
+   Star Forest Graph     1              0
+========================================================================================================================
+Average time to get PetscTime(): 3.71e-08
+Average time for MPI_Barrier(): 2.649e-06
+Average time for zero size MPI_Send(): 1.6505e-06
+#PETSc Option Table entries:
+-log_view # (source: command line)
+-mat_file ../matrices/bin/01_s_ex2.bin # (source: command line)
+-mat_mumps_icntl_1 6 # (source: command line)
+-mat_mumps_icntl_13 1 # (source: command line)
+-mat_mumps_icntl_14 120 # (source: command line)
+-mat_mumps_icntl_2 3 # (source: command line)
+-mat_mumps_icntl_4 2 # (source: command line)
+-mat_mumps_icntl_7 5 # (source: command line)
+-mat_solver_type mumps # (source: command line)
+-matload_block_size 1 # (source: file)
+-pc_type lu # (source: command line)
+#End of PETSc Option Table entries
+Compiled without FORTRAN kernels
+Compiled with full precision matrices (default)
+sizeof(short) 2 sizeof(int) 4 sizeof(long) 8 sizeof(void*) 8 sizeof(PetscScalar) 8 sizeof(PetscInt) 4
+Configure options: --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --with-debugging=0 --with-shared-libraries=1 --with-64-bit-indices=0 --download-mpich --download-netlib-lapack --with-netlib-lapack-c-bindings --download-scalapack --download-suitesparse --download-metis --download-parmetis --download-ptscotch --download-superlu --download-superlu_dist --download-mumps --download-pastix --download-hypre --download-hdf5 --download-zlib --download-hwloc --download-bison
+-----------------------------------------
+Libraries compiled on 2025-09-21 15:24:35 on HP-Pavilion-Gaming-Laptop-15-ec0xxx
+Machine characteristics: Linux-6.8.0-83-generic-x86_64-with-glibc2.39
+Using PETSc directory: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc
+Using PETSc arch: arch-linux-c-opt
+-----------------------------------------
+
+Using C compiler: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/bin/mpicc  -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O 
+Using Fortran compiler: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/bin/mpif90  -Wall -ffree-line-length-none -ffree-line-length-0 -Wno-lto-type-mismatch -Wno-unused-dummy-argument -g -O  
+-----------------------------------------
+
+Using include paths: -I/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/include -I/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/include -I/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/include/suitesparse
+-----------------------------------------
+
+Using C linker: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/bin/mpicc
+Using Fortran linker: /home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/bin/mpif90
+Using libraries: -Wl,-rpath,/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -L/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -lpetsc -Wl,-rpath,/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -L/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib -Wl,-rpath,/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13 -lHYPRE -lspqr -lumfpack -lklu -lcholmod -lamd -lsuperlu_dist -ldmumps -lmumps_common -lpord -lpthread -lscalapack -lpastix -lsuperlu -llapacke -llapack -lcblas -lblas -lptesmumps -lptscotchparmetisv3 -lptscotch -lptscotcherr -lesmumps -lscotch -lscotcherr -llapacke -lcblas -llapack -lblas -lparmetis -lmetis -lhdf5_hl -lhdf5 -lm -lz -lhwloc -lX11 -lmpifort -lmpi -lgfortran -lm -lgfortran -lm -lgcc_s -lquadmath -lstdc++
+-----------------------------------------
+

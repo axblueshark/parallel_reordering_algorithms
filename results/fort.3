@@ -1,0 +1,185 @@
+L U Solver for unsymmetric matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ Estimated INTEGER space for factors         :           27232
+ INFO(3), est. real space to store factors   :          827469
+ Estimated number of entries in factors      :          827469
+ Current value of space relaxation parameter :             120
+ Estimated size of IS (In Core factorization):          126432
+ Estimated size of S  (In Core factorization):         1855671
+ Estimated size of S  (OOC factorization)    :          276078
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+ Estimated space in MBytes for IC factorization   (INFO(15)):              40
+
+
+****** FACTORIZATION STEP ********
+
+
+ Local redistrib: data local/sent           =            1116          269877
+
+ Allocated buffers
+ ------------------
+ Size of reception buffer in bytes ...... =      1161984
+ Size of async. emission buffer (bytes).. =      2335585
+ Small emission buffer (bytes) .......... =          320
+ STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Size of internal working array S           =         1855671
+ Size of internal working array IS          =          126432
+ Minimum (ICNTL(14)=0) size of S            =          843471
+ Minimum (ICNTL(14)=0) size of IS           =           27432
+ Real space for original matrix             =          246519
+ Integer space for original matrix          =          246519
+ INFO(3) Real space for factors (estimated) =          827469
+ INFO(4) Integer space for factors (estim.) =           27232
+ Maximum frontal size (estimated)           =             330
+
+ LEAVING FACTORIZATION PHASE WITH ...
+ INFO (1)                                      =              0
+  --- (2)                                      =              0
+           Number of nodes in the tree         =            611
+ INFO (9)  Real space for factors              =         827469
+  --- (10) Integer space for factors           =          27232
+  --- (11) Maximum size of frontal matrices    =            330
+  --- (12) Number of off diagonal pivots       =              0
+  --- (13) Number of delayed pivots            =              0
+  --- (14) Number of memory compresses         =              0
+ RINFO(2)  Operations during node assembly     = 6.735D+05
+ -----(3)  Operations during node elimination  = 1.100D+08
+ ** Eff. min. Space MBYTES for facto             (INFO(16)):          40
+
+
+ ****** SOLVE & CHECK STEP ********
+
+
+ Local statistics
+ Time to build/scatter RHS        =       0.000325
+ Time in solution step (fwd/bwd)  =       0.003159
+  .. Time in forward (fwd) step   =          0.001623
+  .. Time in backward (bwd) step  =          0.001516
+ Time to gather solution(cent.sol)=       0.000000
+ Time for distributed solution    =       0.000028
+    =         0
+
+***********CONTROL PARAMETERS (ICNTL)**************
+
+ CNTL(1)   Threshold for numerical pivoting        =     -0.1000D+01
+ CNTL(3)   Threshold to detect singularities       =      0.0000D+00
+ CNTL(4)   Threshold for static pivoting           =     -0.1000D+01
+ CNTL(5)   Fixation for null pivots                =      0.0000D+00
+ CNTL(7)   Dropping threshold for BLR compression  =      0.0000D+00
+ICNTL(1)   Output stream for error messages        =         6
+ICNTL(2)   Output stream for diagnostic messages   =         3
+ICNTL(3)   Output stream for global information    =         6
+ICNTL(4)   Level of printing                       =         2
+ICNTL(8)   Scaling strategy                        =        77
+ICNTL(14)  Percent of memory increase              =       120
+ICNTL(24)  Null pivot detection (0=off)            =         0
+ICNTL(31)  Discard factors (0=off, else=on)        =         0
+ICNTL(32)  Forward elimination during facto (0=off)=         0
+ICNTL(33)  Compute determinant (0=off)             =         0
+ICNTL(35)  Block Low Rank (BLR, 0=off >0=on)       =         0
+ICNTL(36)  BLR variant                             =         0
+ICNTL(49)  Compact workarray S (end of facto.)     =         0
+ICNTL(56)  Null space functionality                =         0
+
+
+****** FACTORIZATION STEP ********
+
+
+ Local redistrib: data local/sent           =           60067          176546
+
+ Allocated buffers
+ ------------------
+ Size of reception buffer in bytes ...... =      1161984
+ Size of async. emission buffer (bytes).. =      2335585
+ Small emission buffer (bytes) .......... =          320
+ STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Size of internal working array S           =         2242629
+ Size of internal working array IS          =          143882
+ Minimum (ICNTL(14)=0) size of S            =         1019349
+ Minimum (ICNTL(14)=0) size of IS           =           31202
+ Real space for original matrix             =          274145
+ Integer space for original matrix          =          274145
+ INFO(3) Real space for factors (estimated) =          928143
+ INFO(4) Integer space for factors (estim.) =           30598
+ Maximum frontal size (estimated)           =             294
+
+ Start factorization with total estimated flops RINFOG(1) / Average per MPI proc    =  4.686D+08 /  1.172D+08
+
+ LEAVING FACTORIZATION PHASE WITH ...
+ INFO (1)                                      =              0
+  --- (2)                                      =              0
+           Number of nodes in the tree         =            611
+ INFO (9)  Real space for factors              =         928143
+  --- (10) Integer space for factors           =          30598
+  --- (11) Maximum size of frontal matrices    =            294
+  --- (12) Number of off diagonal pivots       =              0
+  --- (13) Number of delayed pivots            =              0
+  --- (14) Number of memory compresses         =              0
+ RINFO(2)  Operations during node assembly     = 7.808D+05
+ -----(3)  Operations during node elimination  = 1.234D+08
+ ** Eff. min. Space MBYTES for facto             (INFO(16)):          44
+
+***********CONTROL PARAMETERS (ICNTL)**************
+
+ CNTL(1)   Threshold for numerical pivoting        =     -0.1000D+01
+ CNTL(3)   Threshold to detect singularities       =      0.0000D+00
+ CNTL(4)   Threshold for static pivoting           =     -0.1000D+01
+ CNTL(5)   Fixation for null pivots                =      0.0000D+00
+ CNTL(7)   Dropping threshold for BLR compression  =      0.0000D+00
+ICNTL(1)   Output stream for error messages        =         6
+ICNTL(2)   Output stream for diagnostic messages   =         3
+ICNTL(3)   Output stream for global information    =         6
+ICNTL(4)   Level of printing                       =         2
+ICNTL(8)   Scaling strategy                        =        77
+ICNTL(14)  Percent of memory increase              =       120
+ICNTL(24)  Null pivot detection (0=off)            =         0
+ICNTL(31)  Discard factors (0=off, else=on)        =         0
+ICNTL(32)  Forward elimination during facto (0=off)=         0
+ICNTL(33)  Compute determinant (0=off)             =         0
+ICNTL(35)  Block Low Rank (BLR, 0=off >0=on)       =         0
+ICNTL(36)  BLR variant                             =         0
+ICNTL(49)  Compact workarray S (end of facto.)     =         0
+ICNTL(56)  Null space functionality                =         0
+
+***********CONTROL PARAMETERS (ICNTL)**************
+
+ICNTL(1)   Output stream for error messages        =         6
+ICNTL(2)   Output stream for diagnostic messages   =         3
+ICNTL(3)   Output stream for global information    =         6
+ICNTL(4)   Level of printing                       =         2
+ICNTL(9)   Solve A x=b (1) or A'x = b (else)       =         1
+ICNTL(10)  Max steps iterative refinement          =         0
+ICNTL(11)  Error analysis (1=all,2=some,else=off)  =         0
+ICNTL(20)  Den.(0)/sparse(1,2,3)/dist.(10,11) RHS  =        10
+ICNTL(21)  Gathered (0) or distributed(1) solution =         1
+ICNTL(26)  Solution step                           =         0
+
+
+ ****** SOLVE & CHECK STEP ********
+
+
+ Local statistics
+ Time to build/scatter RHS        =       0.000326
+ Time in solution step (fwd/bwd)  =       0.003160
+  .. Time in forward (fwd) step   =          0.001619
+  .. Time in backward (bwd) step  =          0.001515
+ Time to gather solution(cent.sol)=       0.000000
+ Time for distributed solution    =       0.000021
+
+***********CONTROL PARAMETERS (ICNTL)**************
+
+ICNTL(1)   Output stream for error messages        =         6
+ICNTL(2)   Output stream for diagnostic messages   =         3
+ICNTL(3)   Output stream for global information    =         6
+ICNTL(4)   Level of printing                       =         2
+ICNTL(9)   Solve A x=b (1) or A'x = b (else)       =         1
+ICNTL(10)  Max steps iterative refinement          =         0
+ICNTL(11)  Error analysis (1=all,2=some,else=off)  =         0
+ICNTL(20)  Den.(0)/sparse(1,2,3)/dist.(10,11) RHS  =        10
+ICNTL(21)  Gathered (0) or distributed(1) solution =         1
+ICNTL(26)  Solution step                           =         0
