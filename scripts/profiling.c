@@ -56,3 +56,29 @@ PetscErrorCode save_matrix( Mat A, const char* path )
 
     PetscFunctionReturn( PETSC_SUCCESS );
 }
+
+
+/**
+ * @brief Compute the norm of obtained solution (Ax - b).
+ * 
+ * @param A System matrix.
+ * @param b Right-hand side vector.
+ * @param x Obtained solution of the system Ax = b.
+ * @param norm The norm to be computed.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode compute_solution_norm( Mat A, Vec b, Vec x, PetscReal *norm )
+{
+    Vec r;
+
+    PetscFunctionBeginUser;
+
+    PetscCall( VecDuplicate(b, &r) );        // allocate r
+    PetscCall( MatMult(A, x, r) );           // r = A * x
+    PetscCall( VecAXPY(r, -1.0, b) );        // r = r - b = Ax - b
+    PetscCall( VecNorm(r, NORM_2, norm) );  // norm = ||r||_2
+
+    PetscCall( VecDestroy(&r) );
+
+    PetscFunctionReturn( PETSC_SUCCESS );
+}

@@ -99,4 +99,16 @@ PetscErrorCode matrix_info( Mat A );
  */
 PetscErrorCode save_matrix( Mat A, const char* path );
 
+
+/**
+ * @brief Compute the norm of obtained solution (Ax - b).
+ * 
+ * @param A System matrix.
+ * @param b Right-hand side vector.
+ * @param x Obtained solution of the system Ax = b.
+ * @param norm The norm to be computed.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode compute_solution_norm( Mat A, Vec b, Vec x, PetscReal *norm );
+
 #endif // SOLVER_UTILS_H
