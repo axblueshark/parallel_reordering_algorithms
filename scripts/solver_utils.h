@@ -71,7 +71,8 @@ PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering,
  * @return PetscErrorCode 
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
-                             PCType pc_type, MatSolverType mat_solver_type,
+                             PCType pc_type, 
+                             MatSolverType mat_solver_type,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve );
 
@@ -87,5 +88,15 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
  * @return PetscErrorCode 
  */
 PetscErrorCode matrix_info( Mat A );
+
+
+/**
+ * @brief Save a matrix to .bin format.
+ * 
+ * @param A The matrix to be saved.
+ * @param path The desired file path.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode save_matrix( Mat A, const char* path );
 
 #endif // SOLVER_UTILS_H

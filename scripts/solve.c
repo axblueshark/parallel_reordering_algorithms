@@ -6,13 +6,15 @@
  * @param A The system matrix.
  * @param b The right-hand side vector.
  * @param x The solution vector.
- * @param ordering_type The type of the reordering to be used.
  * @param pc_type The type of the preconditioner to be used.
  * @param mat_solver_type The solver type.
+ * @param stage_factor The stage to measure factorization.
+ * @param stage_solve THe stage to measure solve.
  * @return PetscErrorCode 
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
-                             PCType pc_type, MatSolverType mat_solver_type,
+                             PCType pc_type, 
+                             MatSolverType mat_solver_type,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve )
 {
