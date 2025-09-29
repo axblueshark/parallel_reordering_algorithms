@@ -1,0 +1,109 @@
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                       4
+  Number of threads per process:                 2
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
+spmCheckAndCorrect: 56011 entries have been added for symmetry
++-------------------------------------------------+
+  Ordering subtask :
+    Ordering method is: Scotch
+    Time to compute ordering              1.834976e-01 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Number of nonzeroes in L structure     4126064
+    Fill-in of L                          36.771895
+    Time to compute symbol matrix         4.331988e-03 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   1.558158e-01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+    Number of non-zeroes in blocked L      8252128
+    Fill-in                               73.543790
+    Number of operations in full-rank: LU        8.39 GFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   5.647801e-01 s
+    Time for mapping/scheduling           1.106736e-02 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                3.558309e-01 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    Time to initialize internal csc       7.422055e-03 s
+    Time to initialize coeftab            3.180260e-02 s
+    Time to factorize                     1.884216e+00 s ( 4.45 GFlop/s)
+    Number of operations                       -35425700787.00  Flops
+    Number of static pivots                   4547
+    Memory usage of coeftab                       3.93 Mo
+    Time to solve                         2.518002e-02 s
+    - iteration 1 :
+         total iteration time                   0.00862 s
+         error                                  0
+    - iteration 2 :
+         total iteration time                   0.0125 s
+         error                                  0
+    - iteration 3 :
+         total iteration time                   0.018 s
+         error                                  0
+    - iteration 4 :
+         total iteration time                   0.0209 s
+         error                                  0
+    - iteration 5 :
+         total iteration time                   0.0214 s
+         error                                  0
+    - iteration 6 :
+         total iteration time                   0.0253 s
+         error                                  0
+Assertion failed in file ./src/include/mpir_request.h at line 569: ((req))->ref_count >= 0
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x350578) [0x7c41a2550578]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x277deb) [0x7c41a2477deb]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x218f88) [0x7c41a2418f88]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x18b27a) [0x7c41a238b27a]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x1f9a4e) [0x7c41a23f9a4e]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x1f9b21) [0x7c41a23f9b21]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x18bb1f) [0x7c41a238bb1f]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x1f9a7b) [0x7c41a23f9a7b]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(+0x1f9b21) [0x7c41a23f9b21]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libmpi.so.12(MPI_Barrier+0x360) [0x7c41a225c8b0]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(sopalin_dtrsm+0x1a5) [0x7c41a4d18313]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(pastix_subtask_trsm+0x144) [0x7c41a4ce9811]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(pastix_subtask_solve_adv+0x2ec) [0x7c41a4ce9e23]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(pastix_subtask_solve+0x1a) [0x7c41a4ce9e59]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(bcsc_dspsv+0x94) [0x7c41a4d003b8]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(d_gmres_smp+0x5b6) [0x7c41a4d1e31d]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(pastix_subtask_refine+0x155) [0x7c41a4ceb52e]
+/home/alexandr/Plocha/bsc_thesis/numerical_experiments/petsc/arch-linux-c-opt/lib/libpastix.so.6.4(pastix_task_refine+0x114) [0x7c41a4ceb830]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(+0x5a801a) [0x7c41a53a801a]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(MatSolve+0x34c) [0x7c41a5678efa]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(+0xf76937) [0x7c41a5d76937]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(PCApply+0x5d0) [0x7c41a5e9a59e]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(+0xe20a52) [0x7c41a5c20a52]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(+0xe4b2ab) [0x7c41a5c4b2ab]
+../petsc/arch-linux-c-opt/lib/libpetsc.so.3.23(KSPSolve+0x1b) [0x7c41a5c4d870]
+../scripts/experiment(+0x47ef) [0x5c56e2e4b7ef]
+../scripts/experiment(+0x3e64) [0x5c56e2e4ae64]
+/lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7c41a4a2a1ca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7c41a4a2a28b]
+../scripts/experiment(+0x4055) [0x5c56e2e4b055]
+internal ABORT - process 2
