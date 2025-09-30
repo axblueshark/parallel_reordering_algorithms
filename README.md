@@ -74,10 +74,10 @@ This will produce the `experiment` file, which is the main executable for the pr
 After successfully building the project, follow these steps to obtain results: 
 
 1. **Download test matrices** \
-Place .mtx files into matrices/mtx/
+Place `.mtx` files into `matrices/mtx/`.
 
 2. **Convert to PETSc binary**
-Preferably run the scripts in `scripts/mtx_converter/mtx_to_bin.ipynb`. This will convert the .mtx matrices into .bin format in `matrices/bin` subfolder.
+Preferably run the scripts in `scripts/mtx_converter/mtx_to_bin.ipynb`. This will convert the `.mtx` matrices into `.bin` format in `matrices/bin` subfolder.
 
 3. **Run**
 In `results/results.ipynb`, the scripts are ready to be used. Adjust solvers, reorderings and number of processes here.
