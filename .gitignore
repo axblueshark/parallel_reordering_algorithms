@@ -11,6 +11,10 @@ experiments
 *.out
 *.exe
 
+# matrices files 
+/matrices/bin/
+/matrices/mtx/
+
 # backup / temp
 *~
 .DS_Store
