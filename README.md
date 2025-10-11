@@ -9,8 +9,9 @@ The results will be presented in the **Numerical experiments** chapter of the af
 numerical_experiments/
 │
 ├── matrices/                 
-│   ├── mtx/  # here the matrices in .mtx format should be placed
-│   ├── bin/  # here the converted matrix will be stored
+│   ├── mtx/             # here the matrices in .mtx format should be placed
+│   ├── bin/             # here the converted matrix will be stored
+│   ├── mtx_to_bin.ipynb # Python scrips for .mtx to .bin conversion
 │   └── matrices.md
 │
 ├── plots/
@@ -21,10 +22,10 @@ numerical_experiments/
 │   ├── mumps/
 │   ├── pastix/
 │   ├── superlu_dist/
+│   ├── pardiso/
 │   └── results.ipynb  # batch run experiments and obtain results
 │
-│── scripts/
-│   ├── mtx_converter/ # converter from .mtx .bin
+│── src/
 │   ├── experiments.c  # the main experiments driver
 │   ├── loading.c      # loading (or generating) data
 │   ├── Makefile
@@ -63,7 +64,7 @@ cd numerical_experiments
 
 Then build with:
 ```bash
-cd scripts
+cd src
 make
 ```
 
@@ -77,7 +78,7 @@ After successfully building the project, follow these steps to obtain results:
 Place `.mtx` files into `matrices/mtx/`.
 
 2. **Convert to PETSc binary**
-Preferably run the scripts in `scripts/mtx_converter/mtx_to_bin.ipynb`. This will convert the `.mtx` matrices into `.bin` format in `matrices/bin` subfolder.
+Run the scripts in `matrices/mtx_to_bin.ipynb`. This will convert the `.mtx` matrices into `.bin` format and place them into `matrices/bin` subfolder.
 
 3. **Run**
 In `results/results.ipynb`, the scripts are ready to be used. Adjust solvers, reorderings and number of processes here.
