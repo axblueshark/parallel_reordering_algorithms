@@ -64,7 +64,7 @@ PetscErrorCode load_vector( const char *filename, Vec *v )
  */
 PetscErrorCode generate_rhs( Mat A, Vec *b )
 {
-    Vec      ones;
+    /*Vec      ones;
     PetscInt n;
 
     PetscCall( MatGetSize(A, NULL, &n) );
@@ -83,5 +83,18 @@ PetscErrorCode generate_rhs( Mat A, Vec *b )
 
     PetscCall( VecDestroy(&ones) );
     
+    PetscFunctionReturn( PETSC_SUCCESS );*/
+
+
+    Vec x;
+    
+    PetscCall( MatCreateVecs(A, &x, b) );
+    PetscCall( VecSet(x, 1.0) );
+    PetscCall( VecAssemblyBegin(x) ); 
+    PetscCall( VecAssemblyEnd(x) );
+
+    PetscCall( MatMult(A, x, *b) );
+    PetscCall( VecDestroy(&x) );
+
     PetscFunctionReturn( PETSC_SUCCESS );
 }
