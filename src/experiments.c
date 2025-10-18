@@ -97,6 +97,11 @@ int main( int argc, char **argv )
 
     PetscOptionsEnd();
 
+    // require input
+    PetscCheck( input_mat_file[0] != '\0', 
+        PETSC_COMM_WORLD, PETSC_ERR_USER,
+        "Missing -mat_file <path>" );
+
     // load system & RHS vector
     PetscCall( load_matrix(input_mat_file, &A) );
 
@@ -128,12 +133,13 @@ int main( int argc, char **argv )
     // solve
     PetscCall( solve_system(A_in, b_in, &x,
                            pc_type,
+                           own_reordering,
                            solver_type,
                            stage_factor, stage_solve) );
 
     // unpermute if our reorder() was used
     if ( own_reordering ) {
-        PetscCall(VecPermute(x, rperm, PETSC_TRUE));
+        PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
     }
 
     // check solution norm

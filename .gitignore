@@ -14,6 +14,7 @@ experiments
 # matrices files 
 /matrices/bin/
 /matrices/mtx/
+/matrices/tmp
 
 # backup / temp
 *~

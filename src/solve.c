@@ -14,6 +14,7 @@
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
                              PCType pc_type, 
+                             PetscBool own_reordering,
                              MatSolverType mat_solver_type,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve )
@@ -31,8 +32,14 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     PetscCall( KSPGetPC(ksp, &pc) );
     PetscCall( PCSetType(pc, pc_type) );
     PetscCall( PCFactorSetMatSolverType(pc, mat_solver_type) );
-    PetscCall( PCFactorSetUpMatSolverType(pc) );
     PetscCall( KSPSetFromOptions(ksp) );
+
+    if ( own_reordering ) {
+        // solver does not reorder again
+        PetscCall( PCFactorSetMatOrderingType(pc, MATORDERINGNATURAL) );
+    }
+
+    PetscCall( PCFactorSetUpMatSolverType(pc) );
 
     // factorization
     PetscCall( PetscLogStagePush(stage_factor) );

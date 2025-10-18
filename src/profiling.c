@@ -18,7 +18,7 @@ PetscErrorCode matrix_info( Mat A )
     PetscCall( MatGetInfo(A, MAT_GLOBAL_SUM, &info) );
     PetscCall( MatGetType(A, &type) );
 
-    PetscPrintf( PETSC_COMM_SELF,
+    PetscPrintf( PETSC_COMM_WORLD,
         "----------------------------------------\n"
         "Matrix info:\n"
         "- size:               %" PetscInt_FMT " x %" PetscInt_FMT "\n"

@@ -44,7 +44,7 @@ PetscErrorCode load_vector( const char *filename, Vec *v )
     // open PETSc binary file for reading
     PetscCall( PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_READ, &viewer) );
 
-    // create and load the matrix
+    // create and load the vector
     PetscCall( VecCreate(PETSC_COMM_WORLD, v) );
     PetscCall( VecSetFromOptions(*v) );
     PetscCall( VecLoad(*v, viewer) );
@@ -64,30 +64,8 @@ PetscErrorCode load_vector( const char *filename, Vec *v )
  */
 PetscErrorCode generate_rhs( Mat A, Vec *b )
 {
-    /*Vec      ones;
-    PetscInt n;
-
-    PetscCall( MatGetSize(A, NULL, &n) );
-
-    // create a vector filled with ones
-    PetscCall( VecCreate(PETSC_COMM_WORLD, &ones) );
-    PetscCall( VecSetSizes(ones, PETSC_DECIDE, n) );
-    PetscCall( VecSetFromOptions(ones) );
-    PetscCall( VecSet(ones, 1.0) );
-    PetscCall( VecAssemblyBegin(ones) );
-    PetscCall( VecAssemblyEnd(ones) );
-
-    // create b of size n and calculate b = A * ones
-    PetscCall( VecDuplicate(ones, b) );
-    PetscCall( MatMult(A, ones, *b) );
-
-    PetscCall( VecDestroy(&ones) );
-    
-    PetscFunctionReturn( PETSC_SUCCESS );*/
-
-
     Vec x;
-    
+
     PetscCall( MatCreateVecs(A, &x, b) );
     PetscCall( VecSet(x, 1.0) );
     PetscCall( VecAssemblyBegin(x) ); 

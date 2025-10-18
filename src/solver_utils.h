@@ -73,7 +73,8 @@ PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering,
  * @return PetscErrorCode 
  */
 PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
-                             PCType pc_type, 
+                             PCType pc_type,
+                             PetscBool own_reordering, 
                              MatSolverType mat_solver_type,
                              PetscLogStage stage_factor,
                              PetscLogStage stage_solve );
