@@ -1,0 +1,7 @@
+	matrix dimension     85567
+	nonzeros in A       419201
+	nonzeros in L     604423602
+	nonzeros in U     604423602
+	nonzeros in L+U   1208761637
+	fill ratio          2883.5
+	nonzeros in LSUB  464439288

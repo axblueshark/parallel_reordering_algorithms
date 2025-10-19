@@ -1,0 +1,42 @@
+	matrix dimension     80016
+	nonzeros in A       347222
+	nonzeros in L      1288727
+	nonzeros in U      1288707
+	nonzeros in L+U    2497418
+	fill ratio             7.2
+	nonzeros in LSUB    236181
+
+** Memory Usage **********************************
+** Total highmark (MB):
+    Sum-of-all :   742.06 | Avg :    92.76  | Max :    95.18
+    Max at rank 7, different stages (MB):
+	. symbfact           10.06
+	. distribution       93.44
+	. numfact            11.24
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :           21.39 |  Total :    84.47
+	. max at rank 7, max L+U memory (MB):     5.08
+	. max at rank 7, peak buffer (MB):        7.89
+**************************************************
+
+** number of Tiny Pivots:      199
+
+**************************************************
+**** Time (seconds) ****
+	EQUIL time            0.014
+	ROWPERM time          0.026
+	COLPERM time          3.342
+	SYMBFACT time         0.018
+	DISTRIBUTE time       0.264
+	FACTOR time           0.352
+	Factor flops	4.300580e+07	Mflops 	  122.27
+	SOLVE time            0.000
+	REFINEMENT time       0.000	Steps       0
+
+**************************************************
+	SOLVE time            0.035
+	Solve flops	4.994836e+06	Mflops 	  144.66
+	REFINEMENT time       0.165	Steps       4
+
+**************************************************
+||Ax - b||_2 = 1.561608e-13
