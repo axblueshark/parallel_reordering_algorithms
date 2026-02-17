@@ -34,7 +34,7 @@ LDFLAGS = -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc \
           $(MPI_LDFLAGS)
 
 # === Files ===
-SRC = experiments.c loading.c profiling.c reorder.c solve.c
+SRC = experiments.c io.c metrics.c reorder.c solve.c
 EXE = experiment
 
 # === Targets ===

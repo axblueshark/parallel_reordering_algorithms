@@ -66,6 +66,8 @@ PetscErrorCode generate_rhs( Mat A, Vec *b )
 {
     Vec x;
 
+    PetscFunctionBeginUser;
+
     PetscCall( MatCreateVecs(A, &x, b) );
     PetscCall( VecSet(x, 1.0) );
     PetscCall( VecAssemblyBegin(x) ); 
@@ -73,6 +75,27 @@ PetscErrorCode generate_rhs( Mat A, Vec *b )
 
     PetscCall( MatMult(A, x, *b) );
     PetscCall( VecDestroy(&x) );
+
+    PetscFunctionReturn( PETSC_SUCCESS );
+}
+
+
+/**
+ * @brief Save a matrix to .bin format.
+ * 
+ * @param A The matrix to be saved.
+ * @param path The desired file path.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode save_matrix( Mat A, const char* path )
+{
+    PetscViewer viewer;
+
+    PetscFunctionBeginUser;
+
+    PetscCall( PetscViewerBinaryOpen(PETSC_COMM_WORLD, path, FILE_MODE_WRITE, &viewer) );
+    PetscCall( MatView(A, viewer) );
+    PetscCall( PetscViewerDestroy(&viewer) );
 
     PetscFunctionReturn( PETSC_SUCCESS );
 }

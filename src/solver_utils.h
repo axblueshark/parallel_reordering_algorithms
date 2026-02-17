@@ -4,7 +4,7 @@
 #include <petsc.h>
 
 // -------------------------------------
-// MATRIX AND VECTOR LOADING/GENERATING
+// MATRIX AND VECTOR LOADING/GENERATING/SAVING
 // -------------------------------------
 
 /**
@@ -35,6 +35,16 @@ PetscErrorCode load_vector( const char *filename, Vec *v );
  * @return PetscErrorCode 
  */
 PetscErrorCode generate_rhs( Mat A, Vec *b );
+
+
+/**
+ * @brief Save a matrix to .bin format.
+ * 
+ * @param A The matrix to be saved.
+ * @param path The desired file path.
+ * @return PetscErrorCode 
+ */
+PetscErrorCode save_matrix( Mat A, const char* path );
 
 
 // -------------------------------------
@@ -81,7 +91,7 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
 
 
 // -------------------------------------
-// METRICS AND PROFILING
+// METRICS
 // -------------------------------------
 
 /**
@@ -91,16 +101,6 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
  * @return PetscErrorCode 
  */
 PetscErrorCode matrix_info( Mat A );
-
-
-/**
- * @brief Save a matrix to .bin format.
- * 
- * @param A The matrix to be saved.
- * @param path The desired file path.
- * @return PetscErrorCode 
- */
-PetscErrorCode save_matrix( Mat A, const char* path );
 
 
 /**
