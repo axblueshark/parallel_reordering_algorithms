@@ -27,9 +27,9 @@ numerical_experiments/
 │
 │── src/
 │   ├── experiments.c  # the main experiments driver
-│   ├── loading.c      # loading (or generating) data
+│   ├── io.c           # loading, generating and saving data
 │   ├── Makefile
-│   ├── profiling.c    # obtaining basic statistics
+│   ├── metrics.c      # obtaining basic statistics
 │   ├── reorder.c      # performing reordering
 │   ├── solve.c        # solving the system 
 │   └── solver_utils.h # all available functions headers
@@ -48,10 +48,15 @@ numerical_experiments/
 - **MPI implementation**  
   - [OpenMPI](https://www.open-mpi.org/) or [MPICH](https://www.mpich.org/)  
 
+- [**MKL PARDISO**](https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-c/2023-0/onemkl-pardiso-parallel-direct-sparse-solver-iface.html)
+  - Intel oneAPI Base Toolkit (MKL)
+  - Intel oneAPI HPC Toolkit (Intel MPI)
+  - currently a separate PETSc build is configured with MKL (`arch-mklp`)
+
 - **C compiler**  
   - GCC ≥ 9, Clang ≥ 12, or Intel oneAPI  
 
-- **Python 3 + Jupyter + Matplotlib**: for batch running (see results.ipynb) analysis/plotting 
+- **Python 3 + Jupyter + Matplotlib + SciPy + petsc4py**: for batch running (see results.ipynb and mtx_to_bin.ipynb)
 
 
 ## Installation
@@ -69,6 +74,14 @@ make
 ```
 
 This will produce the `experiment` file, which is the main executable for the project.
+
+
+To build the PARDISO-enabled executable (`experiment_pardiso`), make sure Intel oneAPI is sourced and run:
+```bash
+make pardiso
+```
+
+This uses the `arch-mklp` PETSc build and Intel MPI instead of the default build.
 
 ## Running
 
