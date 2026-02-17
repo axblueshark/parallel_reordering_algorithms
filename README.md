@@ -1,6 +1,6 @@
 # Parallel reordering algorithms and parallel direct solvers
 
-This repository is an integral part of the bachelor thesis **Parallel reordering algorithms and parallel direct solvers**. It provides an environment for running parallel numerical experiments, demonstrating effect of different reordering algorithms (e.g. AMD, ND, METIS, ...) along with different direct solvers, such as MUMPS, SuperLU_DIST or PaStiX, to mention a few, on computational time, fill-in, memory requirements and other relevant metrics.
+This repository is an integral part of the bachelor thesis **Parallel reordering algorithms and parallel direct solvers**. It provides an environment for running parallel numerical experiments, demonstrating effect of different reordering algorithms (e.g. AMD, ND, METIS, ...) along with different direct solvers (MUMPS, SuperLU_DIST, PaStiX and MKL_PARDISO), on computational time, fill-in, memory requirements and other relevant metrics.
 
 The results will be presented in the **Numerical experiments** chapter of the aforementioned thesis.
 
