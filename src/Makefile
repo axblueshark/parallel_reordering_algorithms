@@ -1,36 +1,53 @@
 # === PETSc Paths ===
 PETSC_DIR  = ../petsc
-PETSC_ARCH = arch-linux-c-opt
+PETSC_ARCH ?= arch-linux-c-opt
 
-# === Optional: MKL path (used only for runtime rpath) ===
-MKLROOT ?= /opt/intel/oneapi/mkl/2025.2
+# === MKL / Intel MPI ===
+MKLROOT    ?= /opt/intel/oneapi/mkl/2025.3
+I_MPI_ROOT ?= /opt/intel/oneapi/mpi/2021.16
 
-# === Compiler and Flags (use PETSc's MPI wrapper) ===
-CC      = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicc
+# === Compiler and arch-specific flags ===
+ifeq ($(PETSC_ARCH), arch-mklp)
+    CC           = $(I_MPI_ROOT)/bin/mpigcc
+    MPI_INCLUDES = -I$(I_MPI_ROOT)/include
+    MPI_LDFLAGS  = -L$(I_MPI_ROOT)/lib -L$(I_MPI_ROOT)/lib/release \
+                   -Wl,-rpath,$(I_MPI_ROOT)/lib \
+                   -Wl,-rpath,$(I_MPI_ROOT)/lib/release \
+                   -L$(MKLROOT)/lib \
+                   -lmkl_blacs_intelmpi_lp64 \
+                   -Wl,-rpath,$(MKLROOT)/lib
+else
+    CC           = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicc
+    MPI_INCLUDES =
+    MPI_LDFLAGS  =
+endif
+
+# === Compiler Flags ===
 CFLAGS  = -O2 -Wall -Wextra \
           -I$(PETSC_DIR)/include \
-          -I$(PETSC_DIR)/$(PETSC_ARCH)/include
+          -I$(PETSC_DIR)/$(PETSC_ARCH)/include \
+          $(MPI_INCLUDES)
 
-# Link to PETSc and embed runtime search paths so you don't need LD_LIBRARY_PATH
+# === Linker Flags ===
 LDFLAGS = -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc \
           -Wl,-rpath,$(PETSC_DIR)/$(PETSC_ARCH)/lib \
-          -Wl,-rpath,$(MKLROOT)/lib
+          $(MPI_LDFLAGS)
 
 # === Files ===
 SRC = experiments.c loading.c profiling.c reorder.c solve.c
-OBJ = $(SRC:.c=.o)
 EXE = experiment
 
 # === Targets ===
-.PHONY: all clean
+.PHONY: all pardiso clean _build
 
-all: $(EXE)
+all:
+	$(MAKE) PETSC_ARCH=arch-linux-c-opt _build EXE_SUFFIX=""
 
-$(EXE): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+pardiso:
+	$(MAKE) PETSC_ARCH=arch-mklp _build EXE_SUFFIX="_pardiso"
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+_build:
+	$(CC) $(CFLAGS) $(SRC) -o $(EXE)$(EXE_SUFFIX) $(LDFLAGS)
 
 clean:
-	rm -f $(EXE) *.o
+	rm -f $(EXE) $(EXE)_pardiso *.o
