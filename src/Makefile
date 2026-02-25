@@ -1,37 +1,26 @@
 # === PETSc Paths ===
-PETSC_DIR  = ../petsc
+PETSC_DIR  ?= ../petsc
 PETSC_ARCH ?= arch-linux-c-opt
 
 # === MKL / Intel MPI ===
-MKLROOT    ?= /opt/intel/oneapi/mkl/2025.3
-I_MPI_ROOT ?= /opt/intel/oneapi/mpi/2021.16
+MKLROOT    ?= /opt/intel/oneapi/mkl/latest
+I_MPI_ROOT ?= /opt/intel/oneapi/mpi/latest
 
-# === Compiler and arch-specific flags ===
+# === Compiler selection ===
 ifeq ($(PETSC_ARCH), arch-mklp)
-    CC           = $(I_MPI_ROOT)/bin/mpigcc
-    MPI_INCLUDES = -I$(I_MPI_ROOT)/include
-    MPI_LDFLAGS  = -L$(I_MPI_ROOT)/lib -L$(I_MPI_ROOT)/lib/release \
-                   -Wl,-rpath,$(I_MPI_ROOT)/lib \
-                   -Wl,-rpath,$(I_MPI_ROOT)/lib/release \
-                   -L$(MKLROOT)/lib \
-                   -lmkl_blacs_intelmpi_lp64 \
-                   -Wl,-rpath,$(MKLROOT)/lib
+    CC = $(I_MPI_ROOT)/bin/mpicc
 else
-    CC           = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicc
-    MPI_INCLUDES =
-    MPI_LDFLAGS  =
+    CC = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicc
 endif
 
 # === Compiler Flags ===
 CFLAGS  = -O2 -Wall -Wextra \
           -I$(PETSC_DIR)/include \
-          -I$(PETSC_DIR)/$(PETSC_ARCH)/include \
-          $(MPI_INCLUDES)
+          -I$(PETSC_DIR)/$(PETSC_ARCH)/include
 
 # === Linker Flags ===
 LDFLAGS = -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc \
-          -Wl,-rpath,$(PETSC_DIR)/$(PETSC_ARCH)/lib \
-          $(MPI_LDFLAGS)
+          -Wl,-rpath,$(PETSC_DIR)/$(PETSC_ARCH)/lib
 
 # === Files ===
 SRC = experiments.c io.c metrics.c reorder.c solve.c
