@@ -27,24 +27,25 @@ PetscErrorCode solve_system( Mat A, Vec b, Vec *x,
     // solver setup
     PetscCall( KSPCreate(PETSC_COMM_WORLD, &ksp) );
     PetscCall( KSPSetOperators(ksp, A, A) );
-    PetscCall( KSPSetType(ksp, KSPPREONLY) ); // to use direct solvers
+    PetscCall( KSPSetType(ksp, KSPPREONLY) );
 
     PetscCall( KSPGetPC(ksp, &pc) );
     PetscCall( PCSetType(pc, pc_type) );
     PetscCall( PCFactorSetMatSolverType(pc, mat_solver_type) );
-    PetscCall( KSPSetFromOptions(ksp) );
 
-    if ( own_reordering ) {
-        // solver does not reorder again
+    if (own_reordering)
         PetscCall( PCFactorSetMatOrderingType(pc, MATORDERINGNATURAL) );
-    }
 
     PetscCall( PCFactorSetUpMatSolverType(pc) );
+    PetscCall( KSPSetFromOptions(ksp) );
 
     // factorization
     PetscCall( PetscLogStagePush(stage_factor) );
-    PetscCall( KSPSetUp(ksp) ); // triggers symbolic+numeric factorization
+    PetscCall( KSPSetUp(ksp) );
     PetscCall( PetscLogStagePop() );
+
+    PetscCall( KSPViewFromOptions(ksp, NULL, "-ksp_view") );
+    PetscCall( PCViewFromOptions(pc, NULL, "-pc_view") );
 
     // allocate space for solution vector
     PetscCall( VecDuplicate(b, x) );
