@@ -16,20 +16,20 @@
 
 **************************************************
 **** Time (seconds) ****
-	EQUIL time            0.025
-	ROWPERM time          0.231
-	COLPERM time          0.522
-	SYMBFACT time         0.181
-	DISTRIBUTE time       0.745
-	FACTOR time           1.407
-	Factor flops	4.356887e+10	Mflops 	30965.64
+	EQUIL time            0.023
+	ROWPERM time          0.243
+	COLPERM time          0.486
+	SYMBFACT time         0.177
+	DISTRIBUTE time       0.733
+	FACTOR time           1.417
+	Factor flops	4.356900e+10	Mflops 	30748.57
 	SOLVE time            0.000
 	REFINEMENT time       0.000	Steps       0
 
 **************************************************
-	SOLVE time            0.079
-	Solve flops	2.274310e+08	Mflops 	 2887.81
-	REFINEMENT time       0.130	Steps       1
+	SOLVE time            0.077
+	Solve flops	2.274310e+08	Mflops 	 2943.44
+	REFINEMENT time       0.124	Steps       1
 
 **************************************************
 ||Ax - b||_2 = 2.293043e-06

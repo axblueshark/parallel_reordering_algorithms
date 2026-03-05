@@ -25,7 +25,7 @@
       Sort row indexes in each column
       Removing diagonal elements
     Ordering method is: Metis
-    Time to compute ordering              1.133688e+00 s
+    Time to compute ordering              1.162792e+00 s
 +-------------------------------------------------+
   Symbolic factorization subtask:
     Symbol factorization using: Fax Direct
@@ -43,15 +43,15 @@
       Memory space                            3.69 Mo
     Number of nonzeroes in L structure    53980795
     Fill-in of L                          2.666912
-    Time to compute symbol matrix         9.466056e-02 s
+    Time to compute symbol matrix         8.889487e-02 s
 +-------------------------------------------------+
   Reordering subtask:
     Split level                                  0
     Stoping criterion                           -1
-    Time for reordering                   2.515677e-01 s
+    Time for reordering                   2.443731e-01 s
 +-------------------------------------------------+
   Mapping/Scheduling subtask:
-OUTPUTDIR: pastix-Tw17ux
+OUTPUTDIR: pastix-1vavju
     Number of cluster                            8
     Number of processor per cluster              1
     Number of thread per MPI process             1
@@ -67,36 +67,36 @@ OUTPUTDIR: pastix-Tw17ux
       Blok height avg                        17.80
       Blok height stdev                      18.23
       Memory space                            2.67 Mo
-    Symbol split done in                  1.647796e-03 s
-    Elimination tree built in             2.423860e-04 s
-    Cost matrix built in                  9.364390e-04 s
+    Symbol split done in                  1.793439e-03 s
+    Elimination tree built in             2.112060e-04 s
+    Cost matrix built in                  8.093500e-04 s
     Estimated total cost of the etree     3.087690e+00 s
     Estimated critical path of the etree  0.000000e+00 s
-    Proportional mapping done in          2.007780e-04 s
-    Simulation structures built in        2.022770e-03 s
+    Proportional mapping done in          2.450810e-04 s
+    Simulation structures built in        1.982084e-03 s
     Number of tasks found                    25792
-    Simulation done in                    2.164010e-02 s
-    Solver built in                       2.741371e-02 s
+    Simulation done in                    2.155252e-02 s
+    Solver built in                       2.209456e-02 s
     Number of non-zeroes in blocked L     107961590
     Fill-in                               5.333824
     Number of operations in full-rank: LU       31.53 GFlops
     Prediction:
       Model                              AMD 6180  MKL
       Time to factorize                   1.366848e+00 s
-    Time for mapping/scheduling           6.274309e-02 s
+    Time for mapping/scheduling           5.802971e-02 s
 +-------------------------------------------------+
   Analyze task:
-    Total time for analyze                1.560348e+00 s
+    Total time for analyze                1.573259e+00 s
 +-------------------------------------------------+
   Factorization task:
     Factorization used: LU
     ||A||_2  =                            5.146865e+09
-    Time to initialize internal csc       2.063381e-01 s
-    Time to initialize coeftab            7.022697e-02 s
-    Time to factorize                     7.433110e-01 s (42.42 GFlop/s)
+    Time to initialize internal csc       2.138915e-01 s
+    Time to initialize coeftab            6.530936e-02 s
+    Time to factorize                     7.058150e-01 s (44.68 GFlop/s)
     Number of operations                       -84613506904.00  Flops
     Number of static pivots                      0
     Memory usage of coeftab                       84.4 Mo
-    Time to solve                         3.737016e-02 s
-    Time for refinement                   1.191914e-02 s
-||Ax - b||_2 = 2.591223e-06
+    Time to solve                         3.395046e-02 s
+    Time for refinement                   9.875634e-03 s
+||Ax - b||_2 = 2.581718e-06
