@@ -1,0 +1,35 @@
+
+** Memory Usage **********************************
+** Total highmark (MB):
+    Sum-of-all :  4448.95 | Avg :   556.12  | Max :   556.12
+    Max at rank 0, different stages (MB):
+	. symbfact          556.12
+	. distribution     -617.16
+	. numfact           265.43
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :         1393.51 |  Total :  1784.86
+	. max at rank 5, max L+U memory (MB):   236.38
+	. max at rank 5, peak buffer (MB):       49.19
+**************************************************
+
+** number of Tiny Pivots:    65847
+
+**************************************************
+**** Time (seconds) ****
+	EQUIL time            0.116
+	ROWPERM time          0.691
+	COLPERM time         11.946
+	SYMBFACT time         0.577
+	DISTRIBUTE time       7.647
+	FACTOR time           2.253
+	Factor flops	5.488472e+09	Mflops 	 2436.14
+	SOLVE time            0.000
+	REFINEMENT time       0.000	Steps       0
+
+**************************************************
+	SOLVE time            0.749
+	Solve flops	2.718244e+08	Mflops 	  362.90
+	REFINEMENT time       0.862	Steps       1
+
+**************************************************
+||Ax - b||_2 = 8.988819e+00
