@@ -6,8 +6,7 @@ import os
 import sys
 import scipy.io
 
-dirs = os.environ["PETSC_DIR"]
-#dirs = "/home/alexandr/Documents/bsc_thesis/numerical_experiments/petsc"
+dirs = "../petsc"
 sys.path.insert(0, dirs + "/lib/petsc/bin/")
 
 import PetscBinaryIO
