@@ -10,7 +10,7 @@ numerical_experiments/
 │
 ├── matrices/                 
 │   ├── mtx/             # here the matrices in .mtx format should be placed
-│   ├── bin/             # here the converted matrix will be stored¨
+│   ├── bin/             # here the converted matrix will be stored
 │   ├── mm2petsc.py      # Python script for .mtx to .bin conversion
 │   └── matrices.md
 │
