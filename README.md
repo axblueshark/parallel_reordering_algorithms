@@ -10,9 +10,8 @@ numerical_experiments/
 │
 ├── matrices/                 
 │   ├── mtx/             # here the matrices in .mtx format should be placed
-│   ├── bin/             # here the converted matrix will be stored
-│   ├── mtx_to_bin.ipynb # Python scrips for .mtx to .bin conversion
-│   ├── mm2petsc.py      # Python script for .mtx to .bin conversion - from Jakub Kružík
+│   ├── bin/             # here the converted matrix will be stored¨
+│   ├── mm2petsc.py      # Python script for .mtx to .bin conversion
 │   └── matrices.md
 │
 ├── plots/
@@ -37,6 +36,8 @@ numerical_experiments/
 │── .gitignore
 └── README.md
 ```
+
+`mm2petsc.py` is adapted from [Jakub Kružík](https://github.com/jkruzik/nla2/tree/main/tools/mm2petsc)
 
 ## Requirements
 - [**PETSc**](https://petsc.org/release/)

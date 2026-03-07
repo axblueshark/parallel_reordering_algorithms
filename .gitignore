@@ -1,5 +1,6 @@
-# specific folders
+# specific folders/files
 /petsc
+/matrices/mtx_to_bin.ipynb
 
 # object files
 *.o
