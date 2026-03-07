@@ -12,6 +12,7 @@ numerical_experiments/
 │   ├── mtx/             # here the matrices in .mtx format should be placed
 │   ├── bin/             # here the converted matrix will be stored
 │   ├── mtx_to_bin.ipynb # Python scrips for .mtx to .bin conversion
+│   ├── mm2petsc.py      # Python script for .mtx to .bin conversion - from Jakub Kružík
 │   └── matrices.md
 │
 ├── plots/
@@ -82,6 +83,22 @@ make pardiso
 ```
 
 This uses the `arch-mklp` PETSc build and Intel MPI instead of the default build.
+
+**Note**: The PETSc archs can be build as follows:
+
+```
+export PETSC_DIR=`pwd`
+export PETSC_ARCH=arch-opt
+
+./configure --with-debugging=0 COPTFLAGS='-O3 -march=native -mtune=native' CXXOPTFLAGS='-O3 -march=native -mtune=native' FOPTFLAGS='-O3 -march=native -mtune=native' --download-mpich --download-fblaslapack --download-scalapack –download-bison --download-metis --download-parmetis --download-mumps --download-superlu --download-superlu_dist --download-hwloc --download-ptscotch --download-pastix –download-netlib-lapack --with-netlib-lapack-c-bindings --download-hypre –with-fortran-bindings=0
+```
+
+and 
+
+```
+PETSC_ARCH=arch-mkl-pardiso ./configure --with-debugging=0 COPTFLAGS='-O3 -march=native -mtune=native' CXXOPTFLAGS='-O3 -march=native -mtune=native' FOPTFLAGS='-O3 -march=native -mtune=native' --with-mpi-dir=<your mpi directory> --with-blaslapack-dir=$MKLROOT --with-mkl_pardiso=1 --with-mkl_cpardiso=1 --with-mkl_cpardiso-dir=$MKLROOT  --with-mkl_pardiso-dir=$MKLROOT --download-scalapack --with-fortran-bindings=0
+```
+
 
 ## Running
 
