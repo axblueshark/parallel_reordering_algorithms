@@ -1,0 +1,124 @@
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+spmCheckAndCorrect: 94675 entries have been added for symmetry
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                      16
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Scotch
+      Scotch direct strategy
+    Time to compute ordering              3.706366e-01 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                          8883
+      Number of blok                         36773
+      Cblk width min                             1
+      Cblk width max                           161
+      Cblk width avg                         13.15
+      Cblk width stdev                        7.53
+      Blok height min                            1
+      Blok height max                          161
+      Blok height avg                         1.81
+      Blok height stdev                       1.99
+      Memory space                            1.01 Mo
+    Number of nonzeroes in L structure     1773327
+    Fill-in of L                          2.059443
+    Time to compute symbol matrix         5.518986e-03 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   2.236336e-02 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-ziOezs
+    Number of cluster                           16
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                          8883
+      Number of blok                         32428
+      Cblk width min                             1
+      Cblk width max                           161
+      Cblk width avg                         13.15
+      Cblk width stdev                        7.53
+      Blok height min                            1
+      Blok height max                          161
+      Blok height avg                         2.05
+      Blok height stdev                       2.32
+      Memory space                          945.73 Ko
+    Symbol split done in                  1.133900e-04 s
+    Elimination tree built in             6.687000e-05 s
+    Cost matrix built in                  4.075500e-04 s
+    Estimated total cost of the etree     2.578717e-01 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          7.018110e-04 s
+    Simulation structures built in        2.732100e-04 s
+    Number of tasks found                     8883
+    Simulation done in                    5.998045e-03 s
+    Solver built in                       4.778321e-03 s
+    Number of non-zeroes in blocked L      3546654
+    Fill-in                               4.118887
+    Number of operations in full-rank: LU       95.84 MFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   4.522934e-02 s
+    Time for mapping/scheduling           1.524806e-02 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                4.223281e-01 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            6.292481e+04
+    Time to initialize internal csc       3.103779e-02 s
+    Time to initialize coeftab            1.751444e-03 s
+    Time to factorize                     1.081876e-02 s ( 8.65 GFlop/s)
+    Number of operations                       528.66 MFlops
+    Number of static pivots                      0
+    Memory usage of coeftab                       2.77 Mo
+    Time to solve                         1.757978e-03 s
+    Time to solve                         1.595733e-03 s
+    - iteration 1 :
+         total iteration time                   0.00417 s
+         error                                  3.2618e-27
+    Time for refinement                   8.087605e-03 s
+||Ax - b||_2 = 1.481075e-09

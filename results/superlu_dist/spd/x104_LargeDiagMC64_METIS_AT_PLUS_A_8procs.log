@@ -1,0 +1,99 @@
+.. equilibrated? *equed = B
+.. RowPerm 1	 time: 0.13
+.. anorm 3.191616e+01
+.. Use METIS ordering on A'+A
+.. symbfact(): relax 30, maxsuper 256, fill 5
+	matrix dimension    108384
+	nonzeros in A     10167624
+	nonzeros in L     26573304
+	nonzeros in U     26573304
+	nonzeros in L+U   53038224
+	fill ratio             5.2
+	nonzeros in LSUB   9782298
+	No of supers     4015
+	Size of G(L)   689104
+	Size of G(U)   580720
+	int 4, short 2, float 4, double 8
+	SYMBfact (MB):	L\U 43.62	total 47.52	expansions 0
+.. # L blocks     3128	# U blocks     2202
+MPI tag upper bound = 1073741823
+.. Starting with 1 OpenMP threads 
+ === using DAG ===
+.. thresh = s_eps 5.960464e-08 * anorm 3.191616e+01 = 1.902352e-06
+.. Buffer size: Lsub 1034	Lval 262144	Usub 1057	Uval 196608	LDA 1024
+max_ncols 638,  max_ldu 256, bigu_size   163328
+	.. SUPERLU_MAX_BUFFER_SIZE 256000000 set for GPU
+	.. SUPERLU_N_GEMM: 5000 flops of GEMM done on CPU (1st block always on CPU)
+	.. GEMM buffer size: max_row_size X max_ncols = 880 x      638
+[0].. BIG U size   163328 (on CPU)
+[0].. BIG V size   573648 (on CPU)
+  Max row size is 880 
+  Threads per process 1 
+
+Initialization time	  0.0015 seconds
+	 Serial: compute static schedule, allocate storage
+
+==== Time breakdown in factorization (rank 0) ====
+Panel factorization 	   0.0728 seconds
+.. L-panel pxgstrf2 	   0.0474 seconds
+.. U-panel pxgstrs2 	   0.0253 seconds
+Time in Look-ahead update 	   0.0932 seconds
+Time in Schur update 		   0.1725 seconds
+.. Time to Gather L buffer	   0.0068  (Separate L panel by Lookahead/Remain)
+.. Time to Gather U buffer	   0.0037 
+.. Time in GEMM   0.1113 
+	* Look-ahead	   0.0122 
+	* Remain	   0.0991	Flops 1.1398e+10	Gflops 115.0186
+.. Time to Scatter   0.0499 
+	* Look-ahead	   0.0020 
+	* Remain	   0.0479 
+Total factorization time            	:   0.5533 seconds, 
+--------
+GEMM maximum block: 546-256-514
+
+** Memory Usage **********************************
+.. dQuerySpace: peak_buffer 55.77 (MB)
+	(P0) serial symbolic::stage[0]: symb_memory 47.52, GA_mem_use 122.45
+	(P0) serial distribution::stage[1]:symb_LU 43.62, dist_mem_use 136.53, num_mem_usage.for_lu 56.37
+** Total highmark (MB):
+    Sum-of-all :  1868.23 | Avg :   233.53  | Max :   252.44
+    Max at rank 5, different stages (MB):
+	. symbfact          169.97
+	. distribution      236.52
+	. numfact           112.14
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :          435.09 |  Total :   875.33
+	. max at rank 5, max L+U memory (MB):    68.72
+	. max at rank 5, peak buffer (MB):       57.86
+**************************************************
+
+** number of Tiny Pivots:     3721
+
+.. DiagScale = 3
+**************************************************
+**** Time (seconds) ****
+	EQUIL time            0.010
+	ROWPERM time          0.129
+	COLPERM time          0.222
+	SYMBFACT time         0.085
+	DISTRIBUTE time       0.211
+	FACTOR time           0.561
+	Factor flops	2.464405e+10	Mflops 	43906.10
+	SOLVE time            0.000
+	REFINEMENT time       0.000	Steps       0
+
+**************************************************
+.. anorm 3.191616e+01
+num_thread:     1
+( 0) .. Step        0: berr[j] = 1.085356e-08
+num_thread:     1
+( 0) .. Step        1: berr[j] = 5.362319e-09
+num_thread:     1
+( 0) .. Step        2: berr[j] = 3.720190e-09
+.. DiagScale = 3
+	SOLVE time            0.018
+	Solve flops	1.060764e+08	Mflops 	 5893.45
+	REFINEMENT time       0.061	Steps       2
+
+**************************************************
+||Ax - b||_2 = 1.470322e-05

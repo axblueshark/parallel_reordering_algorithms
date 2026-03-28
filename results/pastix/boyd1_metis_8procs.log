@@ -1,0 +1,108 @@
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                       8
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Metis
+    Time to compute ordering              1.570878e+00 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                         24434
+      Number of blok                         76102
+      Cblk width min                             1
+      Cblk width max                         22928
+      Cblk width avg                          3.82
+      Cblk width stdev                      218.15
+      Blok height min                            1
+      Blok height max                            4
+      Blok height avg                         2.03
+      Blok height stdev                       1.15
+      Memory space                            2.29 Mo
+    Number of nonzeroes in L structure    582052413
+    Fill-in of L                          480.546166
+    Time to compute symbol matrix         1.930504e-02 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   2.834625e-01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-Fg99bV
+    Number of cluster                            8
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                         24645
+      Number of blok                         75614
+      Cblk width min                             1
+      Cblk width max                           319
+      Cblk width avg                          3.78
+      Cblk width stdev                       29.35
+      Blok height min                            1
+      Blok height max                          319
+      Blok height avg                        25.85
+      Blok height stdev                      82.94
+      Memory space                            2.29 Mo
+    Symbol split done in                  1.738958e-03 s
+    Elimination tree built in             3.276460e-04 s
+    Cost matrix built in                  6.933320e-04 s
+    Estimated total cost of the etree     9.834671e+01 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          2.683964e-03 s
+    Simulation structures built in        4.567483e-03 s
+    Number of tasks found                    24645
+    Simulation done in                    1.569512e-02 s
+    Solver built in                       1.616595e-02 s
+    Number of non-zeroes in blocked L     1164104826
+    Fill-in                               961.092332
+    Number of operations in full-rank: LU       13.84 TFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   1.957691e+02 s
+    Time for mapping/scheduling           4.955682e-02 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                1.927792e+00 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            3.877652e+10
+    Time to initialize internal csc       2.985286e-02 s
+    Time to initialize coeftab            1.316207e+00 s
+[mpiexec@alexandr-ASUS-TUF-Gaming-A16-FA608UM-FA608UM] Sending Ctrl-C to processes as requested
+[mpiexec@alexandr-ASUS-TUF-Gaming-A16-FA608UM-FA608UM] Press Ctrl-C again to force abort
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 28816 RUNNING AT alexandr-ASUS-TUF-Gaming-A16-FA608UM-FA608UM
+=   EXIT CODE: 2
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Interrupt (signal 2)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions

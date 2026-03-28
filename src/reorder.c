@@ -8,29 +8,25 @@
  * @param ordering The ordering type.
  * @param A_perm The permuted matrix.
  * @param b_perm The permuted right-hand side vector.
- * @param rperm The row permutation (will be needed for unpermuting x).
+ * @param rperm The row permutation (used to permute the RHS).
+ *  @param cperm The column permutation (used to unpermute the solution).
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
-                        Mat *A_perm, Vec *b_perm, IS *rperm ) 
+                        Mat *A_perm, Vec *b_perm, IS *rperm, IS *cperm ) 
 {
-    IS cperm;
-
     PetscFunctionBeginUser;
 
     // get the permutation indices
-    PetscCall( MatGetOrdering(A, ordering, rperm, &cperm) );
+    PetscCall( MatGetOrdering(A, ordering, rperm, cperm) );
 
     // get the permuted matrix
-    PetscCall( MatPermute(A, *rperm, cperm, A_perm) );
+    PetscCall( MatPermute(A, *rperm, *cperm, A_perm) );
 
     // permute rhs
     PetscCall( VecDuplicate(b, b_perm) );
     PetscCall( VecCopy(b, *b_perm) );
     PetscCall( VecPermute(*b_perm, *rperm, PETSC_FALSE) );
-
-    // cleanup
-    PetscCall( ISDestroy(&cperm) );
 
     PetscFunctionReturn( PETSC_SUCCESS );
 }

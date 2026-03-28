@@ -8,9 +8,9 @@ int main( int argc, char **argv )
 {
     PetscCall( PetscInitialize(&argc, &argv, NULL, help) );
 
-    Mat             A, A_perm, A_in = NULL;
-    Vec             b, b_perm, b_in = NULL, x;
-    IS              rperm;
+    Mat             A = NULL, A_perm = NULL, A_in = NULL;
+    Vec             b = NULL, b_perm = NULL, b_in = NULL, x = NULL;
+    IS              rperm = NULL, cperm = NULL;
 
     char            input_mat_file[PETSC_MAX_PATH_LEN] = "";
     char            input_rhs_file[PETSC_MAX_PATH_LEN] = "";
@@ -119,7 +119,7 @@ int main( int argc, char **argv )
     // reordering
     if ( own_reordering ) {
         PetscCall( PetscLogStagePush(stage_reorder) );
-        PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm) );
+        PetscCall( reorder(A, b, ordering_type, &A_perm, &b_perm, &rperm, &cperm) );
         PetscCall( PetscLogStagePop() );
 
         A_in = A_perm;
@@ -139,7 +139,7 @@ int main( int argc, char **argv )
 
     // unpermute if our reorder() was used
     if ( own_reordering ) {
-        PetscCall( VecPermute(x, rperm, PETSC_TRUE) );
+        PetscCall( VecPermute(x, cperm, PETSC_TRUE) );
     }
 
     // check solution norm
@@ -155,15 +155,16 @@ int main( int argc, char **argv )
     }
 
     // cleanup
-    VecDestroy(&x);
-    VecDestroy(&b);
-    MatDestroy(&A);
+    PetscCall( VecDestroy(&x) );
+    PetscCall( VecDestroy(&b) );
+    PetscCall( MatDestroy(&A) );
     if ( own_reordering ) {
-        MatDestroy(&A_perm);
-        VecDestroy(&b_perm);
-        ISDestroy(&rperm);
+        PetscCall( MatDestroy(&A_perm) );
+        PetscCall( VecDestroy(&b_perm) );
+        PetscCall( ISDestroy(&rperm) );
+        PetscCall( ISDestroy(&cperm) );
     }
 
-    PetscFinalize();
+    PetscCall( PetscFinalize() );
     return 0;
 }

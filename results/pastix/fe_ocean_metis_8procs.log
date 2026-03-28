@@ -1,0 +1,182 @@
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                       8
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Metis
+    Time to compute ordering              9.171854e-01 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                         29509
+      Number of blok                        508270
+      Cblk width min                             1
+      Cblk width max                          1262
+      Cblk width avg                          4.86
+      Cblk width stdev                       13.48
+      Blok height min                            1
+      Blok height max                          712
+      Blok height avg                         1.59
+      Blok height stdev                       4.70
+      Memory space                           10.71 Mo
+    Number of nonzeroes in L structure    19725005
+    Fill-in of L                          24.078787
+    Time to compute symbol matrix         4.422438e-02 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   3.273424e-01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-yDHcum
+    Number of cluster                            8
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                         29518
+      Number of blok                        200811
+      Cblk width min                             1
+      Cblk width max                           332
+      Cblk width avg                          4.86
+      Cblk width stdev                       10.90
+      Blok height min                            1
+      Blok height max                          332
+      Blok height avg                         4.05
+      Blok height stdev                      10.23
+      Memory space                            4.84 Mo
+    Symbol split done in                  4.105423e-03 s
+    Elimination tree built in             4.193180e-04 s
+    Cost matrix built in                  1.525496e-03 s
+    Estimated total cost of the etree     2.013902e+00 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          1.838260e-04 s
+    Simulation structures built in        8.632007e-03 s
+    Number of tasks found                    29518
+    Simulation done in                    5.007832e-02 s
+    Solver built in                       4.818478e-02 s
+    Number of non-zeroes in blocked L     39450010
+    Fill-in                               48.157573
+    Number of operations in full-rank: LU       19.97 GFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   8.964393e-01 s
+    Time for mapping/scheduling           1.367510e-01 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                1.428400e+00 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            9.050889e+02
+    Time to initialize internal csc       1.337160e-02 s
+    Time to initialize coeftab            2.086959e-02 s
+    Time to factorize                     4.993134e-01 s (40.00 GFlop/s)
+    Number of operations                       -139478857101.00  Flops
+    Number of static pivots                  55602
+    Memory usage of coeftab                       30.1 Mo
+    Time to solve                         1.468165e-02 s
+    Time to solve                         1.380363e-02 s
+    - iteration 1 :
+         total iteration time                   0.0155 s
+         error                                  2.6731e+80
+    Time to solve                         1.342649e-02 s
+    - iteration 2 :
+         total iteration time                   0.0151 s
+         error                                  2.1763e+77
+    Time to solve                         1.379144e-02 s
+    - iteration 3 :
+         total iteration time                   0.0156 s
+         error                                  1.4223e+73
+    Time to solve                         1.348798e-02 s
+    - iteration 4 :
+         total iteration time                   0.0152 s
+         error                                  2.018e+65
+    Time to solve                         1.387682e-02 s
+    - iteration 5 :
+         total iteration time                   0.0157 s
+         error                                  1.2986e+65
+    Time to solve                         1.509702e-02 s
+    - iteration 6 :
+         total iteration time                   0.0172 s
+         error                                  7.8863e+64
+    Time to solve                         1.499854e-02 s
+    - iteration 7 :
+         total iteration time                   0.0169 s
+         error                                  6.8983e+64
+    Time to solve                         1.472144e-02 s
+    - iteration 8 :
+         total iteration time                   0.0167 s
+         error                                  5.8694e+64
+    Time to solve                         1.407303e-02 s
+    - iteration 9 :
+         total iteration time                   0.0164 s
+         error                                  5.8044e+64
+    Time to solve                         1.467744e-02 s
+    - iteration 10 :
+         total iteration time                   0.0166 s
+         error                                  5.724e+64
+    Time to solve                         1.404924e-02 s
+    - iteration 11 :
+         total iteration time                   0.016 s
+         error                                  5.2204e+64
+    Time to solve                         1.379709e-02 s
+    - iteration 12 :
+         total iteration time                   0.0163 s
+         error                                  4.895e+64
+    Time to solve                         1.369546e-02 s
+    - iteration 13 :
+         total iteration time                   0.0158 s
+         error                                  4.8821e+64
+    Time to solve                         1.350585e-02 s
+    - iteration 14 :
+         total iteration time                   0.0157 s
+         error                                  4.5488e+64
+    Time to solve                         1.328386e-02 s
+    - iteration 15 :
+         total iteration time                   0.0153 s
+         error                                  4.5299e+64
+    Time to solve                         1.354681e-02 s
+    - iteration 16 :
+         total iteration time                   0.0157 s
+         error                                  4.3453e+64
+    Time to solve                         1.353221e-02 s
+    - iteration 17 :
+         total iteration time                   0.0157 s
+         error                                  3.5351e+64
+    Time to solve                         1.367215e-02 s
+    - iteration 18 :
+         total iteration time                   0.0159 s
+         error                                  3.5347e+64
+    Time to solve                         1.352638e-02 s
+    - iteration 19 :
+         total iteration time                   0.0162 s
+         error                                  3.5017e+64
+    Time to solve                         1.332572e-02 s
+    - iteration 20 :
+         total iteration time                   0.0155 s
+         error                                  3.4517e+64
+    Time for refinement                   3.223584e-01 s
+||Ax - b||_2 = 3.646952e+68

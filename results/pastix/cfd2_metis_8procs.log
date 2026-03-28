@@ -1,0 +1,102 @@
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                       8
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Metis
+    Time to compute ordering              1.193625e+00 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                          4858
+      Number of blok                        320272
+      Cblk width min                             3
+      Cblk width max                          2698
+      Cblk width avg                         25.41
+      Cblk width stdev                       48.95
+      Blok height min                            1
+      Blok height max                          813
+      Blok height avg                         1.97
+      Blok height stdev                       6.87
+      Memory space                            6.28 Mo
+    Number of nonzeroes in L structure    39497537
+    Fill-in of L                          12.791076
+    Time to compute symbol matrix         3.235706e-02 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   3.340662e-01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-qlQfeY
+    Number of cluster                            8
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                          4877
+      Number of blok                         45430
+      Cblk width min                             3
+      Cblk width max                           318
+      Cblk width avg                         25.31
+      Cblk width stdev                       29.29
+      Blok height min                            1
+      Blok height max                          318
+      Blok height avg                        14.45
+      Blok height stdev                      26.13
+      Memory space                            1.03 Mo
+    Symbol split done in                  6.052370e-04 s
+    Elimination tree built in             3.445500e-05 s
+    Cost matrix built in                  3.278960e-04 s
+    Estimated total cost of the etree     3.444864e+00 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          3.926400e-05 s
+    Simulation structures built in        3.050630e-04 s
+    Number of tasks found                     4877
+    Simulation done in                    7.205789e-03 s
+    Solver built in                       3.821878e-02 s
+    Number of non-zeroes in blocked L     78995074
+    Fill-in                               25.582151
+    Number of operations in full-rank: LU       61.30 GFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   2.157392e+00 s
+    Time for mapping/scheduling           5.005330e-02 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                1.614217e+00 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            5.140446e+02
+    Time to initialize internal csc       3.146171e-02 s
+    Time to initialize coeftab            4.442653e-02 s
+    Time to factorize                     1.750208e+00 s (35.02 GFlop/s)
+    Number of operations                       -175388620715.00  Flops
+    Number of static pivots                      0
+    Memory usage of coeftab                       59.9 Mo
+    Time to solve                         2.083559e-02 s
+    Time for refinement                   2.522890e-03 s
+||Ax - b||_2 = 2.108434e-13

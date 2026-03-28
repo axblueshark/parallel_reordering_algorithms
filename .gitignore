@@ -1,6 +1,6 @@
 # specific folders/files
 /petsc
-
+/src/LUMI
 # object files
 *.o
 

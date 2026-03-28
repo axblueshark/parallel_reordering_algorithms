@@ -59,11 +59,12 @@ PetscErrorCode save_matrix( Mat A, const char* path );
  * @param ordering The ordering type.
  * @param A_perm The permuted matrix.
  * @param b_perm The permuted right-hand side vector.
- * @param rperm The row permutation (will be needed for unpermuting x).
+ * @param rperm The row permutation (used to permute the RHS).
+ *  @param cperm The column permutation (used to unpermute the solution).
  * @return PetscErrorCode 
  */
 PetscErrorCode reorder( Mat A, Vec b, MatOrderingType ordering, 
-                        Mat *A_perm, Vec *b_perm, IS *rperm );
+                        Mat *A_perm, Vec *b_perm, IS *rperm, IS *cperm );
 
 
 // -------------------------------------

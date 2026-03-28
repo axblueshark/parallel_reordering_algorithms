@@ -1,0 +1,8 @@
+[5]PETSC ERROR: ------------------------------------------------------------------------
+[5]PETSC ERROR: Caught signal number 11 SEGV: Segmentation Violation, probably memory access out of range
+[5]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[5]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[5]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[5]PETSC ERROR: to get more information on the crash.
+[5]PETSC ERROR: Run with -malloc_debug to check if memory corruption is causing the crash.
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 5
