@@ -4,6 +4,8 @@ This repository is an integral part of the bachelor thesis **Parallel reordering
 
 The results will be presented in the **Numerical experiments** chapter of the aforementioned thesis.
 
+**Note:** The installation steps below are intended for a local machine. However, the main results were run on a [LUMI supercomputer](https://lumi-supercomputer.eu/).  
+
 ## Repository overview and structure
 ```
 numerical_experiments/
@@ -19,6 +21,7 @@ numerical_experiments/
 │   └── plots.ipynb
 │
 ├── results/
+│   ├── LUMI/
 │   ├── mumps/
 │   ├── pastix/
 │   ├── superlu_dist/
