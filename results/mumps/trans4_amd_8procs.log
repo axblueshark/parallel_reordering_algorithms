@@ -18,7 +18,6 @@ Type of parallelism: Working host
 
  ****** ANALYSIS STEP ********
 
- ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
  Processing a graph of size:    116835 with        744236 edges
  Ordering based on AMD 
  WARNING: Largest root node of size       236 not selected for parallel execution
@@ -56,7 +55,7 @@ Leaving analysis phase with  ...
     Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):              49
     Total space in MBytes,  OOC factorization    (INFOG(27)):             382
 
- Elapsed time in analysis driver=       5.7097
+ Elapsed time in analysis driver=       5.5616
 
 Entering DMUMPS 5.8.1 from C interface with JOB, N =   2      116835
       executing #MPI =      8, without OMP
@@ -87,7 +86,7 @@ Advanced settings:
  Effective threshold for pivoting, CNTL(1)  =      0.1000D-01
 
  Statistics on the scaling phase
- Elapsed time for scaling                   =      0.0137
+ Elapsed time for scaling                   =      0.0139
  Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.15D+01
 
  Average Effective size of S     (based on INFO(39))=               568089
@@ -107,7 +106,7 @@ Advanced settings:
  ** Memory effectively used, max in  Mbytes     (INFOG(21)):          54
  ** Memory effectively used, total in Mbytes    (INFOG(22)):         395
 
- Elapsed time for factorization                     =      0.0163
+ Elapsed time for factorization                     =      0.0173
 
 Leaving factorization with ...
  RINFOG (2) Operations in node assembly             = 8.211D+05
@@ -125,7 +124,7 @@ Leaving factorization with ...
  INFOG (24) Effective value of ICNTL(12)            =               1
  INFOG (14) Number of memory compress               =               0
 
- Elapsed time in factorization driver               =      0.0396
+ Elapsed time in factorization driver               =      0.0409
 
 Entering DMUMPS 5.8.1 from C interface with JOB, N =   3      116835
       executing #MPI =      8, without OMP
@@ -154,14 +153,14 @@ Advanced settings:
  ** Avg. Space in MBYTES per working proc during solve    :        25
 
  Leaving solve with ...
- Time to build/scatter RHS        =       0.000656
- Time in solution step (fwd/bwd)  =       0.008131
-  .. Time in forward (fwd) step   =          0.003861
-  .. Time in backward (bwd) step  =          0.004244
+ Time to build/scatter RHS        =       0.000572
+ Time in solution step (fwd/bwd)  =       0.007536
+  .. Time in forward (fwd) step   =          0.003536
+  .. Time in backward (bwd) step  =          0.003990
  Time to gather solution(cent.sol)=       0.000000
- Time for distributed solution    =       0.000101
+ Time for distributed solution    =       0.000089
 
- Elapsed time in solve driver=       0.0099
+ Elapsed time in solve driver=       0.0092
 
 Entering DMUMPS 5.8.1 from C interface with JOB =  -2
       executing #MPI =      8, without OMP

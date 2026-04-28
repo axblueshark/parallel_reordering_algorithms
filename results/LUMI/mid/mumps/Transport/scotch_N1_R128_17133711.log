@@ -1,0 +1,175 @@
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   1     1602111
+      executing #MPI =    128, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+ =================================================
+  MUMPS compiled with option -DAVOID_MPI_IN_PLACE
+ MUMPS compiled with option -Dmetis
+ MUMPS compiled with option -Dparmetis
+ MUMPS compiled with option -Dpord
+ MUMPS compiled with option -Dptscotch
+ MUMPS compiled with option -Dscotch
+ =================================================
+L U Solver for unsymmetric matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
+ Processing a graph of size:   1602111 with      21898620 edges
+ Ordering based on SCOTCH 
+ ELAPSED TIME SPENT IN SCOTCH reordering =     27.4238
+ A root of estimated size  4991  has been selected for Scalapack.
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =      2732361349
+ --  (3) Real space for factors    (estimated)  =      2758893472
+ --  (4) Integer space for factors (estimated)  =        22620626
+ --  (5) Maximum frontal size      (estimated)  =           12659
+ --  (6) Number of nodes in the tree            =           40342
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               3
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               3
+ ICNTL(12) Ordering symmetric indef. matrices   =               1
+ ICNTL(13) Parallelism/splitting of root node   =               0
+ ICNTL(14) Percentage of memory relaxation      =             500
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               3
+ ICNTL(32) Forward elimination during facto.    =               0
+ ICNTL(35) BLR activation                       =               0
+ ICNTL(48) Tree based multithreading (effective)=               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =             245
+ Number of split nodes                          =              54
+ RINFOG(1) Operations during elimination (estim)= 1.083E+13
+ Distributed matrix entry format (ICNTL(18))    =               3
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):            2440
+    Total space in MBytes, IC factorization      (INFOG(17)):          217985
+    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):            1331
+    Total space in MBytes,  OOC factorization    (INFOG(27)):          135035
+
+ Elapsed time in analysis driver=      29.1644
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   2     1602111
+      executing #MPI =    128, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =             128
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(56) Effective value during facto.    =               0
+ ICNTL(14) Memory relaxation                =             500
+ INFOG(3) Real space for factors (estimated)=      2758893472
+ INFOG(4) Integer space for factors (estim.)=        22620626
+ Maximum frontal size (estimated)           =           12659
+ Number of nodes in the tree                =           40342
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.1000E-01
+
+ Statistics on the scaling phase
+ Elapsed time for scaling                   =      0.6521
+ Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.29E-01
+
+ Average Effective size of S     (based on INFO(39))=            188535121
+
+ Redistrib: total data local/sent           =          662148        88008506
+ Elapsed time to reformat/distribute matrix =      0.2357
+
+
+ Allocated buffers
+ ------------------
+ Size of reception buffer in bytes ...... =      9573704
+ Size of async. emission buffer (bytes).. =     28816847
+ Small emission buffer (bytes) .......... =       338756
+ ** Memory allocated, max in Mbytes             (INFOG(18)):        2440
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):      217985
+ ** Memory effectively used, max in  Mbytes     (INFOG(21)):         546
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):       53379
+
+ Elapsed time to process root node                  =      0.4420
+
+ Elapsed time for factorization                     =     12.7808
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 8.983E+09
+ ------ (3) Operations in node elimination          = 1.083E+13
+ ICNTL  (8) Scaling effectively used                =               7
+ INFOG  (9) Real space for factors                  =      2732332151
+ INFOG (10) Integer space for factors               =        22578753
+ INFOG (11) Maximum front size                      =           12657
+ INFOG (29) Number of entries in factors            =      2732332151
+ INFOG (12) Number of off diagonal pivots           =               0
+ INFOG (13) Number of delayed pivots                =               0
+ RINFOG(19) Smallest pivot WITH perturbed pivots    = 1.143E-01
+ RINFOG(20) Smallest pivot WITHOUT perturbed pivots = 1.143E-01
+ RINFOG(21) Largest pivot in absolute value         = 1.000E+00
+ INFOG (24) Effective value of ICNTL(12)            =               1
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =     13.8518
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   3     1602111
+      executing #MPI =    128, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           2
+  --- (11)                                     =           0
+  --- (20)                                     =           0
+  --- (21)                                     =           1
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+  --- (48) (effective)                         =           0
+ WARNING:  Incompatible features: nrhs>1 or distrib sol and Iter. Ref and/or Err. Anal.
+ WARNING: ICNTL(10) treated as if set to 0 
+ ** Rank of processor needing largest memory in solve     :        85
+ ** Space in MBYTES used by this processor for solve      :      2328
+ ** Avg. Space in MBYTES per working proc during solve    :      1583
+ 
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.029609
+ Time in solution step (fwd/bwd)  =       0.202031
+  .. Time in forward (fwd) step   =          0.080788
+  .. Time in ScaLAPACK root       =          0.006562
+  .. Time in backward (bwd) step  =          0.112325
+ Time to gather solution(cent.sol)=       0.000000
+ Time for distributed solution    =       0.000257
+
+ Elapsed time in solve driver=       0.2646
+
+Entering DMUMPS 5.8.1 from C interface with JOB =  -2
+      executing #MPI =    128, without OMP
+||Ax - b||_2 = 5.902860e-14

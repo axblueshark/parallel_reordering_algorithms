@@ -1,0 +1,37 @@
+// 1. Parameters for Scaling
+// To get ~30M DoFs, use n = 310
+int n = 220; // Start with 114 for ~1.5M DoFs 
+load "msh3"
+
+// 2. Build 3D Mesh (Geometric Coarse Grid)
+mesh3 Th = cube(n, n, n);
+
+// 3. Define Functional Space
+fespace Vh(Th, P1);
+cout << "Targeting DoFs: " << Vh.ndof << endl;
+
+// 4. Assemble the Global Coarse Matrix (3D Poisson)
+// This operator represents the global coupling in DDM [cite: 1, 5]
+varf a(u, v) = int3d(Th)(dx(u)*dx(v) + dy(u)*dy(v) + dz(u)*dz(v)) + on(1, u=0);
+matrix A = a(Vh, Vh);
+
+// 5. EXPORT TO .MTX
+// Warning: At 30M DoFs, this file will be >20GB.
+string filename = "Coarse_Matrix_" + Vh.ndof + ".mtx";
+{
+    ofstream file(filename);
+    file.precision(16); 
+    
+    file << "%%MatrixMarket matrix coordinate real general" << endl;
+    file << A.n << " " << A.m << " " << A.nbcoef << endl;
+    
+    int[int] I(A.nbcoef), J(A.nbcoef);
+    real[int] V(A.nbcoef);
+    [I, J, V] = A; 
+    
+    for (int k = 0; k < A.nbcoef; k++) {
+        file << (I[k] + 1) << " " << (J[k] + 1) << " " << V[k] << "\n";
+    }
+}
+
+cout << "Success! Created benchmark: " << filename << endl;

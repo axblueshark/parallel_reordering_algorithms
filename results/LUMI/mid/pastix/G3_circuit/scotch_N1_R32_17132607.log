@@ -1,0 +1,135 @@
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                      32
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Scotch
+      Scotch direct strategy
+    Time to compute ordering              1.125039e+01 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                         89959
+      Number of blok                        899318
+      Cblk width min                             1
+      Cblk width max                          1306
+      Cblk width avg                         17.62
+      Cblk width stdev                       14.35
+      Blok height min                            1
+      Blok height max                         1306
+      Blok height avg                         4.19
+      Blok height stdev                       8.68
+      Memory space                           40.48 Mo
+    Number of nonzeroes in L structure    130925286
+    Fill-in of L                          17.090231
+    Time to compute symbol matrix         2.109299e-01 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   1.345789e+00 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-yivyqU
+    Number of cluster                           32
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                         89980
+      Number of blok                        592348
+      Cblk width min                             1
+      Cblk width max                           319
+      Cblk width avg                         17.62
+      Cblk width stdev                       12.62
+      Blok height min                            1
+      Blok height max                          319
+      Blok height avg                         6.41
+      Blok height stdev                      11.22
+      Memory space                           28.77 Mo
+    Symbol split done in                  1.645647e-02 s
+    Elimination tree built in             3.502664e-03 s
+    Cost matrix built in                  7.922084e-03 s
+    Estimated total cost of the etree     1.060629e+01 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          1.286872e-03 s
+    Simulation structures built in        2.374552e-02 s
+    Number of tasks found                    89980
+    Simulation done in                    1.945925e-01 s
+    Solver built in                       5.821775e-02 s
+    Number of non-zeroes in blocked L     261850572
+    Fill-in                               34.180462
+    Number of operations in full-rank: LU       106.40 GFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   2.141900e+00 s
+    Time for mapping/scheduling           3.876173e-01 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                1.335376e+01 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            3.970651e+06
+    Time to initialize internal csc       6.745652e-02 s
+    Time to initialize coeftab            2.453870e-02 s
+    Time to factorize                     4.967570e-01 s (214.18 GFlop/s)
+    Number of operations                       -1832498541095.00  Flops
+    Number of static pivots                      0
+    Memory usage of coeftab                       75.4 Mo
+    Time to solve                         3.198774e-02 s
+    Time for refinement                   2.518523e-02 s
+||Ax - b||_2 = 7.389760e-10

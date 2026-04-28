@@ -1,0 +1,449 @@
+.. equilibrated? *equed = N
+.. RowPerm 1	 time: 0.46
+.. anorm 2.000000e+00
+.. Use METIS ordering on A'+A
+.. symbfact(): relax 30, maxsuper 256, fill 5
+slurmstepd: error: Detected 3 oom_kill events in StepId=17134600.0. Some of the step tasks have been OOM Killed.
+srun: error: nid001508: tasks 97,109,119: Out Of Memory
+srun: Terminating StepId=17134600.0
+slurmstepd: error: *** STEP 17134600.0 ON nid001508 CANCELLED AT 2026-04-01T01:25:23 ***
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[3]PETSC ERROR: ------------------------------------------------------------------------
+[3]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[3]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[3]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[3]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[3]PETSC ERROR: to get more information on the crash.
+[5]PETSC ERROR: ------------------------------------------------------------------------
+[5]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[5]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[5]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[5]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[5]PETSC ERROR: to get more information on the crash.
+[8]PETSC ERROR: ------------------------------------------------------------------------
+[8]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[8]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[8]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[8]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[8]PETSC ERROR: to get more information on the crash.
+[9]PETSC ERROR: ------------------------------------------------------------------------
+[10]PETSC ERROR: ------------------------------------------------------------------------
+[10]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[10]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[10]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[10]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[10]PETSC ERROR: to get more information on the crash.
+[12]PETSC ERROR: ------------------------------------------------------------------------
+[13]PETSC ERROR: ------------------------------------------------------------------------
+[13]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[13]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[13]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[13]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[13]PETSC ERROR: to get more information on the crash.
+[25]PETSC ERROR: ------------------------------------------------------------------------
+[25]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[27]PETSC ERROR: ------------------------------------------------------------------------
+[32]PETSC ERROR: ------------------------------------------------------------------------
+[36]PETSC ERROR: ------------------------------------------------------------------------
+[36]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[36]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[36]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[36]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[36]PETSC ERROR: to get more information on the crash.
+[44]PETSC ERROR: ------------------------------------------------------------------------
+[44]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[44]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[44]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[44]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[44]PETSC ERROR: to get more information on the crash.
+[45]PETSC ERROR: ------------------------------------------------------------------------
+[46]PETSC ERROR: ------------------------------------------------------------------------
+[46]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[46]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[46]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[46]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[46]PETSC ERROR: to get more information on the crash.
+[47]PETSC ERROR: ------------------------------------------------------------------------
+[48]PETSC ERROR: ------------------------------------------------------------------------
+[48]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[48]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[48]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[48]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[48]PETSC ERROR: to get more information on the crash.
+[51]PETSC ERROR: ------------------------------------------------------------------------
+[51]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[51]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[51]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[52]PETSC ERROR: ------------------------------------------------------------------------
+[52]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[52]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[52]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[55]PETSC ERROR: ------------------------------------------------------------------------
+[55]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[55]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[55]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[55]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[55]PETSC ERROR: to get more information on the crash.
+[60]PETSC ERROR: ------------------------------------------------------------------------
+[60]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[60]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[60]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[60]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[60]PETSC ERROR: to get more information on the crash.
+[62]PETSC ERROR: ------------------------------------------------------------------------
+[62]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[64]PETSC ERROR: ------------------------------------------------------------------------
+[64]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[64]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[64]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[64]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[64]PETSC ERROR: to get more information on the crash.
+[65]PETSC ERROR: ------------------------------------------------------------------------
+[65]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[65]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[65]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[65]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[65]PETSC ERROR: to get more information on the crash.
+[66]PETSC ERROR: ------------------------------------------------------------------------
+[66]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[66]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[66]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[66]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[66]PETSC ERROR: to get more information on the crash.
+[67]PETSC ERROR: ------------------------------------------------------------------------
+[67]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[67]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[67]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[67]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[67]PETSC ERROR: to get more information on the crash.
+[68]PETSC ERROR: ------------------------------------------------------------------------
+[68]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[68]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[68]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[68]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[68]PETSC ERROR: to get more information on the crash.
+[69]PETSC ERROR: ------------------------------------------------------------------------
+[69]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[69]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[69]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[69]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[69]PETSC ERROR: to get more information on the crash.
+[70]PETSC ERROR: ------------------------------------------------------------------------
+[70]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[70]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[70]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[70]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[70]PETSC ERROR: to get more information on the crash.
+[71]PETSC ERROR: ------------------------------------------------------------------------
+[71]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[71]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[71]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[71]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[71]PETSC ERROR: to get more information on the crash.
+[72]PETSC ERROR: ------------------------------------------------------------------------
+[72]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[72]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[72]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[72]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[72]PETSC ERROR: to get more information on the crash.
+[73]PETSC ERROR: ------------------------------------------------------------------------
+[73]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[73]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[73]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[73]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[73]PETSC ERROR: to get more information on the crash.
+[74]PETSC ERROR: ------------------------------------------------------------------------
+[74]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[74]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[74]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[74]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[75]PETSC ERROR: ------------------------------------------------------------------------
+[75]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[75]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[75]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[75]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[75]PETSC ERROR: to get more information on the crash.
+[76]PETSC ERROR: ------------------------------------------------------------------------
+[76]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[76]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[76]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[76]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[76]PETSC ERROR: to get more information on the crash.
+[77]PETSC ERROR: ------------------------------------------------------------------------
+[77]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[77]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[77]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[77]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[77]PETSC ERROR: to get more information on the crash.
+[78]PETSC ERROR: ------------------------------------------------------------------------
+[78]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[78]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[78]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[78]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[78]PETSC ERROR: to get more information on the crash.
+[79]PETSC ERROR: ------------------------------------------------------------------------
+[79]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[79]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[79]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[79]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[79]PETSC ERROR: to get more information on the crash.
+[80]PETSC ERROR: ------------------------------------------------------------------------
+[80]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[80]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[80]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[80]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[80]PETSC ERROR: to get more information on the crash.
+[81]PETSC ERROR: ------------------------------------------------------------------------
+[81]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[82]PETSC ERROR: ------------------------------------------------------------------------
+[82]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[82]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[82]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[82]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[82]PETSC ERROR: to get more information on the crash.
+[83]PETSC ERROR: ------------------------------------------------------------------------
+[83]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[83]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[83]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[83]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[83]PETSC ERROR: to get more information on the crash.
+[84]PETSC ERROR: ------------------------------------------------------------------------
+[84]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[84]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[84]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[84]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[84]PETSC ERROR: to get more information on the crash.
+[85]PETSC ERROR: ------------------------------------------------------------------------
+[85]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[85]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[85]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[85]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[85]PETSC ERROR: to get more information on the crash.
+[86]PETSC ERROR: ------------------------------------------------------------------------
+[86]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[86]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[86]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[86]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[87]PETSC ERROR: ------------------------------------------------------------------------
+[87]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[87]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[87]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[87]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[87]PETSC ERROR: to get more information on the crash.
+[88]PETSC ERROR: ------------------------------------------------------------------------
+[88]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[88]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[88]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[88]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[88]PETSC ERROR: to get more information on the crash.
+[89]PETSC ERROR: ------------------------------------------------------------------------
+[89]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[89]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[89]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[89]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[89]PETSC ERROR: to get more information on the crash.
+[90]PETSC ERROR: ------------------------------------------------------------------------
+[90]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[90]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[90]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[90]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[91]PETSC ERROR: ------------------------------------------------------------------------
+[91]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[91]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[91]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[91]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[91]PETSC ERROR: to get more information on the crash.
+[92]PETSC ERROR: ------------------------------------------------------------------------
+[92]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[92]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[92]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[92]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[92]PETSC ERROR: to get more information on the crash.
+[93]PETSC ERROR: ------------------------------------------------------------------------
+[93]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[93]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[93]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[93]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[93]PETSC ERROR: to get more information on the crash.
+[94]PETSC ERROR: ------------------------------------------------------------------------
+[94]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[94]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[94]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[94]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[94]PETSC ERROR: to get more information on the crash.
+[95]PETSC ERROR: ------------------------------------------------------------------------
+[95]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[95]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[95]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[95]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[95]PETSC ERROR: to get more information on the crash.
+[96]PETSC ERROR: ------------------------------------------------------------------------
+[96]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[96]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[96]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[96]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[96]PETSC ERROR: to get more information on the crash.
+[98]PETSC ERROR: ------------------------------------------------------------------------
+[98]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[98]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[98]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[98]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[98]PETSC ERROR: to get more information on the crash.
+[99]PETSC ERROR: ------------------------------------------------------------------------
+[99]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[99]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[99]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[99]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[99]PETSC ERROR: to get more information on the crash.
+[100]PETSC ERROR: ------------------------------------------------------------------------
+[100]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[100]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[100]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[100]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[100]PETSC ERROR: to get more information on the crash.
+[101]PETSC ERROR: ------------------------------------------------------------------------
+[101]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[101]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[101]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[101]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[102]PETSC ERROR: ------------------------------------------------------------------------
+[102]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[102]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[102]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[102]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[102]PETSC ERROR: to get more information on the crash.
+[103]PETSC ERROR: ------------------------------------------------------------------------
+[103]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[103]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[103]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[103]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[103]PETSC ERROR: to get more information on the crash.
+[104]PETSC ERROR: ------------------------------------------------------------------------
+[104]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[104]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[104]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[104]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[104]PETSC ERROR: to get more information on the crash.
+[105]PETSC ERROR: ------------------------------------------------------------------------
+[105]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[105]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[105]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[105]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[105]PETSC ERROR: to get more information on the crash.
+[106]PETSC ERROR: ------------------------------------------------------------------------
+[106]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[106]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[106]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[106]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[106]PETSC ERROR: to get more information on the crash.
+[107]PETSC ERROR: ------------------------------------------------------------------------
+[107]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[107]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[107]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[107]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[107]PETSC ERROR: to get more information on the crash.
+[108]PETSC ERROR: ------------------------------------------------------------------------
+[108]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[108]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[108]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[108]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[108]PETSC ERROR: to get more information on the crash.
+[110]PETSC ERROR: ------------------------------------------------------------------------
+[110]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[110]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[110]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[110]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[111]PETSC ERROR: ------------------------------------------------------------------------
+[111]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[111]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[111]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[111]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[111]PETSC ERROR: to get more information on the crash.
+[112]PETSC ERROR: ------------------------------------------------------------------------
+[112]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[112]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[112]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[112]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[112]PETSC ERROR: to get more information on the crash.
+[113]PETSC ERROR: ------------------------------------------------------------------------
+[113]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[113]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[113]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[113]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[113]PETSC ERROR: to get more information on the crash.
+[114]PETSC ERROR: ------------------------------------------------------------------------
+[114]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[114]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[114]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[114]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[114]PETSC ERROR: to get more information on the crash.
+[115]PETSC ERROR: ------------------------------------------------------------------------
+[115]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[115]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[115]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[115]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[116]PETSC ERROR: ------------------------------------------------------------------------
+[116]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[116]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[116]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[116]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[116]PETSC ERROR: to get more information on the crash.
+[117]PETSC ERROR: ------------------------------------------------------------------------
+[117]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[117]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[117]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[117]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[117]PETSC ERROR: to get more information on the crash.
+[118]PETSC ERROR: ------------------------------------------------------------------------
+[120]PETSC ERROR: ------------------------------------------------------------------------
+[120]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[120]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[120]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[120]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[120]PETSC ERROR: to get more information on the crash.
+[121]PETSC ERROR: ------------------------------------------------------------------------
+[121]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[121]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[121]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[121]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[121]PETSC ERROR: to get more information on the crash.
+[122]PETSC ERROR: ------------------------------------------------------------------------
+[122]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[122]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[122]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[122]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[122]PETSC ERROR: to get more information on the crash.
+[123]PETSC ERROR: ------------------------------------------------------------------------
+[123]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[123]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[123]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[123]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[123]PETSC ERROR: to get more information on the crash.
+[124]PETSC ERROR: ------------------------------------------------------------------------
+[124]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[124]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[124]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[124]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[124]PETSC ERROR: to get more information on the crash.
+[125]PETSC ERROR: ------------------------------------------------------------------------
+[125]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[125]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[125]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[125]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[125]PETSC ERROR: to get more information on the crash.
+[126]PETSC ERROR: ------------------------------------------------------------------------
+[126]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[126]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[126]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[126]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[126]PETSC ERROR: to get more information on the crash.
+[127]PETSC ERROR: ------------------------------------------------------------------------
+[127]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[127]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[127]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[127]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[127]PETSC ERROR: to get more information on the crash.
+[39]PETSC ERROR: [53]PETSC ERROR: [20]PETSC ERROR: [41]PETSC ERROR: [43]PETSC ERROR: [49]PETSC ERROR: [54]PETSC ERROR: [23]PETSC ERROR: [57]PETSC ERROR: [24]PETSC ERROR: [50]PETSC ERROR: [28]PETSC ERROR: [30]PETSC ERROR: [21]PETSC ERROR: [31]PETSC ERROR: [38]PETSC ERROR: [40]PETSC ERROR: [59]PETSC ERROR: [63]PETSC ERROR: [2]PETSC ERROR: [19]PETSC ERROR: [14]PETSC ERROR: [16]PETSC ERROR: [22]PETSC ERROR: [58]PETSC ERROR: [37]PETSC ERROR: [6]PETSC ERROR: [56]PETSC ERROR: [61]PETSC ERROR: [7]PETSC ERROR: [4]PETSC ERROR: 

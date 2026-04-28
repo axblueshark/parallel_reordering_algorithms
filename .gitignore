@@ -19,3 +19,4 @@ experiments
 # backup / temp
 *~
 .DS_Store
+/tmp

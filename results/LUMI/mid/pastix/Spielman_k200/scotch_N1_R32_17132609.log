@@ -1,0 +1,121 @@
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                      32
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Scotch
+      Scotch direct strategy
+    Time to compute ordering              4.961106e+00 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                        132114
+      Number of blok                        266811
+      Cblk width min                             1
+      Cblk width max                        169954
+      Cblk width avg                         20.34
+      Cblk width stdev                      723.55
+      Blok height min                            1
+      Blok height max                           62
+      Blok height avg                         1.02
+      Blok height stdev                       0.31
+      Memory space                           19.25 Mo
+    Number of nonzeroes in L structure    34669413428
+    Fill-in of L                          4279.749692
+    Time to compute symbol matrix         1.070583e-01 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   1.177930e+01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-UasFq2
+    Number of cluster                           32
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                        135461
+      Number of blok                        611978
+      Cblk width min                             1
+      Cblk width max                           347
+      Cblk width avg                         19.83
+      Cblk width stdev                       48.03
+      Blok height min                            1
+      Blok height max                          329
+      Blok height avg                       176.95
+      Blok height stdev                     157.86
+      Memory space                           32.65 Mo
+    Symbol split done in                  1.990295e-02 s
+    Elimination tree built in             5.217281e-03 s
+    Cost matrix built in                  9.561824e-03 s
+    Estimated total cost of the etree     5.831800e+03 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          7.662060e-03 s
+    Simulation structures built in        9.203947e-02 s
+    Number of tasks found                   135461
+    Simulation done in                    8.767125e-01 s
+    Solver built in                       1.380175e-01 s
+    Number of non-zeroes in blocked L     69338826856
+    Fill-in                               8559.499385
+    Number of operations in full-rank: LU        4.21 PFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+srun: error: slurm_send_node_msg: [socket:[24172300]] slurm_bufs_sendto(msg_type=REQUEST_CANCEL_JOB_STEP) failed: Unexpected missing socket error
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: Timed out waiting for job step to complete
+srun: error: slurm_send_node_msg: [socket:[23868256]] slurm_bufs_sendto(msg_type=REQUEST_CANCEL_JOB_STEP) failed: Unexpected missing socket error

@@ -1,0 +1,233 @@
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   1    16240000
+      executing #MPI =     64, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+ =================================================
+  MUMPS compiled with option -DAVOID_MPI_IN_PLACE
+ MUMPS compiled with option -Dmetis
+ MUMPS compiled with option -Dparmetis
+ MUMPS compiled with option -Dpord
+ MUMPS compiled with option -Dptscotch
+ MUMPS compiled with option -Dscotch
+ =================================================
+L U Solver for unsymmetric matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
+ Processing a graph of size:  16240000 with     431985632 edges
+ Ordering based on AMD 
+ A root of estimated size  258518  has been selected for Scalapack.
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =    422172947810
+ --  (3) Real space for factors    (estimated)  =    422421246405
+ --  (4) Integer space for factors (estimated)  =       560303850
+ --  (5) Maximum frontal size      (estimated)  =          301178
+ --  (6) Number of nodes in the tree            =         4355431
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               0
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               0
+ ICNTL(12) Ordering symmetric indef. matrices   =               1
+ ICNTL(13) Parallelism/splitting of root node   =               0
+ ICNTL(14) Percentage of memory relaxation      =             500
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               3
+ ICNTL(32) Forward elimination during facto.    =               0
+ ICNTL(35) BLR activation                       =               0
+ ICNTL(48) Tree based multithreading (effective)=               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =             131
+ Number of split nodes                          =              20
+ RINFOG(1) Operations during elimination (estim)= 6.380E+16
+ Distributed matrix entry format (ICNTL(18))    =               3
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Max. estimated space for factors per compute node       :    211524625067
+    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):         1969646
+    Total space in MBytes, IC factorization      (INFOG(17)):        42640423
+    Max. estim. space per compute node, in MBytes, IC fact  :        22501494
+    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):         1646772
+    Total space in MBytes,  OOC factorization    (INFOG(27)):        31603806
+    Max. estim. space per compute node, in MBytes, OOC fact :        17431289
+
+ Elapsed time in analysis driver=      52.1835
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   2    16240000
+      executing #MPI =     64, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =              64
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(56) Effective value during facto.    =               0
+ ICNTL(14) Memory relaxation                =             500
+ INFOG(3) Real space for factors (estimated)=    422421246405
+ INFOG(4) Integer space for factors (estim.)=       560303850
+ Maximum frontal size (estimated)           =          301178
+ Number of nodes in the tree                =         4355431
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.1000E-01
+
+ Statistics on the scaling phase
+ Elapsed time for scaling                   =      3.8456
+ Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.82E+00
+
+ Average Effective size of S     (based on INFO(39))=          82751963536
+
+ Elapsed time in factorization driver               =      3.9055
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -139588
+ On return from DMUMPS, INFOG(1)=             -13
+ On return from DMUMPS, INFOG(2)=         -139588
+
+Entering DMUMPS 5.8.1 from C interface with JOB =  -2
+      executing #MPI =     64, without OMP
+||Ax - b||_2 = -nan
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -61332
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -245546
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -48366
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -53876
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -49942
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -66746
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -98642
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -70706
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -49637
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -65200
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -78935
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -149376
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -69538
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -53829
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -99878
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -111324
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -60843
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -153913
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -67675
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -67103
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -71413
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -69769
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -54752
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -73963
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -78825
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -82572
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -209523
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -68336
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -163429
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -65022
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -77766
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -70159
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -83405
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -73498
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -62126
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -76566
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -54780
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -65219
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -68490
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -72194
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -57653
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -90926
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -66682
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -162392
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -68446
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -93028
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -61612
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -91478
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=         -186516
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -88613
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -65092
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -62685
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -68222
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -57921
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -63718
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -53995
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -66943
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -61686
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -60903
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -64273
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -62542
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -71553
+ ** ERROR RETURN ** FROM DMUMPS INFO(1)=  -13
+ ** INFO(2)=          -65414

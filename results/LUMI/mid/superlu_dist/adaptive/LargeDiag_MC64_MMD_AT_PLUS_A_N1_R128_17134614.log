@@ -1,0 +1,12 @@
+.. equilibrated? *equed = N
+.. RowPerm 1	 time: 103.83
+.. anorm 4.000000e+00
+.. Use minimum degree ordering on A'+A.
+.. symbfact(): relax 30, maxsuper 256, fill 5
+slurmstepd: error: Detected 2 oom_kill events in StepId=17134614.0. Some of the step tasks have been OOM Killed.
+slurmstepd: error: Failed to send MESSAGE_TASK_EXIT: Socket timed out on send/recv operation
+slurmstepd: error: *** STEP 17134614.0 ON nid001991 CANCELLED AT 2026-04-01T02:19:09 DUE TO TIME LIMIT ***
+srun: error: nid001991: tasks 0-1,3,5,7-8,10,16-27,29-31,48-52,55,57,97,105,113,125: Out Of Memory
+srun: Terminating StepId=17134614.0
+srun: error: slurm_send_node_msg: [socket:[319493222]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Munge decode failed: Expired credential

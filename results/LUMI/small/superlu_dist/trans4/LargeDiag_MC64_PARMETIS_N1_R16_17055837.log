@@ -1,0 +1,121 @@
+.. equilibrated? *equed = B
+.. RowPerm 1	 time: 0.02
+.. anorm 4.942911e+04
+.. Use parMETIS ordering on A'+A with 16 sub-domains. sizeof(int_t) 4
+.. symbfact(): relax 30, maxsuper 256, fill 5
+	matrix dimension    116835
+	nonzeros in A       766396
+	nonzeros in L      1571150
+	nonzeros in U      1572367
+	nonzeros in L+U    3026682
+	fill ratio             3.9
+	nonzeros in LSUB    430029
+	No of supers    53209
+	Size of G(L)   261156
+	Size of G(U)   143997
+	int 4, short 2, float 4, double 8
+	SYMBfact (MB):	L\U 4.63	total 8.84	expansions 0
+.. # L blocks    15558	# U blocks     2257
+MPI tag upper bound = 536870911
+.. Starting with 1 OpenMP threads 
+ === using DAG ===
+.. thresh = s_eps 5.960464e-08 * anorm 4.942911e+04 = 2.946204e-03
+.. Buffer size: Lsub 279	Lval 65536	Usub 317	Uval 34701	LDA 269
+max_ncols 102,  max_ldu 256, bigu_size    26112
+	.. SUPERLU_MAX_BUFFER_SIZE 256000000 set for GPU
+	.. SUPERLU_N_GEMM: 5000 flops of GEMM done on CPU (1st block always on CPU)
+	.. GEMM buffer size: max_row_size X max_ncols = 104 x      102
+[0].. BIG U size    26112 (on CPU)
+[0].. BIG V size    67248 (on CPU)
+  Max row size is 104 
+  Threads per process 1 
+
+Initialization time	  0.0417 seconds
+	 Serial: compute static schedule, allocate storage
+
+==== Time breakdown in factorization (rank 0) ====
+Panel factorization 	   0.0236 seconds
+.. L-panel pxgstrf2 	   0.0227 seconds
+.. U-panel pxgstrs2 	   0.0009 seconds
+Time in Look-ahead update 	   0.0007 seconds
+Time in Schur update 		   0.0076 seconds
+.. Time to Gather L buffer	   0.0005  (Separate L panel by Lookahead/Remain)
+.. Time to Gather U buffer	   0.0010 
+.. Time in GEMM   0.0015 
+	* Look-ahead	   0.0001 
+	* Remain	   0.0014	Flops 7.3634e+07	Gflops  51.5543
+.. Time to Scatter   0.0015 
+	* Look-ahead	   0.0000 
+	* Remain	   0.0014 
+Total factorization time            	:   0.3630 seconds, 
+--------
+GEMM maximum block: 74-129-77
+
+** Memory Usage **********************************
+.. dQuerySpace: peak_buffer 19.08 (MB)
+	(P0) serial symbolic::stage[0]: symb_memory 8.84, GA_mem_use 9.66
+	(P0) serial distribution::stage[1]:symb_LU 4.63, dist_mem_use 67.53, num_mem_usage.for_lu 3.64
+** Total highmark (MB):
+    Sum-of-all :  1240.60 | Avg :    77.54  | Max :    93.13
+    Max at rank 15, different stages (MB):
+	. symbfact           18.50
+	. distribution       75.80
+	. numfact            22.73
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :           85.97 |  Total :   390.69
+	. max at rank 15, max L+U memory (MB):    18.98
+	. max at rank 15, peak buffer (MB):       19.23
+**************************************************
+
+** number of Tiny Pivots:       89
+
+.. DiagScale = 3
+**************************************************
+**** Time (seconds) ****
+	EQUIL time            0.008
+	ROWPERM time          0.024
+	COLPERM time          4.220
+	SYMBFACT time         0.013
+	DISTRIBUTE time       0.318
+	FACTOR time           0.405
+	Factor flops	2.044682e+08	Mflops 	  504.87
+	SOLVE time            0.000
+	REFINEMENT time       0.000	Steps       0
+
+**************************************************
+.. anorm 4.942911e+04
+num_thread:     1
+( 0) .. Step        0: berr[j] = 1.609226e-04
+num_thread:     1
+( 0) .. Step        1: berr[j] = 1.585277e-05
+num_thread:     1
+( 0) .. Step        2: berr[j] = 1.713645e-06
+num_thread:     1
+( 0) .. Step        3: berr[j] = 1.870143e-07
+num_thread:     1
+( 0) .. Step        4: berr[j] = 2.043045e-08
+num_thread:     1
+( 0) .. Step        5: berr[j] = 2.232185e-09
+num_thread:     1
+( 0) .. Step        6: berr[j] = 2.438866e-10
+num_thread:     1
+( 0) .. Step        7: berr[j] = 2.664687e-11
+num_thread:     1
+( 0) .. Step        8: berr[j] = 2.911426e-12
+num_thread:     1
+( 0) .. Step        9: berr[j] = 3.181397e-13
+num_thread:     1
+( 0) .. Step       10: berr[j] = 3.477184e-14
+num_thread:     1
+( 0) .. Step       11: berr[j] = 3.825502e-15
+num_thread:     1
+( 0) .. Step       12: berr[j] = 1.057094e-15
+num_thread:     1
+( 0) .. Step       13: berr[j] = 6.871111e-16
+.. DiagScale = 3
+	SOLVE time            0.030
+	Solve flops	6.053364e+06	Mflops 	  199.43
+	REFINEMENT time       0.409	Steps      13
+
+**************************************************
+||Ax - b||_2 = 5.589311e-08

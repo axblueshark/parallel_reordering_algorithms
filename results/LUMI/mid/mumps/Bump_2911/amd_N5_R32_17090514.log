@@ -1,0 +1,554 @@
+slurmstepd: error: Detected 1 oom_kill event in StepId=17090514.0. Some of the step tasks have been OOM Killed.
+slurmstepd: error: Detected 1 oom_kill event in StepId=17090514.0. Some of the step tasks have been OOM Killed.
+MPICH ERROR [Rank 112] [job id 17090514.0] [Sun Mar 29 22:44:55 2026] [nid002950] - Abort(472493455) (rank 112 in comm 416): Fatal error in PMPI_Iprobe: Other MPI error, error stack:
+PMPI_Iprobe(126)...............: MPI_Iprobe(src=MPI_ANY_SOURCE, tag=MPI_ANY_TAG, comm=0xc4000002, flag=0x7ffc53576ffc, status=0x7ffc53577060) failed
+MPID_Iprobe(257)...............: 
+MPIDI_iprobe_safe(118).........: 
+MPIDI_iprobe_unsafe(42)........: 
+MPIDI_OFI_do_iprobe(77)........: 
+MPIDI_OFI_handle_cq_error(1310): OFI poll failed (ofi_events.c:1312:MPIDI_OFI_handle_cq_error:Input/output error - Text file busy)
+
+xpmem_attach error: : No such file or directory
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   1     2911419
+      executing #MPI =    160, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+ =================================================
+  MUMPS compiled with option -DAVOID_MPI_IN_PLACE
+ MUMPS compiled with option -Dmetis
+ MUMPS compiled with option -Dparmetis
+ MUMPS compiled with option -Dpord
+ MUMPS compiled with option -Dptscotch
+ MUMPS compiled with option -Dscotch
+ =================================================
+L U Solver for unsymmetric matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ ** Maximum transversal (ICNTL(6)) not allowed because matrix is distributed
+ Processing a graph of size:   2911419 with     124818480 edges
+ Ordering based on AMD 
+ A root of estimated size  147743  has been selected for Scalapack.
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+srun: error: nid002950: task 104: Out Of Memory
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =     89340289879
+ --  (3) Real space for factors    (estimated)  =     89933975695
+ --  (4) Integer space for factors (estimated)  =        88909967
+ --  (5) Maximum frontal size      (estimated)  =          165683
+ --  (6) Number of nodes in the tree            =          117616
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               0
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               0
+ ICNTL(12) Ordering symmetric indef. matrices   =               1
+ ICNTL(13) Parallelism/splitting of root node   =               0
+ ICNTL(14) Percentage of memory relaxation      =             500
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               3
+ ICNTL(32) Forward elimination during facto.    =               0
+ ICNTL(35) BLR activation                       =               0
+ ICNTL(48) Tree based multithreading (effective)=               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =             286
+ Number of split nodes                          =              45
+ RINFOG(1) Operations during elimination (estim)= 7.574E+15
+ Distributed matrix entry format (ICNTL(18))    =               3
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Max. estimated space for factors per compute node       :     21116888617
+    Maximum estim. space in Mbytes, IC facto.    (INFOG(16)):          194527
+    Total space in MBytes, IC factorization      (INFOG(17)):        11350118
+    Max. estim. space per compute node, in MBytes, IC fact  :         3380625
+    Maximum estim. space in Mbytes, OOC facto.   (INFOG(26)):          162331
+    Total space in MBytes,  OOC factorization    (INFOG(27)):         9168906
+    Max. estim. space per compute node, in MBytes, OOC fact :         2790120
+
+ Elapsed time in analysis driver=       4.1660
+
+Entering DMUMPS 5.8.1 from C interface with JOB, N =   2     2911419
+      executing #MPI =    160, without OMP
+
+Advanced settings:
+   KEEP(370) Static mapping              =         1
+   KEEP(371) Advanced optimizations      =         0
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =             160
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(56) Effective value during facto.    =               0
+ ICNTL(14) Memory relaxation                =             500
+ INFOG(3) Real space for factors (estimated)=     89933975695
+ INFOG(4) Integer space for factors (estim.)=        88909967
+ Maximum frontal size (estimated)           =          165683
+ Number of nodes in the tree                =          117616
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.1000E-01
+
+ Statistics on the scaling phase
+ Elapsed time for scaling                   =      0.8157
+ Max difference from 1 after scaling the entries for ONE-NORM (option 7/8)   = 0.46E-01
+
+ Average Effective size of S     (based on INFO(39))=           8605721069
+
+ Redistrib: total data local/sent           =         7184583      1243493310
+ Elapsed time to reformat/distribute matrix =      0.4413
+
+
+ Allocated buffers
+ ------------------
+ Size of reception buffer in bytes ...... =    487117456
+ Size of async. emission buffer (bytes).. =   1466223542
+ Small emission buffer (bytes) .......... =       528008
+srun: Terminating StepId=17090514.0
+srun: error: slurm_send_node_msg: [socket:[24545232]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+slurmstepd: error: Failed to send MESSAGE_TASK_EXIT: Socket timed out on send/recv operation
+srun: error: slurm_send_node_msg: [socket:[25292489]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+slurmstepd: error: Failed to send MESSAGE_TASK_EXIT: Socket timed out on send/recv operation
+slurmstepd: error: Failed to send MESSAGE_TASK_EXIT: Socket timed out on send/recv operation
+slurmstepd: error: *** STEP 17090514.0 ON nid002076 CANCELLED AT 2026-03-29T22:45:37 ***
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: slurm_send_node_msg: [socket:[25149181]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: slurm_send_node_msg: [socket:[24584093]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 104 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584095]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 154 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584097]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: Task 32 reported exit for a second time.
+srun: error: Task 33 reported exit for a second time.
+srun: error: Task 34 reported exit for a second time.
+srun: error: Task 35 reported exit for a second time.
+srun: error: Task 36 reported exit for a second time.
+srun: error: Task 37 reported exit for a second time.
+srun: error: Task 38 reported exit for a second time.
+srun: error: Task 39 reported exit for a second time.
+srun: error: Task 40 reported exit for a second time.
+srun: error: Task 41 reported exit for a second time.
+srun: error: Task 42 reported exit for a second time.
+srun: error: Task 43 reported exit for a second time.
+srun: error: Task 44 reported exit for a second time.
+srun: error: Task 45 reported exit for a second time.
+srun: error: Task 46 reported exit for a second time.
+srun: error: Task 47 reported exit for a second time.
+srun: error: Task 48 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584099]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: Task 64 reported exit for a second time.
+srun: error: Task 65 reported exit for a second time.
+srun: error: Task 66 reported exit for a second time.
+srun: error: Task 67 reported exit for a second time.
+srun: error: Task 68 reported exit for a second time.
+srun: error: Task 69 reported exit for a second time.
+srun: error: Task 70 reported exit for a second time.
+srun: error: Task 71 reported exit for a second time.
+srun: error: Task 72 reported exit for a second time.
+srun: error: Task 73 reported exit for a second time.
+srun: error: Task 74 reported exit for a second time.
+srun: error: Task 75 reported exit for a second time.
+srun: error: Task 76 reported exit for a second time.
+srun: error: Task 77 reported exit for a second time.
+srun: error: Task 78 reported exit for a second time.
+srun: error: Task 79 reported exit for a second time.
+srun: error: Task 80 reported exit for a second time.
+srun: error: Task 81 reported exit for a second time.
+srun: error: Task 82 reported exit for a second time.
+srun: error: Task 83 reported exit for a second time.
+srun: error: Task 84 reported exit for a second time.
+srun: error: Task 85 reported exit for a second time.
+srun: error: Task 86 reported exit for a second time.
+srun: error: Task 87 reported exit for a second time.
+srun: error: Task 88 reported exit for a second time.
+srun: error: Task 89 reported exit for a second time.
+srun: error: Task 90 reported exit for a second time.
+srun: error: Task 91 reported exit for a second time.
+srun: error: Task 92 reported exit for a second time.
+srun: error: Task 93 reported exit for a second time.
+srun: error: Task 94 reported exit for a second time.
+srun: error: Task 95 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584101]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 104 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584103]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 154 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584105]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: Task 32 reported exit for a second time.
+srun: error: Task 33 reported exit for a second time.
+srun: error: Task 34 reported exit for a second time.
+srun: error: Task 35 reported exit for a second time.
+srun: error: Task 36 reported exit for a second time.
+srun: error: Task 37 reported exit for a second time.
+srun: error: Task 38 reported exit for a second time.
+srun: error: Task 39 reported exit for a second time.
+srun: error: Task 40 reported exit for a second time.
+srun: error: Task 41 reported exit for a second time.
+srun: error: Task 42 reported exit for a second time.
+srun: error: Task 43 reported exit for a second time.
+srun: error: Task 44 reported exit for a second time.
+srun: error: Task 45 reported exit for a second time.
+srun: error: Task 46 reported exit for a second time.
+srun: error: Task 47 reported exit for a second time.
+srun: error: Task 48 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584107]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: Task 64 reported exit for a second time.
+srun: error: Task 65 reported exit for a second time.
+srun: error: Task 66 reported exit for a second time.
+srun: error: Task 67 reported exit for a second time.
+srun: error: Task 68 reported exit for a second time.
+srun: error: Task 69 reported exit for a second time.
+srun: error: Task 70 reported exit for a second time.
+srun: error: Task 71 reported exit for a second time.
+srun: error: Task 72 reported exit for a second time.
+srun: error: Task 73 reported exit for a second time.
+srun: error: Task 74 reported exit for a second time.
+srun: error: Task 75 reported exit for a second time.
+srun: error: Task 76 reported exit for a second time.
+srun: error: Task 77 reported exit for a second time.
+srun: error: Task 78 reported exit for a second time.
+srun: error: Task 79 reported exit for a second time.
+srun: error: Task 80 reported exit for a second time.
+srun: error: Task 81 reported exit for a second time.
+srun: error: Task 82 reported exit for a second time.
+srun: error: Task 83 reported exit for a second time.
+srun: error: Task 84 reported exit for a second time.
+srun: error: Task 85 reported exit for a second time.
+srun: error: Task 86 reported exit for a second time.
+srun: error: Task 87 reported exit for a second time.
+srun: error: Task 88 reported exit for a second time.
+srun: error: Task 89 reported exit for a second time.
+srun: error: Task 90 reported exit for a second time.
+srun: error: Task 91 reported exit for a second time.
+srun: error: Task 92 reported exit for a second time.
+srun: error: Task 93 reported exit for a second time.
+srun: error: Task 94 reported exit for a second time.
+srun: error: Task 95 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584109]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 104 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584111]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 154 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584113]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: Task 32 reported exit for a second time.
+srun: error: Task 33 reported exit for a second time.
+srun: error: Task 34 reported exit for a second time.
+srun: error: Task 35 reported exit for a second time.
+srun: error: Task 36 reported exit for a second time.
+srun: error: Task 37 reported exit for a second time.
+srun: error: Task 38 reported exit for a second time.
+srun: error: Task 39 reported exit for a second time.
+srun: error: Task 40 reported exit for a second time.
+srun: error: Task 41 reported exit for a second time.
+srun: error: Task 42 reported exit for a second time.
+srun: error: Task 43 reported exit for a second time.
+srun: error: Task 44 reported exit for a second time.
+srun: error: Task 45 reported exit for a second time.
+srun: error: Task 46 reported exit for a second time.
+srun: error: Task 47 reported exit for a second time.
+srun: error: Task 48 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584115]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: Task 64 reported exit for a second time.
+srun: error: Task 65 reported exit for a second time.
+srun: error: Task 66 reported exit for a second time.
+srun: error: Task 67 reported exit for a second time.
+srun: error: Task 68 reported exit for a second time.
+srun: error: Task 69 reported exit for a second time.
+srun: error: Task 70 reported exit for a second time.
+srun: error: Task 71 reported exit for a second time.
+srun: error: Task 72 reported exit for a second time.
+srun: error: Task 73 reported exit for a second time.
+srun: error: Task 74 reported exit for a second time.
+srun: error: Task 75 reported exit for a second time.
+srun: error: Task 76 reported exit for a second time.
+srun: error: Task 77 reported exit for a second time.
+srun: error: Task 78 reported exit for a second time.
+srun: error: Task 79 reported exit for a second time.
+srun: error: Task 80 reported exit for a second time.
+srun: error: Task 81 reported exit for a second time.
+srun: error: Task 82 reported exit for a second time.
+srun: error: Task 83 reported exit for a second time.
+srun: error: Task 84 reported exit for a second time.
+srun: error: Task 85 reported exit for a second time.
+srun: error: Task 86 reported exit for a second time.
+srun: error: Task 87 reported exit for a second time.
+srun: error: Task 88 reported exit for a second time.
+srun: error: Task 89 reported exit for a second time.
+srun: error: Task 90 reported exit for a second time.
+srun: error: Task 91 reported exit for a second time.
+srun: error: Task 92 reported exit for a second time.
+srun: error: Task 93 reported exit for a second time.
+srun: error: Task 94 reported exit for a second time.
+srun: error: Task 95 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584117]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 104 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584119]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 154 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584121]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: Task 32 reported exit for a second time.
+srun: error: Task 33 reported exit for a second time.
+srun: error: Task 34 reported exit for a second time.
+srun: error: Task 35 reported exit for a second time.
+srun: error: Task 36 reported exit for a second time.
+srun: error: Task 37 reported exit for a second time.
+srun: error: Task 38 reported exit for a second time.
+srun: error: Task 39 reported exit for a second time.
+srun: error: Task 40 reported exit for a second time.
+srun: error: Task 41 reported exit for a second time.
+srun: error: Task 42 reported exit for a second time.
+srun: error: Task 43 reported exit for a second time.
+srun: error: Task 44 reported exit for a second time.
+srun: error: Task 45 reported exit for a second time.
+srun: error: Task 46 reported exit for a second time.
+srun: error: Task 47 reported exit for a second time.
+srun: error: Task 48 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584123]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: Task 64 reported exit for a second time.
+srun: error: Task 65 reported exit for a second time.
+srun: error: Task 66 reported exit for a second time.
+srun: error: Task 67 reported exit for a second time.
+srun: error: Task 68 reported exit for a second time.
+srun: error: Task 69 reported exit for a second time.
+srun: error: Task 70 reported exit for a second time.
+srun: error: Task 71 reported exit for a second time.
+srun: error: Task 72 reported exit for a second time.
+srun: error: Task 73 reported exit for a second time.
+srun: error: Task 74 reported exit for a second time.
+srun: error: Task 75 reported exit for a second time.
+srun: error: Task 76 reported exit for a second time.
+srun: error: Task 77 reported exit for a second time.
+srun: error: Task 78 reported exit for a second time.
+srun: error: Task 79 reported exit for a second time.
+srun: error: Task 80 reported exit for a second time.
+srun: error: Task 81 reported exit for a second time.
+srun: error: Task 82 reported exit for a second time.
+srun: error: Task 83 reported exit for a second time.
+srun: error: Task 84 reported exit for a second time.
+srun: error: Task 85 reported exit for a second time.
+srun: error: Task 86 reported exit for a second time.
+srun: error: Task 87 reported exit for a second time.
+srun: error: Task 88 reported exit for a second time.
+srun: error: Task 89 reported exit for a second time.
+srun: error: Task 90 reported exit for a second time.
+srun: error: Task 91 reported exit for a second time.
+srun: error: Task 92 reported exit for a second time.
+srun: error: Task 93 reported exit for a second time.
+srun: error: Task 94 reported exit for a second time.
+srun: error: Task 95 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584125]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 104 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584127]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: Task 154 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584129]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 32-48: Exited with exit code 143
+srun: error: Task 32 reported exit for a second time.
+srun: error: Task 33 reported exit for a second time.
+srun: error: Task 34 reported exit for a second time.
+srun: error: Task 35 reported exit for a second time.
+srun: error: Task 36 reported exit for a second time.
+srun: error: Task 37 reported exit for a second time.
+srun: error: Task 38 reported exit for a second time.
+srun: error: Task 39 reported exit for a second time.
+srun: error: Task 40 reported exit for a second time.
+srun: error: Task 41 reported exit for a second time.
+srun: error: Task 42 reported exit for a second time.
+srun: error: Task 43 reported exit for a second time.
+srun: error: Task 44 reported exit for a second time.
+srun: error: Task 45 reported exit for a second time.
+srun: error: Task 46 reported exit for a second time.
+srun: error: Task 47 reported exit for a second time.
+srun: error: Task 48 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584131]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002099: tasks 64-95: Exited with exit code 143
+srun: error: Task 64 reported exit for a second time.
+srun: error: Task 65 reported exit for a second time.
+srun: error: Task 66 reported exit for a second time.
+srun: error: Task 67 reported exit for a second time.
+srun: error: Task 68 reported exit for a second time.
+srun: error: Task 69 reported exit for a second time.
+srun: error: Task 70 reported exit for a second time.
+srun: error: Task 71 reported exit for a second time.
+srun: error: Task 72 reported exit for a second time.
+srun: error: Task 73 reported exit for a second time.
+srun: error: Task 74 reported exit for a second time.
+srun: error: Task 75 reported exit for a second time.
+srun: error: Task 76 reported exit for a second time.
+srun: error: Task 77 reported exit for a second time.
+srun: error: Task 78 reported exit for a second time.
+srun: error: Task 79 reported exit for a second time.
+srun: error: Task 80 reported exit for a second time.
+srun: error: Task 81 reported exit for a second time.
+srun: error: Task 82 reported exit for a second time.
+srun: error: Task 83 reported exit for a second time.
+srun: error: Task 84 reported exit for a second time.
+srun: error: Task 85 reported exit for a second time.
+srun: error: Task 86 reported exit for a second time.
+srun: error: Task 87 reported exit for a second time.
+srun: error: Task 88 reported exit for a second time.
+srun: error: Task 89 reported exit for a second time.
+srun: error: Task 90 reported exit for a second time.
+srun: error: Task 91 reported exit for a second time.
+srun: error: Task 92 reported exit for a second time.
+srun: error: Task 93 reported exit for a second time.
+srun: error: Task 94 reported exit for a second time.
+srun: error: Task 95 reported exit for a second time.
+srun: error: slurm_send_node_msg: [socket:[24584133]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: slurm_send_node_msg: [socket:[24584135]] slurm_bufs_sendto(msg_type=RESPONSE_SLURM_RC) failed: Unexpected missing socket error
+srun: error: nid002077: tasks 49-63: Exited with exit code 143
+srun: error: Task 96 reported exit for a second time.
+srun: error: Task 97 reported exit for a second time.
+srun: error: Task 98 reported exit for a second time.
+srun: error: Task 99 reported exit for a second time.
+srun: error: Task 100 reported exit for a second time.
+srun: error: Task 101 reported exit for a second time.
+srun: error: Task 102 reported exit for a second time.
+srun: error: Task 105 reported exit for a second time.
+srun: error: Task 106 reported exit for a second time.
+srun: error: Task 107 reported exit for a second time.
+srun: error: Task 108 reported exit for a second time.
+srun: error: Task 109 reported exit for a second time.
+srun: error: Task 110 reported exit for a second time.
+srun: error: Task 111 reported exit for a second time.
+srun: error: Task 112 reported exit for a second time.
+srun: error: Task 113 reported exit for a second time.
+srun: error: Task 114 reported exit for a second time.
+srun: error: Task 115 reported exit for a second time.
+srun: error: Task 116 reported exit for a second time.
+srun: error: Task 117 reported exit for a second time.
+srun: error: Task 118 reported exit for a second time.
+srun: error: Task 119 reported exit for a second time.
+srun: error: Task 120 reported exit for a second time.
+srun: error: Task 121 reported exit for a second time.
+srun: error: Task 122 reported exit for a second time.
+srun: error: Task 123 reported exit for a second time.
+srun: error: Task 124 reported exit for a second time.
+srun: error: Task 125 reported exit for a second time.
+srun: error: Task 126 reported exit for a second time.
+srun: error: Task 127 reported exit for a second time.
+srun: error: nid002076: tasks 7-12,14,16,18-20,22-24,26-27,29-31: Exited with exit code 143
+srun: error: nid002076: tasks 0,4,13: Exited with exit code 143
+[28]PETSC ERROR: ------------------------------------------------------------------------
+[1]PETSC ERROR: ------------------------------------------------------------------------
+[5]PETSC ERROR: ------------------------------------------------------------------------
+[5]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[28]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[1]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[5]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[28]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[1]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[5]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[28]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[1]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[5]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[28]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[1]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[21]PETSC ERROR: ------------------------------------------------------------------------
+[21]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[21]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[21]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[21]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[28]PETSC ERROR: to get more information on the crash.
+[5]PETSC ERROR: to get more information on the crash.
+[1]PETSC ERROR: to get more information on the crash.
+[21]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 1] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 1
+
+MPICH ERROR [Rank 5] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 5 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 5
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 5
+MPICH ERROR [Rank 21] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 21 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 21
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 21
+MPICH ERROR [Rank 28] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 28 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 28
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 28
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 1
+[25]PETSC ERROR: ------------------------------------------------------------------------
+[25]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[25]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[25]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[25]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[25]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 25] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 25 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 25
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 25
+[17]PETSC ERROR: ------------------------------------------------------------------------
+[17]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[17]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[17]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[17]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[17]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 17] [job id 17090514.0] [Sun Mar 29 22:46:36 2026] [nid002076] - Abort(59) (rank 17 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 17
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 17
+srun: error: nid002076: tasks 5,17,21,25,28: Exited with exit code 15
+srun: error: nid002076: task 1: Exited with exit code 15
+[6]PETSC ERROR: ------------------------------------------------------------------------
+[6]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[6]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[6]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[6]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[6]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 6] [job id 17090514.0] [Sun Mar 29 22:46:37 2026] [nid002076] - Abort(59) (rank 6 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 6
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 6
+[2]PETSC ERROR: ------------------------------------------------------------------------
+[2]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[2]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[2]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[2]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[2]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 2] [job id 17090514.0] [Sun Mar 29 22:46:37 2026] [nid002076] - Abort(59) (rank 2 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 2
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 2
+srun: error: nid002076: tasks 2,6: Exited with exit code 15
+[3]PETSC ERROR: ------------------------------------------------------------------------
+[3]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[3]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[3]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[3]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[3]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 3] [job id 17090514.0] [Sun Mar 29 22:46:38 2026] [nid002076] - Abort(59) (rank 3 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 3
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 3
+[15]PETSC ERROR: ------------------------------------------------------------------------
+[15]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[15]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[15]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[15]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[15]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 15] [job id 17090514.0] [Sun Mar 29 22:46:38 2026] [nid002076] - Abort(59) (rank 15 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 15
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 15
+srun: error: nid002076: task 3: Exited with exit code 15
+srun: error: nid002076: task 15: Exited with exit code 15
