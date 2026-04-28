@@ -2,9 +2,9 @@
 
 This repository is an integral part of the bachelor thesis **Parallel reordering algorithms and parallel direct solvers**. It provides an environment for running parallel numerical experiments, demonstrating effect of different reordering algorithms (e.g. AMD, ND, METIS, ...) along with different direct solvers (MUMPS, SuperLU_DIST, PaStiX and MKL_PARDISO), on computational time, fill-in, memory requirements and other relevant metrics.
 
-The results will be presented in the **Numerical experiments** chapter of the aforementioned thesis.
+The results are presented in the **Numerical experiments** chapter of the aforementioned thesis.
 
-**Note:** The installation steps below are intended for a local machine. However, the main results were run on the [LUMI supercomputer](https://lumi-supercomputer.eu/).  
+**Note:** The installation steps below are intended for a local machine. However, the main results were run on the [LUMI supercomputer](https://lumi-supercomputer.eu/), a HPC (high performance computing) system hosted by CSC in Finland.
 
 ## Repository overview and structure
 ```
@@ -13,15 +13,16 @@ numerical_experiments/
 ├── matrices/                 
 │   ├── mtx/             # here the matrices in .mtx format should be placed
 │   ├── bin/             # here the converted matrix will be stored
+│   ├── generate_poisson.edp             # script to generate 3D Poisson problem using FreeFEM
 │   ├── mm2petsc.py      # Python script for .mtx to .bin conversion
 │   └── matrices.md
 │
 ├── plots/
-│   ├── sparsity_structure/ 
-│   └── plots.ipynb
+│   ├── numerical_experiments.ipynb    # plots for the numerical experiments
+│   ├── sparsity_structures/ 
+│   └── sparsity.ipynb    # scripts for plots of the sparsity structures
 │
 ├── results/
-│   ├── LUMI/
 │   ├── mumps/
 │   ├── pastix/
 │   ├── superlu_dist/
