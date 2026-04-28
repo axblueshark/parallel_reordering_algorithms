@@ -1,0 +1,157 @@
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+slurmstepd: error: Detected 1 oom_kill event in StepId=17199684.0. Some of the step tasks have been OOM Killed.
+srun: error: nid001783: task 5: Out Of Memory
+srun: Terminating StepId=17199684.0
+slurmstepd: error: *** STEP 17199684.0 ON nid001783 CANCELLED AT 2026-04-05T15:02:05 ***
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[4]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[4]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[4]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[4]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[4]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+[4]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 4] [job id 17199684.0] [Sun Apr  5 15:02:05 2026] [nid001783] - Abort(59) (rank 4 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 4
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 4
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                       8
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Metis
+    Time to compute ordering              1.113431e+02 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                      35522833
+      Number of blok                      69322421
+      Cblk width min                             1
+      Cblk width max                             8
+      Cblk width avg                          1.18
+      Cblk width stdev                        0.56
+      Blok height min                            1
+      Blok height max                            7
+      Blok height avg                         1.02
+      Blok height stdev                       0.16
+      Memory space                            4.96 Go
+    Number of nonzeroes in L structure    92909470
+    Fill-in of L                          0.739566
+    Time to compute symbol matrix         1.056715e+01 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   3.009979e+01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-cXVuPT
+    Number of cluster                            8
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                      35522833
+      Number of blok                      67693179
+      Cblk width min                             1
+      Cblk width max                             8
+      Cblk width avg                          1.18
+      Cblk width stdev                        0.56
+      Blok height min                            1
+      Blok height max                            7
+      Blok height avg                         1.05
+      Blok height stdev                       0.22
+      Memory space                            4.90 Go
+    Symbol split done in                  2.052725e-01 s
+    Elimination tree built in             7.533809e-01 s
+    Cost matrix built in                  9.772927e-01 s
+    Estimated total cost of the etree     3.835905e+02 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          4.742261e-01 s
+MPICH ERROR [Rank 0] [job id 17199684.0] [Sun Apr  5 15:02:06 2026] [nid001783] - Abort(59) (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[1]PETSC ERROR: ------------------------------------------------------------------------
+[1]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[1]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[1]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[1]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[1]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 1] [job id 17199684.0] [Sun Apr  5 15:02:06 2026] [nid001783] - Abort(59) (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 1
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 1
+[2]PETSC ERROR: ------------------------------------------------------------------------
+[2]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[2]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[2]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[2]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[2]PETSC ERROR: to get more information on the crash.
+[6]PETSC ERROR: ------------------------------------------------------------------------
+[6]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[6]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[6]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[6]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[6]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 2] [job id 17199684.0] [Sun Apr  5 15:02:07 2026] [nid001783] - Abort(59) (rank 2 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 2
+
+MPICH ERROR [Rank 6] [job id 17199684.0] [Sun Apr  5 15:02:07 2026] [nid001783] - Abort(59) (rank 6 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 6
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 2
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 6
+[3]PETSC ERROR: ------------------------------------------------------------------------
+[3]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[3]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[3]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[3]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[3]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 3] [job id 17199684.0] [Sun Apr  5 15:02:08 2026] [nid001783] - Abort(59) (rank 3 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 3
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 3
+[7]PETSC ERROR: ------------------------------------------------------------------------
+[7]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[7]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[7]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[7]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[7]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 7] [job id 17199684.0] [Sun Apr  5 15:02:09 2026] [nid001783] - Abort(59) (rank 7 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 7
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 7

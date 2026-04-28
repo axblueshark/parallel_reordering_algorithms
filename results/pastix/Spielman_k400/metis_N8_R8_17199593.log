@@ -1,0 +1,32 @@
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+srun: error: nid001728: tasks 56-63: Exited with exit code 2
+srun: Terminating StepId=17199593.0
+slurmstepd: error: *** STEP 17199593.0 ON nid001103 CANCELLED AT 2026-04-05T14:41:57 ***
+srun: error: nid001187: tasks 8-15: Terminated
+srun: error: nid001261: tasks 24-31: Terminated
+srun: error: nid001103: tasks 0-7: Terminated
+srun: error: nid001419: tasks 40-47: Terminated
+srun: error: nid001235: tasks 16-23: Terminated
+srun: error: nid001548: tasks 48-55: Terminated
+Sun Apr  5 14:51:58 2026: [PE_32]:inet_connect:inet_connect: connect from nid001403 to nid001103 failed after 300 attempts
+Sun Apr  5 14:51:58 2026: [PE_32]:conn_to_controller:inet_connect failed
+Sun Apr  5 14:51:58 2026: [PE_32]:control_nets_join:_pmi_inet_setup (full) returned -1
+MPICH ERROR [Rank 0] [job id unknown] [Sun Apr  5 14:51:58 2026] [nid001403] - Abort(1092879) (rank 0 in comm 0): Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(170): 
+MPID_Init(455).......: 
+MPIR_pmi_init(110)...: PMI_Init returned 1
+
+aborting job:
+Fatal error in PMPI_Init_thread: Other MPI error, error stack:
+MPIR_Init_thread(170): 
+MPID_Init(455).......: 
+MPIR_pmi_init(110)...: PMI_Init returned 1
+srun: error: nid001403: task 32: Exited with exit code 255
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.

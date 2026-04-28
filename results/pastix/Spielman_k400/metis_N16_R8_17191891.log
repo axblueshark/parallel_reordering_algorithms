@@ -1,0 +1,27 @@
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+slurmstepd: error: execve(): /scratch/project_465002796/tabaraal/src/experiments: No such file or directory
+srun: error: nid002781: tasks 104-111: Exited with exit code 2
+srun: Terminating StepId=17191891.0
+slurmstepd: error: *** STEP 17191891.0 ON nid001146 CANCELLED AT 2026-04-04T17:55:36 ***
+srun: error: nid001348: tasks 24-31: Terminated
+srun: error: nid002782: tasks 112-119: Terminated
+srun: error: nid002783: tasks 120-127: Terminated
+srun: error: nid001146: tasks 0-7: Terminated
+srun: error: nid002780: tasks 96-103: Terminated
+srun: error: nid001347: tasks 16-23: Terminated
+srun: error: nid001349: tasks 32-39: Terminated
+srun: error: nid002020: tasks 56-63: Terminated
+srun: error: nid002254: tasks 88-95: Terminated
+srun: error: nid001147: tasks 8-15: Terminated
+srun: error: nid002253: tasks 80-87: Terminated
+srun: error: nid002018: tasks 40-47: Terminated
+srun: error: nid002019: tasks 48-55: Terminated
+srun: error: nid002252: tasks 72-79: Terminated
+srun: error: nid002021: tasks 64-71: Terminated
+srun: Force Terminated StepId=17191891.0

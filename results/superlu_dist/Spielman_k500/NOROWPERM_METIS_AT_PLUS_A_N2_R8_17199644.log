@@ -1,0 +1,127 @@
+.. equilibrated? *equed = R
+.. anorm 5.000000e+02
+.. Use METIS ordering on A'+A
+.. symbfact(): relax 30, maxsuper 256, fill 5
+	matrix dimension    41792002
+	nonzeros in A       125627004
+	nonzeros in L       460449114
+	nonzeros in U       460449114
+	nonzeros in L+U     879106226
+	fill ratio             7.0
+	nonzeros in LSUB    95088534
+	No of supers   4525869
+	Size of G(L)   50844674
+	Size of G(U)   9052672
+	int 8, short 2, float 4, double 8
+	SYMBfact (MB):	L\U 2504.81	total 5513.83	expansions 0
+.. # L blocks   1526647	# U blocks   395179
+MPI tag upper bound = 16777215
+.. Starting with 1 OpenMP threads 
+ === using DAG ===
+.. thresh = s_eps 5.960464e-08 * anorm 5.000000e+02 = 2.980232e-05
+.. Buffer size: Lsub 40	Lval 960	Usub 24	Uval 60	LDA 32
+max_ncols 8,  max_ldu 30, bigu_size   240
+	.. SUPERLU_MAX_BUFFER_SIZE 256000000 set for GPU
+	.. SUPERLU_N_GEMM: 5000 flops of GEMM done on CPU (1st block always on CPU)
+	.. GEMM buffer size: max_row_size X max_ncols = 32 x   8
+[0].. BIG U size   240 (on CPU)
+[0].. BIG V size   65856 (on CPU)
+  Max row size is 32 
+  Threads per process 1 
+
+Initialization time	  3.2356 seconds
+	 Serial: compute static schedule, allocate storage
+
+==== Time breakdown in factorization (rank 0) ====
+Panel factorization 	   3.0985 seconds
+.. L-panel pxgstrf2 	   2.9562 seconds
+.. U-panel pxgstrs2 	   0.1423 seconds
+Time in Look-ahead update 	   0.0668 seconds
+Time in Schur update 		   1.2531 seconds
+.. Time to Gather L buffer	   0.1022  (Separate L panel by Lookahead/Remain)
+.. Time to Gather U buffer	   0.1950 
+.. Time in GEMM   0.2388 
+	* Look-ahead	   0.0000 
+	* Remain	   0.2388	Flops 3.3436e+08	Gflops   1.4004
+.. Time to Scatter   0.2182 
+	* Look-ahead	   0.0000 
+	* Remain	   0.2182 
+Total factorization time            	:  13.4629 seconds, 
+--------
+GEMM maximum block: 8-30-8
+
+** Memory Usage **********************************
+.. sQuerySpace: peak_buffer 558.53 (MB)
+	(P0) serial symbolic::stage[0]: symb_memory 5513.83, GA_mem_use 1339.35
+	(P0) serial distribution::stage[1]:symb_LU 2504.81, dist_mem_use 12477.63, num_mem_usage.for_lu 885.03
+** Total highmark (MB):
+    Sum-of-all : 235906.38 | Avg : 14744.15  | Max : 15893.31
+    Max at rank 10, different stages (MB):
+	. symbfact         6853.19
+	. distribution    15867.47
+	. numfact          1443.56
+** NUMfact space (MB): (sum-of-all-processes)
+    L\U :         4750.39 |  Total : 13621.37
+	. max at rank 5, max L+U memory (MB):   889.84
+	. max at rank 5, peak buffer (MB):      558.86
+**************************************************
+
+** number of Tiny Pivots:        2
+
+.. DiagScale = 1
+**************************************************
+**** Time (seconds) ****
+	EQUIL time            0.928
+	COLPERM time         89.751
+	SYMBFACT time         1.370
+	DISTRIBUTE time      31.662
+	FACTOR time          16.699
+	Factor flops	1.172092e+10	Mflops 	  701.90
+	SOLVE time            0.000
+	REFINEMENT time       0.000	Steps       0
+
+**************************************************
+.. anorm 5.000000e+02
+num_thread:     1
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[8]PETSC ERROR: ------------------------------------------------------------------------
+[8]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[8]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[8]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[8]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[8]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 8] [job id 17199644.0] [Sun Apr  5 14:57:06 2026] [nid002091] - Abort(59) (rank 8 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 8
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 8
+slurmstepd: error: *** STEP 17199644.0 ON nid002090 CANCELLED AT 2026-04-05T14:57:06 ***
+[12]PETSC ERROR: ------------------------------------------------------------------------
+[12]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[12]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[12]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[12]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[12]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 12] [job id 17199644.0] [Sun Apr  5 14:57:06 2026] [nid002091] - Abort(59) (rank 12 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 12
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 12
+[0]PETSC ERROR: ------------------------------------------------------------------------
+[0]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[0]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[0]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[0]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[0]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 0] [job id 17199644.0] [Sun Apr  5 14:57:06 2026] [nid002090] - Abort(59) (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 0
+[4]PETSC ERROR: ------------------------------------------------------------------------
+[4]PETSC ERROR: Caught signal number 15 Terminate: Some process (or the batch system) has told this process to end
+[4]PETSC ERROR: Try option -start_in_debugger or -on_error_attach_debugger
+[4]PETSC ERROR: or see https://petsc.org/release/faq/#valgrind and https://petsc.org/release/faq/
+[4]PETSC ERROR: configure using --with-debugging=yes, recompile, link, and run 
+[4]PETSC ERROR: to get more information on the crash.
+MPICH ERROR [Rank 4] [job id 17199644.0] [Sun Apr  5 14:57:06 2026] [nid002090] - Abort(59) (rank 4 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 59) - process 4
+
+aborting job:
+application called MPI_Abort(MPI_COMM_WORLD, 59) - process 4

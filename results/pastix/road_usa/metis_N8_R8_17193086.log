@@ -1,0 +1,246 @@
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
+ischedInit: The thread number has been automatically set to 1
++-------------------------------------------------+
++     PaStiX : Parallel Sparse matriX package     +
++-------------------------------------------------+
+  Version:                                   6.4.0
+  Schedulers:
+    sequential:                            Enabled
+    thread static:                         Started
+    thread dynamic:                        Started
+    PaRSEC:                               Disabled
+    StarPU:                               Disabled
+  Number of MPI processes:                      64
+  Number of threads per process:                 1
+  Number of GPUs:                                0
+  MPI communication support:              PastixMpiThreadFunneled
+  Distribution level:                     2D( 160)
+  Blocking size (min/max):              160 /  320
+  Computational models
+    CPU:              AMD Opteron 6180 - Intel MKL
+    GPU:             Nvidia K40 GK1108L - CUDA 8.0
+  Low rank parameters:
+    Strategy                        No compression
++-------------------------------------------------+
+  Ordering subtask :
+    Prepare graph structure:
+      Sort row indexes in each column
+      Removing diagonal elements
+    Ordering method is: Metis
+    Time to compute ordering              1.807186e+02 s
++-------------------------------------------------+
+  Symbolic factorization subtask:
+    Symbol factorization using: Fax Direct
+    Symbol Matrix statistics:
+      Number of cblk                      16061537
+      Number of blok                      35705711
+      Cblk width min                             1
+      Cblk width max                           315
+      Cblk width avg                          1.49
+      Cblk width stdev                        0.93
+      Blok height min                            1
+      Blok height max                          266
+      Blok height avg                         1.21
+      Blok height stdev                       0.75
+      Memory space                            2.41 Go
+    Number of nonzeroes in L structure    93481329
+    Fill-in of L                          1.619885
+    Time to compute symbol matrix         8.231430e+00 s
++-------------------------------------------------+
+  Reordering subtask:
+    Split level                                  0
+    Stoping criterion                           -1
+    Time for reordering                   2.338611e+01 s
++-------------------------------------------------+
+  Mapping/Scheduling subtask:
+OUTPUTDIR: pastix-KLXaQz
+    Number of cluster                           64
+    Number of processor per cluster              1
+    Number of thread per MPI process             1
+    Symbol Matrix statistics:
+      Number of cblk                      16061537
+      Number of blok                      32846268
+      Cblk width min                             1
+      Cblk width max                           315
+      Cblk width avg                          1.49
+      Cblk width stdev                        0.93
+      Blok height min                            1
+      Blok height max                          266
+      Blok height avg                         1.32
+      Blok height stdev                       1.01
+      Memory space                            2.30 Go
+    Symbol split done in                  1.564708e-01 s
+    Elimination tree built in             3.599570e-01 s
+    Cost matrix built in                  5.089486e-01 s
+    Estimated total cost of the etree     1.782869e+02 s
+    Estimated critical path of the etree  0.000000e+00 s
+    Proportional mapping done in          2.609730e-01 s
+    Simulation structures built in        9.949865e-01 s
+    Number of tasks found                 16061537
+    Simulation done in                    2.744323e+01 s
+    Solver built in                       3.486062e+00 s
+    Number of non-zeroes in blocked L     186962658
+    Fill-in                               3.239770
+    Number of operations in full-rank: LU        5.26 GFlops
+    Prediction:
+      Model                              AMD 6180  MKL
+      Time to factorize                   6.797006e+00 s
+    Time for mapping/scheduling           3.856308e+01 s
++-------------------------------------------------+
+  Analyze task:
+    Total time for analyze                2.530944e+02 s
++-------------------------------------------------+
+  Factorization task:
+    Factorization used: LU
+    ||A||_2  =                            7.596619e+03
+    Time to initialize internal csc       1.041198e+00 s
+    Time to initialize coeftab            1.559402e-01 s
+    Time to factorize                     6.286958e-01 s ( 8.37 GFlop/s)
+    Number of operations                       -143529727680.00  Flops
+    Number of static pivots               10508044
+    Memory usage of coeftab                       34.8 Mo
+    Time to solve                         6.282619e-01 s
+    Time to solve                         6.279248e-01 s
+    - iteration 1 :
+         total iteration time                   1.07 s
+         error                                  0
+    Time to solve                         6.945780e-01 s
+    - iteration 2 :
+         total iteration time                   1.03 s
+         error                                  0
+    Time to solve                         6.254251e-01 s
+    - iteration 3 :
+         total iteration time                   0.962 s
+         error                                  0
+    Time to solve                         6.386362e-01 s
+    - iteration 4 :
+         total iteration time                   0.975 s
+         error                                  0
+    Time to solve                         6.253004e-01 s
+    - iteration 5 :
+         total iteration time                   0.962 s
+         error                                  0
+    Time to solve                         6.266452e-01 s
+    - iteration 6 :
+         total iteration time                   0.963 s
+         error                                  0
+    Time to solve                         6.285175e-01 s
+    - iteration 7 :
+         total iteration time                   0.966 s
+         error                                  0
+    Time to solve                         6.271522e-01 s
+    - iteration 8 :
+         total iteration time                   0.963 s
+         error                                  0
+    Time to solve                         6.269328e-01 s
+    - iteration 9 :
+         total iteration time                   0.965 s
+         error                                  0
+    Time to solve                         6.235821e-01 s
+    - iteration 10 :
+         total iteration time                   0.962 s
+         error                                  0
+    Time to solve                         6.240688e-01 s
+    - iteration 11 :
+         total iteration time                   0.962 s
+         error                                  0
+    Time to solve                         6.237886e-01 s
+    - iteration 12 :
+         total iteration time                   0.96 s
+         error                                  0
+    Time to solve                         7.102258e-01 s
+    - iteration 13 :
+         total iteration time                   1.05 s
+         error                                  0
+    Time to solve                         6.275033e-01 s
+    - iteration 14 :
+         total iteration time                   0.962 s
+         error                                  0
+    Time to solve                         6.364541e-01 s
+    - iteration 15 :
+         total iteration time                   0.972 s
+         error                                  0
+    Time to solve                         6.263514e-01 s
+    - iteration 16 :
+         total iteration time                   0.963 s
+         error                                  0
+    Time to solve                         6.267016e-01 s
+    - iteration 17 :
+         total iteration time                   0.964 s
+         error                                  0
+    Time to solve                         6.280212e-01 s
+    - iteration 18 :
+         total iteration time                   0.965 s
+         error                                  0
+    Time to solve                         6.316200e-01 s
+    - iteration 19 :
+         total iteration time                   0.969 s
+         error                                  0
+    Time to solve                         6.931934e-01 s
+    - iteration 20 :
+         total iteration time                   1.03 s
+         error                                  0
+    Time for refinement                   1.964005e+01 s
+||Ax - b||_2 = -nan
